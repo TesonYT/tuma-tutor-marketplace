@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tuma — Find a Tutor at KNU</title>
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="icon.svg" />
+<meta name="theme-color" content="#1F4D3A" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="topbar-pattern"></div>
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">Tuma</span><span class="tag">by students, at KNU</span></div>
+  <nav id="app-tabs" class="tabs hidden">
+    <button class="tab-btn active" data-tab="browse">Browse Tutors</button>
+    <button class="tab-btn" data-tab="register">Become a Tutor</button>
+    <button class="tab-btn" data-tab="dashboard">Tutor Dashboard</button>
+    <button class="tab-btn" data-tab="my-lessons">My Lessons</button>
+    <button class="tab-btn" data-tab="videos">Video Lessons</button>
+    <button class="tab-btn" data-tab="news">School News</button>
+  </nav>
+  <div id="auth-area" class="auth-area"></div>
+</header>
+
+<!-- Login gate: this is the only thing shown when logged out. No marketplace browsing without an account. -->
+<div id="auth-gate" class="auth-gate">
+  <div class="auth-gate-box">
+    <h2>Log in to browse the marketplace</h2>
+    <p class="meta">You need an account to see tutor listings — as a student to find a tutor, or as a tutor to list your courses.</p>
+    <div class="tabs">
+      <button type="button" class="tab-btn active" data-authtab="login">Log in</button>
+      <button type="button" class="tab-btn" data-authtab="signup">Sign up</button>
+    </div>
+    <form id="login-form" class="form auth-panel active">
+      <label>Email <input name="email" type="email" required /></label>
+      <label>Password <input name="password" type="password" required /></label>
+      <button type="submit">Log in</button>
+    </form>
+    <form id="signup-form" class="form auth-panel">
+      <label>Name <input name="name" required /></label>
+      <label>Email <input name="email" type="email" required /></label>
+      <label>Password (min 6 characters) <input name="password" type="password" minlength="6" required /></label>
+      <label>I am a
+        <select name="role">
+          <option value="student">Student</option>
+          <option value="tutor">Tutor</option>
+        </select>
+      </label>
+      <button type="submit">Create account</button>
+    </form>
+    <p id="auth-result" class="result"></p>
+  </div>
+</div>
+
+<main id="app-main" class="hidden">
+  <p class="disclaimer">
+    This is a local, in-memory prototype for testing the concept — data resets whenever the server restarts,
+    no real payments are processed, and the commission/subscription numbers below are placeholder demo values.
+  </p>
+
+  <!-- Browse Tutors -->
+  <section id="browse" class="panel active">
+    <h2>Find a tutor</h2>
+    <div class="filters">
+      <select id="filter-subject"></select>
+      <select id="filter-location"></select>
+      <button id="filter-apply">Filter</button>
+    </div>
+    <div id="tutor-list" class="card-grid"></div>
+  </section>
+
+  <!-- Become a Tutor -->
+  <section id="register" class="panel">
+    <h2>Register as a tutor</h2>
+    <p id="register-gate" class="result"></p>
+    <form id="tutor-form" class="form">
+      <label>Profile photo (optional)
+        <input type="file" name="photo" id="tutor-photo-input" accept="image/*" />
+      </label>
+      <img id="tutor-photo-preview" class="avatar avatar-lg hidden" alt="Preview" />
+      <p id="tutor-photo-error" class="result error"></p>
+      <fieldset class="course-fieldset">
+        <legend>Courses offered (Kwame Nkrumah — Education &amp; Business sectors only)</legend>
+        <div id="course-checkboxes"></div>
+      </fieldset>
+      <label>Location
+        <select name="location" id="register-location" required></select>
+      </label>
+      <p id="register-rate-note" class="meta"></p>
+      <label>Short bio <textarea name="bio" rows="3"></textarea></label>
+      <button type="submit">Register</button>
+    </form>
+    <p id="register-result" class="result"></p>
+  </section>
+
+  <!-- Tutor Dashboard -->
+  <section id="dashboard" class="panel">
+    <h2>Tutor dashboard</h2>
+    <p id="dashboard-gate" class="result"></p>
+    <div id="dashboard-body">
+      <label>Select tutor profile
+        <select id="dashboard-tutor-select"></select>
+      </label>
+      <div id="dashboard-content"></div>
+    </div>
+  </section>
+
+  <!-- My Lessons (student) -->
+  <section id="my-lessons" class="panel">
+    <h2>My lessons</h2>
+    <p id="my-lessons-gate" class="result"></p>
+    <div id="my-lessons-body">
+      <h3>My subscription</h3>
+      <p class="meta">One subscription covers lessons with any tutor on the platform — it's not tied to a specific tutor.</p>
+      <div id="subscription-status"></div>
+      <div id="subscribe-section"></div>
+
+      <h3 style="margin-top:1.5rem;">Enter a code from your tutor</h3>
+      <p class="meta">If you scanned a QR code from your tutor, it already confirmed the lesson. Use this if you only have the numeric code.</p>
+      <form id="verify-code-form" class="form">
+        <label>Code <input name="code" placeholder="e.g. a1b2c3d4" required /></label>
+        <button type="submit">Confirm lesson</button>
+      </form>
+      <p id="verify-code-result" class="result"></p>
+      <h3 style="margin-top:1.5rem;">Lesson history</h3>
+      <div id="my-lessons-list"></div>
+    </div>
+  </section>
+
+  <!-- Video Lessons -->
+  <section id="videos" class="panel">
+    <h2>Video lessons</h2>
+    <p class="meta">Recordings of past lessons a tutor has posted — pay once to watch anytime.</p>
+    <div id="video-upload-section"></div>
+    <h3 style="margin-top:1.5rem;">Browse video lessons</h3>
+    <div id="video-list" class="card-grid"></div>
+  </section>
+
+  <!-- School News -->
+  <section id="news" class="panel">
+    <h2>School news</h2>
+    <p class="meta">Curated updates from Kwame Nkrumah University — not a live feed. Anyone can add an item below.</p>
+    <div id="news-list"></div>
+    <h3 style="margin-top:1.5rem;">Add a news item</h3>
+    <form id="news-form" class="form">
+      <label>Title <input name="title" required /></label>
+      <label>Summary <textarea name="summary" rows="2" required></textarea></label>
+      <label>Source
+        <select name="source">
+          <option value="website">School website</option>
+          <option value="facebook">Facebook</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+      <label>Link (optional) <input name="url" type="url" placeholder="https://..." /></label>
+      <label>Date <input name="publishedDate" type="date" /></label>
+      <button type="submit">Add</button>
+    </form>
+    <p id="news-result" class="result"></p>
+  </section>
+</main>
+
+<!-- Apply modal -->
+<div id="apply-modal" class="modal hidden">
+  <div class="modal-content">
+    <button id="apply-close" class="modal-close">&times;</button>
+    <h3 id="apply-tutor-name"></h3>
+    <p id="apply-gate" class="result"></p>
+    <form id="apply-form" class="form">
+      <label>Message <textarea name="message" rows="3" placeholder="What would you like help with?"></textarea></label>
+      <button type="submit">Send application</button>
+    </form>
+    <p id="apply-result" class="result"></p>
+  </div>
+</div>
+
+<!-- Reviews modal -->
+<div id="reviews-modal" class="modal hidden">
+  <div class="modal-content">
+    <button id="reviews-close" class="modal-close">&times;</button>
+    <h3 id="reviews-tutor-name"></h3>
+    <div id="reviews-list"></div>
+    <p id="reviews-gate" class="result"></p>
+    <form id="review-form" class="form">
+      <label>Rating
+        <select name="rating">
+          <option value="5">5 — Excellent</option>
+          <option value="4">4 — Good</option>
+          <option value="3">3 — Okay</option>
+          <option value="2">2 — Below average</option>
+          <option value="1">1 — Poor</option>
+        </select>
+      </label>
+      <label>Comment <textarea name="comment" rows="3" placeholder="How was your tutoring experience?"></textarea></label>
+      <button type="submit">Submit review</button>
+    </form>
+    <p id="review-result" class="result"></p>
+  </div>
+</div>
+
+<!-- Video purchase modal -->
+<div id="video-purchase-modal" class="modal hidden">
+  <div class="modal-content">
+    <button id="video-purchase-close" class="modal-close">&times;</button>
+    <h3 id="video-purchase-title"></h3>
+    <div id="video-purchase-content"></div>
+  </div>
+</div>
+
+<!-- Start Lesson / QR modal -->
+<div id="lesson-modal" class="modal hidden">
+  <div class="modal-content">
+    <button id="lesson-close" class="modal-close">&times;</button>
+    <h3 id="lesson-tutor-name">Lesson verification</h3>
+    <div id="lesson-content"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
