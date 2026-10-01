@@ -929,6 +929,9 @@ function round2(n) {
   return Math.round(n * 100) / 100;
 }
 
+// Human tutor track (applications, screening, bookings). Only active when DATABASE_URL is set.
+require('./tutor-track').mount(app);
+
 const PORT = process.env.PORT || 4173;
 app.listen(PORT, () => {
   console.log(`Tutor marketplace sandbox running at http://localhost:${PORT}`);

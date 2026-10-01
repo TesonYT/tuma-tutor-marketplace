@@ -1,0 +1,47 @@
+:root { --bg:#fafafa; --fg:#1d1d1f; --muted:#666; --line:#e2e2e2; --card:#fff; --accent:#1a73e8; --danger:#c5221f; }
+@media (prefers-color-scheme: dark) { :root { --bg:#121212; --fg:#eee; --muted:#aaa; --line:#333; --card:#1c1c1c; --accent:#8ab4f8; --danger:#f28b82; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+header { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem 1.5rem; padding:.75rem 16px; border-bottom:1px solid var(--line); background:var(--card); }
+.brand { font-weight:700; font-size:1.25rem; text-decoration:none; color:var(--fg); }
+nav { display:flex; flex-wrap:wrap; gap:.25rem 1rem; align-items:center; }
+a { color:var(--accent); }
+main { max-width:960px; margin:0 auto; padding:1.5rem 16px 3rem; }
+footer { text-align:center; color:var(--muted); padding:1.5rem; font-size:.85rem; }
+h1 { margin-top:0; }
+.cards { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:1rem; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:1rem; text-decoration:none; color:var(--fg); }
+a.card:hover { border-color:var(--accent); }
+.card h2, .card h3 { margin-top:0; }
+.tutor img { width:72px; height:72px; border-radius:50%; object-fit:cover; }
+.stack { display:flex; flex-direction:column; gap:1rem; }
+dl { display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:.5rem 0; }
+dt { color:var(--muted); } dd { margin:0; overflow-wrap:anywhere; }
+.form { display:flex; flex-direction:column; gap:.9rem; }
+.form.narrow { max-width:360px; }
+.form.boxed { border:1px solid var(--line); border-radius:12px; padding:1rem; background:var(--card); margin:.5rem 0; }
+.inline-form { flex-direction:row; flex-wrap:wrap; align-items:center; margin-top:.5rem; }
+fieldset { border:1px solid var(--line); border-radius:12px; padding:1rem; display:flex; flex-direction:column; gap:.9rem; background:var(--card); }
+legend { font-weight:600; padding:0 .4rem; }
+label { display:flex; flex-direction:column; gap:.25rem; font-weight:500; }
+label.chk { flex-direction:row; align-items:flex-start; gap:.5rem; font-weight:400; }
+.group { display:flex; flex-wrap:wrap; gap:.25rem 1rem; } .group > span { flex-basis:100%; font-weight:500; }
+input, select, textarea { font:inherit; padding:.55rem .6rem; border:1px solid var(--line); border-radius:8px; background:var(--bg); color:var(--fg); }
+input[type=checkbox] { margin-top:.3rem; }
+textarea { resize:vertical; }
+small, .note { color:var(--muted); font-weight:400; }
+.btn { display:inline-block; font:inherit; font-weight:600; padding:.6rem 1.1rem; border:0; border-radius:999px; background:var(--accent); color:#fff; cursor:pointer; text-decoration:none; }
+@media (prefers-color-scheme: dark) { .btn { color:#111; } }
+.btn.small { padding:.35rem .8rem; font-size:.9rem; } .btn.danger { background:var(--danger); }
+button.link { background:none; border:0; color:var(--accent); font:inherit; cursor:pointer; padding:0; }
+form.inline { display:inline; }
+.hp { position:absolute; left:-9999px; height:0; width:0; opacity:0; }
+.errors { border:1px solid var(--danger); border-radius:8px; padding:.75rem 1rem; color:var(--danger); }
+.flash { background:var(--card); border:1px solid var(--accent); border-radius:8px; padding:.6rem 1rem; }
+.filters { display:flex; flex-wrap:wrap; gap:.5rem; margin:1rem 0; }
+table { width:100%; border-collapse:collapse; display:block; overflow-x:auto; }
+th, td { text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--line); white-space:nowrap; }
+.pill { display:inline-block; font-size:.78rem; padding:.1rem .6rem; border-radius:999px; border:1px solid var(--line); text-transform:capitalize; vertical-align:middle; }
+.pill.approved, .pill.paid, .pill.confirmed { border-color:#188038; color:#188038; } .pill.rejected, .pill.withdrawn, .pill.refunded { border-color:var(--danger); color:var(--danger); }
+blockquote { margin:0; padding:1rem 1.25rem; background:var(--card); border-left:4px solid var(--accent); border-radius:8px; font-size:1.05rem; }
+section { margin:1.5rem 0; }
