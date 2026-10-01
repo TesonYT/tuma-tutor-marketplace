@@ -1,0 +1,69 @@
+{
+  "_meta": {
+    "status": "draft",
+    "language": "Ichibemba",
+    "reviewed_by": null,
+    "needs_native_review": true,
+    "note": "Interface strings only. Short, everyday words are filled in; long explanatory sentences are deliberately left out and fall back to English, because a wrong sentence in a student's own language is worse than a right one in English. Lesson content is NOT translated here - that lives in the course packs, via 'packtool translate-export'.",
+    "how_to_complete": "Copy a key from en.json, translate the value, save. Nothing else needs changing; the tutor picks it up on restart. Any key left out simply shows English.",
+    "review_these_first": [
+      "enrol.institution", "enrol.programme", "plan.mastered", "plan.blocked",
+      "install.title", "install.available", "lesson.sources", "ask.extractive",
+      "common.loading"
+    ],
+    "reviewer_notes": "The keys listed in review_these_first are the ones I am least sure of - abstract or administrative words rather than everyday ones. Check those before anything else. Where a course is taught in English at the student's university, keeping the English technical term is usually right; note that decision here so the next person keeps it consistent."
+  },
+  "strings": {
+    "app.tagline": "Kafundisha wenu uwabula intaneti",
+    "app.offline_badge": "Takwaba intaneti",
+
+    "nav.learn": "Ukusambilila",
+    "nav.ask": "Ipusha",
+    "nav.courses": "Amasambililo yandi",
+    "nav.signout": "Fumamo",
+
+    "login.title": "Nani alesambilila?",
+    "login.existing": "Twalililenifye",
+    "login.new": "Ndi mupya kuno",
+    "login.name": "Ishina lyenu",
+    "login.id": "Nomba ya musambi",
+    "login.pin": "PIN",
+    "login.start": "Twendeni",
+
+    "enrol.institution": "Isukulu",
+    "enrol.field": "Cinshi mulesambilila?",
+    "enrol.year": "Umwaka wa kusambilila",
+
+    "install.missing": "Tacili pa cikuuko ici",
+    "install.done": "Nacibikwa",
+
+    "placement.title": "Ilyo tushilatampa",
+    "placement.begin": "Tampeni",
+    "placement.dont_know": "Nshishibe",
+    "placement.finish": "Pwisheni",
+
+    "lesson.next": "Twendeni",
+    "lesson.submit": "Asukeni",
+    "lesson.correct": "Calungama",
+    "lesson.incorrect": "Tacalungeme",
+    "lesson.speak": "Mbelengeleni ici",
+
+    "ask.title": "Ipusheni conse ukufuma mu masambililo yenu",
+    "ask.placeholder": "Lembeni icipusho cenu",
+    "ask.send": "Ipusha",
+
+    "plan.title": "Ubupange bwa kusambilila kwenu",
+    "plan.in_progress": "Cilecitika",
+    "plan.not_started": "Tacilatampa",
+    "plan.review": "Bwelelapo",
+
+    "voice.male": "Ishiwi lya mwaume",
+    "voice.female": "Ishiwi lya mwanakashi",
+    "voice.off": "Takwaba ishiwi",
+
+    "common.yes": "Ee",
+    "common.no": "Awe",
+    "common.back": "Bwelela",
+    "common.cancel": "Lekeni"
+  }
+}

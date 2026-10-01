@@ -1,0 +1,83 @@
+{
+  "_meta": {"status": "complete", "reviewed_by": null},
+  "strings": {
+    "app.name": "Ethel",
+    "app.tagline": "Your offline tutor",
+    "app.offline_badge": "Offline",
+    "app.offline_explain": "This machine has no internet connection and cannot make one. Everything here is already installed.",
+
+    "nav.learn": "Learn",
+    "nav.ask": "Ask",
+    "nav.plan": "My plan",
+    "nav.courses": "My courses",
+    "nav.doctor": "System check",
+    "nav.signout": "Sign out",
+
+    "login.title": "Who is studying?",
+    "login.existing": "Continue",
+    "login.new": "I'm new here",
+    "login.name": "Your name",
+    "login.id": "Student ID",
+    "login.pin": "PIN",
+    "login.pin_help": "Four digits or more. This keeps your progress separate from other students on this machine.",
+    "login.start": "Start",
+
+    "enrol.title": "Tell me where you study",
+    "enrol.institution": "Institution",
+    "enrol.field": "What are you studying?",
+    "enrol.programme": "Programme",
+    "enrol.year": "Year of study",
+    "enrol.track": "Specialisation",
+    "enrol.one_only": "You can only study one programme at a time. You can change later, but your progress on this one is set aside when you do.",
+    "enrol.confirm": "Build my course",
+
+    "install.title": "Loading your courses onto this machine",
+    "install.explain": "Nothing is downloaded from the internet. Your courses are copied from the material already stored here.",
+    "install.available": "Ready to install",
+    "install.missing": "Not on this machine yet",
+    "install.install": "Install these",
+    "install.done": "Installed",
+
+    "placement.title": "Before we start",
+    "placement.explain": "A short test so I know where to begin. There is no pass mark. If you don't know, say so - a wrong answer here saves us both time later.",
+    "placement.begin": "Begin",
+    "placement.dont_know": "I don't know this one",
+    "placement.progress": "Question {n} of {total}",
+    "placement.prefs": "How should I teach you?",
+    "placement.finish": "Finish",
+    "placement.result": "Here's how I'll teach you",
+
+    "lesson.next": "Continue",
+    "lesson.submit": "Answer",
+    "lesson.correct": "Correct",
+    "lesson.incorrect": "Not quite",
+    "lesson.sources": "From your course material",
+    "lesson.speak": "Read this to me",
+    "lesson.explain_again": "Explain that differently",
+
+    "ask.title": "Ask me anything from your courses",
+    "ask.placeholder": "Type your question",
+    "ask.send": "Ask",
+    "ask.refused": "I don't know. That isn't in your course material, and I won't guess at it.",
+    "ask.extractive": "Straight from your course material",
+
+    "plan.title": "Your study plan",
+    "plan.mastered": "Mastered",
+    "plan.in_progress": "In progress",
+    "plan.not_started": "Not started",
+    "plan.review": "Review",
+    "plan.blocked": "Needs earlier work first",
+    "plan.due": "Due for review",
+
+    "voice.male": "Male voice",
+    "voice.female": "Female voice",
+    "voice.off": "No voice",
+    "voice.unavailable": "No voice is installed for this language on this machine.",
+
+    "common.yes": "Yes",
+    "common.no": "No",
+    "common.back": "Back",
+    "common.cancel": "Cancel",
+    "common.loading": "Working"
+  }
+}
