@@ -1,0 +1,194 @@
+{
+  "_instructions": [
+    "Decide each term ONCE, before translating unza-agric-soils.",
+    "Set keep_english to true for terms of art the student will meet in English in lectures and exams - then leave the \"bem\" field blank.",
+    "Set keep_english to false and fill in \"bem\" for ordinary words that should be translated.",
+    "If you are unsure, keep_english true is the safer default: a student who knows the English term can follow the lecture, and one who only knows an invented word cannot.",
+    "Hand this back with the translation file; it becomes the pack's provenance.notes so the next translator is consistent with you."
+  ],
+  "pack": "unza-agric-soils",
+  "course": "Soil Acidity and Nutrient Availability (foundation)",
+  "language": "bem",
+  "terms": [
+    {
+      "term": "soil",
+      "occurrences": 10,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "lime",
+      "occurrences": 8,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "root",
+      "occurrences": 6,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "fertiliser",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "field",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "acidity",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "calcium",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "acidic",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "change",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "about",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "phosphorus",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "aluminium",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "test",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "roots",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "alkaline",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "seven",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "below",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "nutrients",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "crop",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "soluble",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "depends",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "acid",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "soils",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "iron",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "applied",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "system",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "magnesium",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "fields",
+      "occurrences": 2,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "well",
+      "occurrences": 2,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "stunted",
+      "occurrences": 2,
+      "bem": "",
+      "keep_english": null
+    }
+  ]
+}

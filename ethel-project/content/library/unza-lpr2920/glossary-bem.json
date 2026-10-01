@@ -1,0 +1,194 @@
+{
+  "_instructions": [
+    "Decide each term ONCE, before translating unza-lpr2920.",
+    "Set keep_english to true for terms of art the student will meet in English in lectures and exams - then leave the \"bem\" field blank.",
+    "Set keep_english to false and fill in \"bem\" for ordinary words that should be translated.",
+    "If you are unsure, keep_english true is the safer default: a student who knows the English term can follow the lecture, and one who only knows an invented word cannot.",
+    "Hand this back with the translation file; it becomes the pack's provenance.notes so the next translator is consistent with you."
+  ],
+  "pack": "unza-lpr2920",
+  "course": "LPR2920 Law of Contract",
+  "language": "bem",
+  "terms": [
+    {
+      "term": "offer",
+      "occurrences": 29,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "acceptance",
+      "occurrences": 23,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "invitation",
+      "occurrences": 11,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "treat",
+      "occurrences": 11,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "contract",
+      "occurrences": 10,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "rule",
+      "occurrences": 8,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "revocation",
+      "occurrences": 7,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "terms",
+      "occurrences": 6,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "advertisement",
+      "occurrences": 6,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "price",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "statement",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "cannot",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "bound",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "counter-offer",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "effective",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "posted",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "made",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "accepted",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "shop",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "held",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "information",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "communication",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "about",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "original",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "hyde",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "offeror",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "trader",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "displays",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "stated",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "intention",
+      "occurrences": 3,
+      "bem": "",
+      "keep_english": null
+    }
+  ]
+}

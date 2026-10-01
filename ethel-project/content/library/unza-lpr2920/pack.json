@@ -1,0 +1,1097 @@
+{
+  "schema": "ethel.pack/1",
+  "id": "unza-lpr2920",
+  "course": {
+    "code": "LPR2920",
+    "title": "Law of Contract",
+    "institution": "unza",
+    "programme": "unza-llb",
+    "year": 2
+  },
+  "source": {
+    "authored_by": "The Ethel Project",
+    "authored_on": "2026-08-26",
+    "licence": "CC BY-SA 4.0",
+    "reviewed_by": null,
+    "syllabus_reference": "Course code and title from the University of Zambia School of Law LLB Year 2 compulsory course list, https://www.unza.zm/undergraduate/school-of-law/private-law/bachelor-of-law (retrieved 2026-08-26). UNZA does not publish the detailed LPR2920 syllabus; these two lessons cover the formation topics that open any common-law contract course and must be checked against the lecturer's scheme of work before use in class.",
+    "jurisdiction_note": "Zambia is a common-law jurisdiction and the cases below are the English authorities standardly taught on contract formation. Zambian courts apply English common law through the English Law (Extent of Application) Act, subject to the Constitution, Zambian statute and any contrary decision of the Zambian courts. Where a Zambian authority exists on a point, it governs. A student must check the current Zambian position with their lecturer rather than relying on the English cases alone - and this pack has not yet been reviewed by a qualified Zambian lawyer."
+  },
+  "languages": [
+    "en",
+    "bem",
+    "loz"
+  ],
+  "lessons": [
+    {
+      "id": "l1",
+      "title": "Offer, or merely an invitation to treat?",
+      "skill": "offer",
+      "prerequisites": [],
+      "estimated_minutes": 30,
+      "hook": "A trader in Soweto Market displays a radio marked K450. A customer puts K450 on the counter and the trader says the price has gone up. Has the trader broken a contract? The answer turns on a distinction that looks like hair-splitting and is in fact the foundation of the whole subject: the difference between an offer and an invitation to treat.",
+      "segments": [
+        {
+          "id": "s1",
+          "heading": "What makes a statement an offer",
+          "body": "An offer is an expression of willingness to contract on stated terms, made with the intention that it will become binding as soon as it is accepted by the person it is addressed to.\n\nTwo elements do the work.\n\nFirst, the terms must be certain enough to be capable of acceptance. A statement so vague that a court could not say what was promised cannot be an offer.\n\nSecond, and decisively, the maker must intend to be bound on acceptance, without any further step of their own. That intention is judged objectively - by what a reasonable person in the other party's position would understand from the words and conduct, not by what the maker privately had in mind.\n\nAn offer may be made to one person, to a group, or to the world at large.",
+          "recap": "An offer has certain terms and an intention to be bound on acceptance, judged objectively.",
+          "check": {
+            "id": "l1s1c",
+            "type": "mcq",
+            "skill": "offer",
+            "difficulty": 2,
+            "prompt": "How does a court decide whether a person intended to be bound by their statement?",
+            "options": [
+              "Objectively - what a reasonable person in the other party's position would understand.",
+              "Subjectively - what the maker of the statement says they actually intended.",
+              "By asking whether the maker later regretted the statement.",
+              "By whichever interpretation produces the fairer result on the facts."
+            ],
+            "answer": 0,
+            "misconception": {
+              "1": "m1",
+              "2": "m1",
+              "3": "m1"
+            },
+            "hint": "If it turned on private intention, any party could escape by saying they never meant it.",
+            "explanation": "The test is objective. Contract law protects reasonable reliance on outward appearances; a purely subjective test would let anyone escape a bargain by claiming a different private intention."
+          }
+        },
+        {
+          "id": "s2",
+          "heading": "The invitation to treat",
+          "body": "An invitation to treat is a step short of an offer: an invitation to others to make offers. It cannot be accepted, so no contract arises from it.\n\nThe standard categories:\n\nGoods displayed in a shop. In Pharmaceutical Society of Great Britain v Boots Cash Chemists (1953) the display of goods on a self-service shelf was held to be an invitation to treat. The customer makes the offer at the till; the shop accepts or declines it.\n\nGoods in a shop window. In Fisher v Bell (1961) a knife displayed in a window with a price ticket was an invitation to treat, not an offer for sale - which is why the shopkeeper escaped conviction on the statute as it then stood.\n\nAdvertisements. In Partridge v Crittenden (1968) an advertisement of birds for sale was an invitation to treat. The practical justification is stock: a seller who advertises to thousands cannot be bound to supply every one of them.\n\nA statement of price in answer to a question. In Harvey v Facey (1893) a telegram answering 'what is your lowest price?' with a figure was held to be a statement of information, not an offer to sell.\n\nThe thread running through all four is that the maker has not yet committed to being bound.",
+          "recap": "Shop displays, window displays, most advertisements and bare price statements are invitations to treat.",
+          "check": {
+            "id": "l1s2c",
+            "type": "mcq",
+            "skill": "offer",
+            "difficulty": 3,
+            "prompt": "A supermarket displays maize meal on a shelf marked K180. At the till the cashier refuses to sell at that price. On the ordinary analysis, who has made the offer?",
+            "options": [
+              "The customer, when presenting the goods at the till.",
+              "The supermarket, when placing the goods on the shelf with a price.",
+              "Neither - a contract was formed when the customer picked up the goods.",
+              "Both simultaneously, so the lower price governs."
+            ],
+            "answer": 0,
+            "misconception": {
+              "1": "m2",
+              "2": "m2",
+              "3": "m2"
+            },
+            "hint": "Recall which way round Boots decided the shelf display.",
+            "explanation": "Following Boots, the display is an invitation to treat. The customer makes the offer at the till and the shop is free to accept or decline it. Note that a display that misleads consumers may attract liability under consumer protection or trade descriptions legislation - but that is a separate question from contract formation."
+          }
+        },
+        {
+          "id": "s3",
+          "heading": "When an advertisement is an offer",
+          "body": "The advertisement rule is a presumption, not a wall. In Carlill v Carbolic Smoke Ball Co (1893) the company advertised that it would pay 100 pounds to anyone who used its smoke ball as directed and still caught influenza, and stated that it had deposited 1,000 pounds with its bank to show its sincerity.\n\nThe Court of Appeal held that this was an offer, not an invitation to treat, and that it was made to the world at large. The deposit statement destroyed any argument that it was mere advertising puff, and the terms were certain enough to accept.\n\nCarlill is also the leading case on the unilateral contract - an offer accepted by performing an act rather than by promising anything in return. Because the offeree gives no promise, there is nothing to communicate: performing the act is itself the acceptance.\n\nThe lesson is that labels do not decide these questions. An advertisement is usually an invitation to treat because advertisers usually do not intend to be bound; where the wording shows that they did, it is an offer.",
+          "check": {
+            "id": "l1s3c",
+            "type": "mcq",
+            "skill": "offer",
+            "difficulty": 4,
+            "prompt": "What most strongly persuaded the court in Carlill that the advertisement was an offer rather than puff?",
+            "options": [
+              "The statement that 1,000 pounds had been deposited with the bank to show sincerity.",
+              "That the product was sold in chemists' shops throughout the country.",
+              "That Mrs Carlill had used the smoke ball exactly as directed.",
+              "That the company refused to pay when she claimed."
+            ],
+            "answer": 0,
+            "misconception": {
+              "1": "m3",
+              "2": "m3",
+              "3": "m3"
+            },
+            "hint": "Which fact in the advertisement itself showed an intention to be bound?",
+            "explanation": "The deposit was evidence, in the advertisement itself, of an intention to be bound - it answered the puff argument directly. Mrs Carlill's use of the ball went to acceptance, not to whether an offer existed."
+          }
+        }
+      ],
+      "worked_example": {
+        "prompt": "A trader displays a bicycle in his shop window with a ticket reading 'K1,200'. Chanda enters and says 'I'll take the bicycle at K1,200.' The trader replies that the price is now K1,500. Advise Chanda.",
+        "steps": [
+          "Identify the question: has a contract been formed, so that the trader is bound at K1,200?",
+          "Classify the window display. Following Fisher v Bell, goods displayed with a price ticket are an invitation to treat, not an offer.",
+          "It follows that the display could not be accepted, so Chanda's words are not an acceptance.",
+          "Reclassify Chanda's words. Saying 'I'll take it at K1,200' is itself an offer to buy at that price.",
+          "Ask whether that offer was accepted. The trader's reply is a refusal - and, if read as a willingness to sell at K1,500, a counter-offer.",
+          "Conclude: no contract at K1,200. Chanda may accept the K1,500 counter-offer or walk away.",
+          "Note the limit of the answer: this is the contract analysis only. Whether the mispriced display breaches consumer protection or trade descriptions legislation is a separate statutory question, and the Zambian position on it should be checked."
+        ]
+      },
+      "practice": [
+        {
+          "id": "l1p1",
+          "type": "mcq",
+          "skill": "offer",
+          "difficulty": 2,
+          "prompt": "Which of these is most likely to be an offer rather than an invitation to treat?",
+          "options": [
+            "A reward notice promising K500 to whoever returns a lost dog.",
+            "A newspaper advertisement listing puppies for sale.",
+            "Tinned fish stacked on a supermarket shelf with a price label.",
+            "A telegram replying 'lowest price K900' to an enquiry."
+          ],
+          "answer": 0,
+          "hint": "Three of these are the standard invitation-to-treat categories. Which one commits the maker to be bound on performance?",
+          "explanation": "A reward notice is a unilateral offer in the Carlill mould: the maker plainly intends to be bound once the act is performed. The other three are Partridge, Boots and Harvey v Facey respectively."
+        },
+        {
+          "id": "l1p2",
+          "type": "mcq",
+          "skill": "offer",
+          "difficulty": 3,
+          "prompt": "Mwansa asks Banda by text, 'Will you sell me your car? What is your lowest price?' Banda replies, 'Lowest price K40,000.' Mwansa texts back, 'I accept, K40,000.' Is there a contract?",
+          "options": [
+            "No - Banda's reply was a statement of information, not an offer.",
+            "Yes - Banda's reply was an offer and Mwansa accepted it.",
+            "Yes - because Mwansa used the word 'accept'.",
+            "No - because contracts for cars must be in writing."
+          ],
+          "answer": 0,
+          "misconception": {
+            "1": "m4",
+            "2": "m4",
+            "3": "m4"
+          },
+          "hint": "Compare the exchange in Harvey v Facey.",
+          "explanation": "This mirrors Harvey v Facey. Banda answered only the second question, supplying information about price. He never said he would sell. Mwansa's message is therefore itself an offer, which Banda is free to accept or refuse. Using the word 'accept' cannot convert information into an offer."
+        },
+        {
+          "id": "l1p3",
+          "type": "short",
+          "skill": "offer",
+          "difficulty": 4,
+          "prompt": "In two or three sentences, explain the practical reason the law treats most advertisements as invitations to treat.",
+          "answer": [
+            "stock",
+            "bound",
+            "advertisement"
+          ],
+          "min_match": 2,
+          "placeholder": "Two or three sentences.",
+          "explanation": "An advertisement reaches an indefinite number of people. If it were an offer, every reader who accepted would form a contract, and the advertiser would be bound to supply far beyond their stock. Treating it as an invitation to treat keeps control of formation with the seller, who can decline once stock runs out. Partridge v Crittenden is the standard authority."
+        }
+      ],
+      "apply": {
+        "id": "l1a1",
+        "type": "short",
+        "skill": "offer",
+        "difficulty": 5,
+        "prompt": "A supermarket advertises: 'First 50 customers on Saturday morning receive a free 10 kg bag of mealie meal - we have set aside 50 bags for this purpose.' Is this an offer or an invitation to treat? Give your reasons.",
+        "answer": [
+          "offer",
+          "carlill",
+          "bound",
+          "certain"
+        ],
+        "min_match": 2,
+        "placeholder": "Four or five sentences. State your conclusion and the authority you rely on.",
+        "explanation": "The better view is that this is a unilateral offer on the Carlill model, not an invitation to treat. The terms are certain - who qualifies, what they get, when - and the statement that 50 bags have been set aside is precisely the kind of assurance that answered the puff argument in Carlill, showing an intention to be bound. The usual objection to treating an advertisement as an offer, that the advertiser cannot supply everyone who accepts, is expressly met by the stated limit of 50. Acceptance would be by performance: being among the first 50 to arrive."
+      },
+      "recap": [
+        "An offer has terms certain enough to accept and an intention to be bound on acceptance, judged objectively.",
+        "An invitation to treat invites offers and cannot be accepted.",
+        "Shop displays (Boots), window displays (Fisher v Bell), most advertisements (Partridge) and bare price statements (Harvey v Facey) are invitations to treat.",
+        "The advertisement rule is a presumption: Carlill shows an advertisement can be a unilateral offer to the world.",
+        "In a unilateral contract, performing the act is the acceptance."
+      ],
+      "misconceptions": [
+        {
+          "id": "m1",
+          "signal": "Deciding intention by what the party says they privately meant.",
+          "repair": "The test is objective throughout the law of contract. Ask what a reasonable person in the other party's position would have understood from the words and conduct. A subjective test would let any party escape by asserting a different private intention, and would destroy the reliance the law is there to protect."
+        },
+        {
+          "id": "m2",
+          "signal": "Treating a priced shop display as an offer the customer accepts by taking the goods.",
+          "repair": "Boots settles this the other way. The display is an invitation to treat; the customer offers at the till and the shop accepts. Two practical reasons support it: the shop must be able to refuse a sale, for example of restricted goods, and a customer must remain free to put an item back on the shelf without having already contracted."
+        },
+        {
+          "id": "m3",
+          "signal": "Explaining Carlill by what Mrs Carlill did rather than by what the advertisement said.",
+          "repair": "Keep the two questions apart. Whether an offer existed is answered by the advertisement alone, and there the deposit statement did the work. Mrs Carlill's use of the ball as directed answers a later question - whether that offer was accepted. Mixing them together makes the case look like it turned on sympathy, which it did not."
+        },
+        {
+          "id": "m4",
+          "signal": "Assuming the word 'accept' creates a contract regardless of what came before.",
+          "repair": "Acceptance is only possible if there is a live offer to accept. Trace the sequence in order: was there an offer, and was it still open? If the earlier statement was information (Harvey v Facey) or an invitation to treat, then the party saying 'I accept' is in fact making the offer, and the other side remains free to refuse."
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "title": "Acceptance, counter-offer and communication",
+      "skill": "acceptance",
+      "prerequisites": [
+        "offer"
+      ],
+      "estimated_minutes": 30,
+      "hook": "Most contract disputes that reach a court are not about whether the parties wanted a deal. They are about whether what the second party said amounted to acceptance, or killed the offer stone dead. One sentence in a reply can decide it.",
+      "segments": [
+        {
+          "id": "s1",
+          "heading": "Acceptance must mirror the offer",
+          "body": "Acceptance is a final and unqualified assent to all the terms of the offer. Lawyers call this the mirror image rule.\n\nA reply that varies the terms is not an acceptance at all. It is a counter-offer, and it destroys the original offer: Hyde v Wrench (1840). Wrench offered his farm at 1,000 pounds; Hyde replied offering 950; when that was refused, Hyde tried to accept the original 1,000. He could not - his counter-offer had killed it.\n\nDistinguish a mere request for information, which does not destroy the offer. In Stevenson, Jaques & Co v McLean (1880) an enquiry about whether delivery could be spread over two months was held to be a request for information, and the original offer survived.\n\nThe practical test: is the reply trying to change a term, or asking about one? Changing kills; asking does not.",
+          "recap": "Acceptance must mirror the offer. A counter-offer destroys it; a request for information does not.",
+          "check": {
+            "id": "l2s1c",
+            "type": "mcq",
+            "skill": "acceptance",
+            "difficulty": 3,
+            "prompt": "Mulenga offers to sell his laptop for K6,000. Phiri replies, 'Would you take K5,500?' Mulenga refuses. Phiri then says, 'Fine, I'll pay K6,000.' Is there a contract?",
+            "options": [
+              "No - Phiri's K5,500 reply was a counter-offer, destroying the original offer.",
+              "Yes - the original offer of K6,000 remained open throughout.",
+              "Yes - because Phiri ended up agreeing to the exact price asked.",
+              "No - because the offer was not made in writing."
+            ],
+            "answer": 0,
+            "misconception": {
+              "1": "m1",
+              "2": "m1",
+              "3": "m1"
+            },
+            "hint": "Compare Hyde v Wrench. Was Phiri asking about a term, or proposing a different one?",
+            "explanation": "Proposing K5,500 varies the price, so it is a counter-offer and the original offer is destroyed - Hyde v Wrench. Phiri's later 'I'll pay K6,000' is a fresh offer that Mulenga is free to accept or refuse. Had Phiri instead asked 'would you consider instalments?', that might have been a mere enquiry under Stevenson, Jaques, leaving the offer alive."
+          }
+        },
+        {
+          "id": "s2",
+          "heading": "Acceptance must be communicated",
+          "body": "As a general rule acceptance takes effect when it is communicated to the offeror. Until then there is no contract.\n\nSilence is not acceptance, and an offeror cannot impose it. In Felthouse v Bindley (1862) an uncle wrote that if he heard no more he would consider the horse his. That did not bind the nephew. The rule protects the offeree: you should not have to write letters to avoid being contracted with.\n\nFor instantaneous or near-instantaneous communication - telephone, telex, and by extension email and messaging - acceptance is effective when and where it is received: Entores v Miles Far East Corporation (1955).\n\nThe well-known exception is the postal rule from Adams v Lindsell (1818): where post is a proper means of acceptance, acceptance takes effect on posting, not on delivery. A letter properly posted can therefore conclude a contract even if it never arrives. The rule is narrow, and it can be excluded by an offer that requires actual receipt - which, in practice, careful drafting always does.",
+          "recap": "Acceptance is effective on communication; silence never binds; posting is the narrow exception.",
+          "check": {
+            "id": "l2s2c",
+            "type": "mcq",
+            "skill": "acceptance",
+            "difficulty": 4,
+            "prompt": "An offer says 'reply by post'. The offeree posts an acceptance on Monday. It is lost and never arrives. When, if at all, was the contract formed?",
+            "options": [
+              "On Monday, when the letter was posted.",
+              "Never, because the offeror did not receive it.",
+              "When the offeror eventually learns of the posting.",
+              "On the day the letter would ordinarily have arrived."
+            ],
+            "answer": 0,
+            "misconception": {
+              "1": "m2",
+              "2": "m2",
+              "3": "m2"
+            },
+            "hint": "This is the fact pattern the postal rule was made for.",
+            "explanation": "Under Adams v Lindsell the acceptance took effect on posting, so the contract was formed on Monday despite the loss. The rule applies because post was a proper - here, a stipulated - means of acceptance. An offer expressly requiring actual receipt would displace it."
+          }
+        },
+        {
+          "id": "s3",
+          "heading": "Revocation and the end of an offer",
+          "body": "An offer can be brought to an end before acceptance in several ways: rejection, a counter-offer, lapse of the time stated or of a reasonable time, the death of a party in some circumstances, or revocation by the offeror.\n\nRevocation is the one that is most often got wrong. Two rules matter.\n\nAn offer can be revoked at any time before acceptance, even if the offeror promised to keep it open - unless that promise was itself supported by consideration, making it an option contract: Routledge v Grant (1828).\n\nBut revocation is only effective when it is actually received by the offeree: Byrne v Van Tienhoven (1880). Note the asymmetry with the postal rule. A posted acceptance binds on posting; a posted revocation does nothing until it arrives. So a revocation posted before an acceptance is posted, but arriving after, comes too late - the contract was already made.",
+          "check": {
+            "id": "l2s3c",
+            "type": "mcq",
+            "skill": "acceptance",
+            "difficulty": 5,
+            "prompt": "On 1 October an offeror posts a revocation. On 3 October, not yet having received it, the offeree posts an acceptance. The revocation arrives on 4 October. What is the position?",
+            "options": [
+              "There is a contract - acceptance took effect on 3 October, before the revocation was received.",
+              "There is no contract - the revocation was posted first, on 1 October.",
+              "There is no contract - both were in the post, so neither took effect.",
+              "The court will divide the loss between the parties."
+            ],
+            "answer": 0,
+            "misconception": {
+              "1": "m3",
+              "2": "m3",
+              "3": "m3"
+            },
+            "hint": "Two different rules apply to the two letters. Which one takes effect on posting?",
+            "explanation": "This is Byrne v Van Tienhoven. Acceptance took effect on posting (3 October); revocation takes effect only on receipt (4 October). By then the contract already existed, so the revocation came too late. The asymmetry is deliberate: it protects an offeree who acts on an offer they have no way of knowing has been withdrawn."
+          }
+        }
+      ],
+      "worked_example": {
+        "prompt": "On 1 March Zulu writes to Banda offering to sell 200 bags of cement at K120 a bag, 'this offer open until 10 March'. On 4 March Banda writes asking whether delivery could be made in two loads. On 6 March Zulu posts a letter withdrawing the offer. On 7 March Banda posts an acceptance. Zulu's withdrawal reaches Banda on 8 March. Advise.",
+        "steps": [
+          "Deal with the 4 March letter first. Asking about delivery in two loads does not vary a term - it seeks information. On Stevenson, Jaques & Co v McLean this is a request for information and the offer survives.",
+          "Consider the promise to keep the offer open until 10 March. On Routledge v Grant such a promise is not binding without consideration, so Zulu was free to revoke early.",
+          "But when did the revocation take effect? On Byrne v Van Tienhoven, only on receipt - 8 March.",
+          "When did the acceptance take effect? Post appears to be a proper means here, the parties having used it throughout, so Adams v Lindsell applies and acceptance took effect on posting - 7 March.",
+          "Compare the dates: acceptance 7 March, revocation effective 8 March. The contract was concluded before the revocation bit.",
+          "Conclude: there is a binding contract for 200 bags at K120. Zulu's withdrawal came too late.",
+          "State the qualification: if Zulu's offer had required actual receipt of any acceptance, the postal rule would be displaced and the answer would reverse. Always check the wording of the offer for such a term."
+        ]
+      },
+      "practice": [
+        {
+          "id": "l2p1",
+          "type": "mcq",
+          "skill": "acceptance",
+          "difficulty": 2,
+          "prompt": "An offeror writes, 'If I do not hear from you by Friday, I shall take it that you accept.' The offeree says nothing. Is there a contract on Friday?",
+          "options": [
+            "No - silence cannot be imposed as acceptance.",
+            "Yes - the offeree had the chance to object and did not.",
+            "Yes - the offeror set the method of acceptance and it was followed.",
+            "Only if the offeree intended to accept."
+          ],
+          "answer": 0,
+          "misconception": {
+            "1": "m4",
+            "2": "m4",
+            "3": "m4"
+          },
+          "hint": "Felthouse v Bindley.",
+          "explanation": "Felthouse v Bindley: an offeror cannot impose silence as acceptance. An offeror may prescribe a method of accepting, but cannot relieve the offeree of the need to do anything at all - otherwise anyone could be contracted with by post."
+        },
+        {
+          "id": "l2p2",
+          "type": "mcq",
+          "skill": "acceptance",
+          "difficulty": 3,
+          "prompt": "Which reply leaves the original offer alive?",
+          "options": [
+            "'Could you tell me whether delivery in two loads is possible?'",
+            "'I accept, but at K5,500 rather than K6,000.'",
+            "'I accept, provided you also throw in the charger.'",
+            "'I accept, subject to delivery by Friday instead of Monday.'"
+          ],
+          "answer": 0,
+          "hint": "Three of these try to change a term. One only asks about one.",
+          "explanation": "Only the first is a request for information (Stevenson, Jaques). The other three each vary a term - price, subject matter, delivery date - and are therefore counter-offers, destroying the original offer under Hyde v Wrench."
+        },
+        {
+          "id": "l2p3",
+          "type": "short",
+          "skill": "acceptance",
+          "difficulty": 4,
+          "prompt": "Explain in two or three sentences why the law treats a posted acceptance and a posted revocation differently.",
+          "answer": [
+            "acceptance",
+            "revocation",
+            "receipt",
+            "posting"
+          ],
+          "min_match": 3,
+          "placeholder": "Two or three sentences.",
+          "explanation": "A posted acceptance binds on posting; a posted revocation binds only on receipt. The asymmetry protects the offeree, who has no way of knowing that an offer they are relying on has been withdrawn, and who would otherwise act at their peril during every day the post is in transit. The offeror, by contrast, chose to make the offer and can protect themselves by requiring actual receipt of acceptance."
+        }
+      ],
+      "apply": {
+        "id": "l2a1",
+        "type": "short",
+        "skill": "acceptance",
+        "difficulty": 5,
+        "prompt": "You are drafting a supply offer for a Zambian client who does not want to be caught by the postal rule. What single term would you include, and why does it work?",
+        "answer": [
+          "receipt",
+          "acceptance",
+          "writing",
+          "effective"
+        ],
+        "min_match": 2,
+        "placeholder": "Three or four sentences.",
+        "explanation": "Include a term to the effect that no acceptance is effective unless and until it is actually received in writing by the offeror at a stated address. It works because the postal rule is only a default: it applies where post is a proper means of acceptance and the offer does not indicate otherwise. An offer that expressly requires receipt indicates otherwise, so the general communication rule applies and the offeror knows precisely when they are bound."
+      },
+      "recap": [
+        "Acceptance must be final, unqualified and mirror the offer.",
+        "A counter-offer destroys the original offer (Hyde v Wrench); a request for information does not (Stevenson, Jaques).",
+        "Acceptance is generally effective on communication; silence never binds (Felthouse v Bindley).",
+        "Instantaneous communication: effective on receipt (Entores). Post: effective on posting (Adams v Lindsell).",
+        "An offer can be revoked before acceptance (Routledge v Grant), but only once the revocation is received (Byrne v Van Tienhoven)."
+      ],
+      "misconceptions": [
+        {
+          "id": "m1",
+          "signal": "Treating an offer as still open after the offeree has proposed different terms.",
+          "repair": "Hyde v Wrench is strict: a counter-offer destroys the original offer, and it cannot be revived by the counter-offeror alone. Build the habit of drawing a timeline and marking the moment the original offer dies. Then check whether the reply changed a term or merely asked about one - only the first is fatal."
+        },
+        {
+          "id": "m2",
+          "signal": "Applying the general receipt rule to a posted acceptance, or the postal rule to everything.",
+          "repair": "Sort the facts by the means of communication before choosing a rule. Instantaneous means - telephone, telex, email, messaging - are governed by Entores and take effect on receipt. Post is the narrow exception under Adams v Lindsell and takes effect on posting, but only where post was a proper means and the offer does not require actual receipt."
+        },
+        {
+          "id": "m3",
+          "signal": "Assuming whichever letter was posted first prevails.",
+          "repair": "The two letters are governed by different rules, so the posting dates alone decide nothing. Draw two lines: acceptance takes effect on posting; revocation takes effect on receipt. Compare those two effective dates, not the two posting dates. That is exactly the trap Byrne v Van Tienhoven resolves."
+        },
+        {
+          "id": "m4",
+          "signal": "Accepting that an offeror can make silence count as acceptance.",
+          "repair": "An offeror may prescribe how acceptance is to be made, but cannot dispense with the need for the offeree to do anything. Felthouse v Bindley protects the offeree from having to take positive steps to avoid a contract they never sought. Ask whether the offeree did any act at all; if not, there is almost certainly no acceptance."
+        }
+      ]
+    }
+  ],
+  "diagnostic": [
+    {
+      "id": "d1",
+      "skill": "offer",
+      "difficulty": 1,
+      "type": "mcq",
+      "prompt": "Which cannot be accepted so as to form a contract?",
+      "options": [
+        "An invitation to treat",
+        "A unilateral offer",
+        "An offer to the world at large",
+        "A written offer"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "d2",
+      "skill": "offer",
+      "difficulty": 2,
+      "type": "mcq",
+      "prompt": "Goods displayed on a self-service shelf with a price label are, on the ordinary analysis:",
+      "options": [
+        "An invitation to treat",
+        "An offer",
+        "An acceptance",
+        "A binding sale"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "d3",
+      "skill": "offer",
+      "difficulty": 4,
+      "type": "mcq",
+      "prompt": "Carlill v Carbolic Smoke Ball Co is chiefly authority for which proposition?",
+      "options": [
+        "An advertisement may be a unilateral offer to the world at large",
+        "All advertisements are offers",
+        "Silence can amount to acceptance",
+        "An offer must always be in writing"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "d4",
+      "skill": "offer",
+      "difficulty": 5,
+      "type": "mcq",
+      "prompt": "In Harvey v Facey the telegram stating the lowest price was held to be:",
+      "options": [
+        "A statement of information",
+        "An offer to sell",
+        "An acceptance",
+        "A counter-offer"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "d5",
+      "skill": "acceptance",
+      "difficulty": 2,
+      "type": "mcq",
+      "prompt": "A reply that varies a term of the offer is:",
+      "options": [
+        "A counter-offer",
+        "A valid acceptance",
+        "A request for information",
+        "A revocation"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "d6",
+      "skill": "acceptance",
+      "difficulty": 3,
+      "type": "mcq",
+      "prompt": "Under the rule in Hyde v Wrench, what happens to the original offer when a counter-offer is made?",
+      "options": [
+        "It is destroyed",
+        "It stays open until the stated date",
+        "It is suspended and revives on refusal",
+        "It becomes an invitation to treat"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "d7",
+      "skill": "acceptance",
+      "difficulty": 4,
+      "type": "mcq",
+      "prompt": "Under Adams v Lindsell, a properly posted acceptance takes effect when it is:",
+      "options": [
+        "Posted",
+        "Delivered",
+        "Read by the offeror",
+        "Acknowledged in writing"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "d8",
+      "skill": "acceptance",
+      "difficulty": 4,
+      "type": "mcq",
+      "prompt": "Under Byrne v Van Tienhoven, a revocation of an offer takes effect when it is:",
+      "options": [
+        "Received by the offeree",
+        "Posted by the offeror",
+        "Written by the offeror",
+        "Decided upon by the offeror"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "d9",
+      "skill": "acceptance",
+      "difficulty": 3,
+      "type": "mcq",
+      "prompt": "Felthouse v Bindley establishes that:",
+      "options": [
+        "Silence cannot be imposed as acceptance",
+        "Acceptance must be in writing",
+        "An offer lapses after seven days",
+        "A counter-offer revives the original offer"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "d10",
+      "skill": "acceptance",
+      "difficulty": 5,
+      "type": "mcq",
+      "prompt": "For acceptance by email or other instantaneous communication, the rule in Entores is that acceptance is effective:",
+      "options": [
+        "On receipt",
+        "On sending",
+        "On reading",
+        "On reply"
+      ],
+      "answer": 0
+    }
+  ],
+  "translations": {
+    "bem": {
+      "lessons": {
+        "l1": {
+          "title": "Offer, nangu ni invitation to treat fye?",
+          "hook": "Umushitishi pa Soweto Market abika radio iyalembwa K450. Umushiti abika K450 pa counter, elyo umushitishi asosa ukuti umutengo naunina. Bushe umushitishi naatoba contract? Icasuko cishintilila pa kupusanya ukwamoneka kwati kwa fye lelo e ntendekelo ya masambililo yonse: ukupusana pakati pa offer na invitation to treat.",
+          "segments": {
+            "s1": {
+              "heading": "Cinshi cilenga amashiwi ukuba offer",
+              "body": "Offer kusosa ukuti umuntu naitemenwa ukwingila mu contract pa fintu ifyalandwa, no kufwaya ukuti akakakwa ilyo fye uo alanda kuli wene akasumina.\n\nIfintu fibili e fibomba.\n\nIca kubalilapo, ifyalandwa filingile ukuba ifyaumfwika bwino pa kuti fingasuminwa. Amashiwi ayashaumfwika, ayo icilye cishingalanda ico calaiwe, te offer iyo.\n\nIca bubili, kabili e cikalamba, uulelanda alingile ukufwaya ukukakwa pa kusuminwa, ukwabula ukucita cimbi. Uku kufwaya kupimwa mu nshila ya cine (objectively) - ukulingana ne fyo umuntu uwa mano engomfwa mu cifulo ca munankwe ukufuma ku mashiwi ne micitile, te ku fyo uulelanda aletontonkanya mu mutima wakwe iyo.\n\nOffer kuti yalengwa ku muntu umo, ku bantu abanono, nangu ku bantu bonse pano isonde.",
+              "recap": "Offer ikwete ifyalandwa ifyaumfwika no kufwaya ukukakwa pa acceptance, ukupimwa mu nshila ya cine."
+            },
+            "s2": {
+              "heading": "Invitation to treat",
+              "body": "Invitation to treat ni ntampulo iishilafika ku offer: kwiita bambi ukuti bapeele ama-offer. Te kuti isuminwe, e co takuli contract iifuma muli yene.\n\nAmatanga ayaishibikwa:\n\nIfintu ifyabikwa mwi shitolo. Muli Pharmaceutical Society of Great Britain v Boots Cash Chemists (1953) ukubika ifintu pa shelufu ya self-service kwapingulwilwe ukuba invitation to treat. Umushiti e upeela offer pa till; ishitolo lisumina nangu likaane.\n\nIfintu mu window ya shitolo. Muli Fisher v Bell (1961) umwele uwabikwa mu window no mutengo wali invitation to treat, te offer ya kushitisha iyo - e mulandu umushitishi apusukile ku milandu ya mafunde ayali muli iyo nshita.\n\nAma-advertisement. Muli Partridge v Crittenden (1968) advertisement ya fyuni ifya kushitisha yali invitation to treat. Umulandu wa cine cine ni ifikwatwa: uushitisha kabili aebela abantu amakana te kuti akakwe ku kupeela onse na onse.\n\nUkulanda umutengo mu kwasuka ku cipusho. Muli Harvey v Facey (1893) telegram iyaswike ati 'ni mutengo nshi uunono?' na namba yapingulwilwe ukuba ukupeela ubwishibisho fye, te offer ya kushitisha iyo.\n\nIcikakila ifi fine fyonse ni ci: uulelanda talakakwa.",
+              "recap": "Ifintu ifyabikwa mwi shitolo, mu window, ama-advertisement ayengi, no kulanda umutengo fye - yonse ni ma-invitation to treat."
+            },
+            "s3": {
+              "heading": "Ilyo advertisement iba offer",
+              "body": "Ifunde lya ma-advertisement ni cimwenso fye, te lubumbu iyo. Muli Carlill v Carbolic Smoke Ball Co (1893) ikampani lyaebele ukuti likalipila mapaundi 100 ku muntu onse uukabomfya smoke ball yabo mu nshila iyalandwa lelo akalwala influenza, kabili lyasosele ukuti lyabikile mapaundi 1,000 ku banki pa kulanga ubufumacumi bwabo.\n\nCilye ca Appeal capingwile ukuti ici cali offer, te invitation to treat, kabili yalengelwe ku bantu bonse pano isonde. Ukulanda pa ndalama ishabikilwe ku banki kwaonawile amashiwi yonse aya kuti ni advertisement fye, kabili ifyalandwa fyali ifyaumfwika bwino ifya kusuminwa.\n\nCarlill kabili e ilyashi likalamba pa unilateral contract - offer iisuminwa ku kucita umulimo, te ku kulaya cimo iyo. Apo offeree tapeela ulusalo, takuli ca kwishibisha: ukucita umulimo e kusumina kwine.\n\nIsambililo lya kuti: amashina tayapingula aya mepusho. Advertisement ilingi ni invitation to treat pantu abaebela tabafwaya ukukakwa; lelo apo amashiwi yalanga ukuti balefwaya, e po iba offer."
+            }
+          },
+          "items": {
+            "l1s1c": {
+              "prompt": "Bushe icilye cipingula shani nga umuntu alefwaya ukukakwa ku mashiwi yakwe?",
+              "options": [
+                "Mu nshila ya cine (objectively) - ifyo umuntu uwa mano mu cifulo ca munankwe engomfwa.",
+                "Mu nshila ya mutima (subjectively) - ifyo uulelanda asosa ukuti e fyo alefwaya.",
+                "Ukwipusha nga uulelanda pa numa aliipilishe pa mashiwi yakwe.",
+                "Ukukonka ubupilibulo ubuleta ubulungami pa fyacitike."
+              ]
+            },
+            "l1s2c": {
+              "prompt": "Isuperimaketi libika ubunga pa shelufu ilyalembwa K180. Pa till, uubombela akaana ukushitisha pa uyu mutengo. Mu kupilibula kwa cine, nani apeele offer?",
+              "options": [
+                "Umushiti, ilyo aleta ifintu pa till.",
+                "Isuperimaketi, ilyo lyabika ifintu pa shelufu no mutengo.",
+                "Takuli nangu umo - contract yapangilwe ilyo umushiti asendele ifintu.",
+                "Bonse babili pa nshita imo, e co umutengo uunono e utambalika."
+              ]
+            },
+            "l1s3c": {
+              "prompt": "Cinshi icakoseleshe sana icilye muli Carlill ukuti advertisement yali offer te puff fye?",
+              "options": [
+                "Ukulanda ukuti mapaundi 1,000 yabikilwe ku banki pa kulanga ubufumacumi.",
+                "Ukuti icintu cashitishiwe mu mashitolo ya miti mu calo conse.",
+                "Ukuti Ba Carlill babomfeshe smoke ball mu nshila iyalandwa.",
+                "Ukuti ikampani lyakeene ukulipila ilyo alombele."
+              ]
+            },
+            "l1p1": {
+              "prompt": "Ni cinshi pali ifi icingaba offer ukucila invitation to treat?",
+              "options": [
+                "Icebo icilaya K500 ku muntu onse uukabwesha imbwa iyalubile.",
+                "Advertisement mu nyunshipepala iyalanga utubwa utwa kushitisha.",
+                "Isabi lya mu makopo ilyabikwa pa shelufu ya superimaketi ne tikiti lya mutengo.",
+                "Telegram iyasuka ati 'umutengo uunono K900' ku cipusho."
+              ],
+              "hint": "Fitatu pali ifi matanga ayaishibikwa aya invitation to treat. Ni cinshi cikaka uulelanda pa kucita umulimo?"
+            },
+            "l1p2": {
+              "prompt": "Mwansa aipusha Banda pa text ati, 'Bushe kuti wanshitisha imotoka yobe? Ni mutengo nshi uunono?' Banda asuka ati, 'Umutengo uunono K40,000.' Mwansa asuka ati, 'Nasumina, K40,000.' Bushe kuli contract?",
+              "options": [
+                "Awe - icasuko ca kwa Banda cali ca kupeela ubwishibisho fye, te offer iyo.",
+                "Ee - icasuko ca kwa Banda cali offer kabili Mwansa aisumine.",
+                "Ee - pantu Mwansa abomfeshe ishiwi lya kuti 'nasumina'.",
+                "Awe - pantu ama-contract ya motoka yalingile ukulembwa."
+              ],
+              "hint": "Palanya ne fyacitike muli Harvey v Facey."
+            },
+            "l1p3": {
+              "prompt": "Mu misongo ibili nangu itatu, londolola umulandu wa cine ulenga amafunde ukumona ama-advertisement ayengi kwati ni ma-invitation to treat.",
+              "answer": [
+                "ifikwatwa",
+                "ukukakwa",
+                "advertisement"
+              ]
+            },
+            "l1a1": {
+              "prompt": "Isuperimaketi lyebela ati: 'Abashiti 50 aba kubalilapo pa Cibelushi ulucelo bakapokelela isaka lya bunga ilya 10 kg ilya bupe - twabika isaka 50 pali uyu mulimo.' Bushe ii ni offer nangu invitation to treat? Peela imilandu yobe.",
+              "answer": [
+                "offer",
+                "carlill",
+                "ukukakwa",
+                "ukuumfwika"
+              ]
+            }
+          },
+          "worked_example": {
+            "prompt": "Umushitishi abika incinga mu window ya shitolo lyakwe ne tikiti ilyalembwa 'K1,200'. Chanda engila no kusosa ati 'Nakasenda incinga pa K1,200.' Umushitishi asuka ati umutengo nomba ni K1,500. Peela Chanda ubufunda.",
+            "steps": [
+              "Ishiba icipusho: bushe contract naipangwa, ica kuti umushitishi nakakwa pa K1,200?",
+              "Ika icibikwa mu window mu tanga lyaciko. Ukukonka Fisher v Bell, ifintu ifyabikwa ne tikiti lya mutengo ni invitation to treat, te offer iyo.",
+              "E co icabikwa te kuti cisuminwe, kabili amashiwi ya kwa Chanda te acceptance iyo.",
+              "Ika amashiwi ya kwa Chanda na kabili. Ukusosa ati 'Nakasenda pa K1,200' kwine ni offer ya kushita pa uyu mutengo.",
+              "Ipusha nga iyo offer yasuminwe. Icasuko ca mushitishi kukaana - kabili, nga capilibulwa kwati alefwaya ukushitisha pa K1,500, ni counter-offer.",
+              "Sondwelela: takuli contract pa K1,200. Chanda kuti asumina counter-offer ya K1,500 nangu ukuya.",
+              "Ishiba umupaka wa casuko: ici kupilibula kwa contract fye. Nga ukubika umutengo uwalubana kutoba amafunde ya consumer protection nangu trade descriptions, ico cipusho cimbi ica mafunde, kabili icalo ca Zambia cifwile ukucebeta pali ico."
+            ]
+          },
+          "recap": [
+            "Offer ni kusosa ukuti umuntu naitemenwa ukukakwa pa fintu ifyaumfwika, ilyo fye casuminwa.",
+            "Invitation to treat kwiita bambi ukupeela ama-offer; te kuti isuminwe.",
+            "Ifintu ifyabikwa mwi shitolo, mu window, ama-advertisement, no kulanda umutengo mu kwasuka - ilingi ni ma-invitation to treat.",
+            "Carlill ilanga ukuti advertisement kuti yaba offer nga amashiwi yalanga ukufwaya ukukakwa.",
+            "Ukufwaya ukukakwa kupimwa mu nshila ya cine, te mu fyo umuntu aletontonkanya mu mutima iyo."
+          ],
+          "misconceptions": {
+            "m1": {
+              "signal": "Ukumona umutengo uwalembwa kwati lyonse ni offer.",
+              "repair": "Umutengo ulanga ukuti umuntu alefwaya ukushitisha, lelo taulanga ukuti nakakwa. Ipusha icipusho cimo: bushe uulelanda nasumina ukukakwa nomba, nangu alefwaya bambi ukwisa kuli wene? Ifintu ifyabikwa na ma-advertisement ilingi te kukakwa iyo - e co Fisher v Bell na Partridge v Crittenden ipingula ifyo ipingula."
+            },
+            "m2": {
+              "signal": "Ukumona Carlill kwati yaonawile ifunde lya ma-advertisement.",
+              "repair": "Carlill tayaonawile ifunde; yalangile umupaka waliko. Ifunde ni cimwenso ukuti abaebela tabafwaya ukukakwa. Muli Carlill amashiwi yaonawile ico cimwenso - maka maka indalama ishabikilwe ku banki. E co ipusha lyonse: bushe amashiwi ya advertisement yalanga ukufwaya ukukakwa?"
+            },
+            "m3": {
+              "signal": "Ukubomfya ishina ilyabikwa ku mashiwi (kwati 'offer') kwati e lipingula.",
+              "repair": "Amashina tayapingula. Icilye cilolesha ku fyalandwa ne micitile, te ku shina umuntu abikile iyo. Amashiwi ayaitwa 'offer' kuti yaba invitation to treat, kabili advertisement kuti yaba offer, ukulingana ne fyo umuntu uwa mano engomfwa."
+            },
+            "m4": {
+              "signal": "Ukutontonkanya ukuti ishiwi lya kuti 'nasumina' lipanga contract, te mulandu ne fyabalilepo.",
+              "repair": "Acceptance ingacitika fye nga kuli offer iyaisula iya kusumina. Konka ifyacitike mu ntambo: bushe kwali offer, kabili bushe yali icili iyaisula? Nga amashiwi ayabalilepo yali ubwishibisho fye (Harvey v Facey) nangu invitation to treat, ninshi uulesosa ati 'nasumina' e ulepeela offer, kabili umbi ashala uwaisula ukukaana."
+            }
+          }
+        },
+        "l2": {
+          "title": "Acceptance, counter-offer no kwishibisha",
+          "hook": "Amalandu ayengi aya contract ayafika ku cilye te ya kuti bushe abantu balefwaya ukupangana iyo. Ni ya kuti bushe ifyo uwa bubili asosele fyali acceptance, nangu fyaipeye offer. Umusongo umo mu casuko kuti wapingula.",
+          "segments": {
+            "s1": {
+              "heading": "Acceptance ilingile ukupalana ne offer",
+              "body": "Acceptance kusumina ukwapwa kabili ukwabula ukwaluka pa fyalandwa fyonse ifya offer. Bakalamba ba mafunde baita ici mirror image rule.\n\nIcasuko icaluula ifyalandwa te acceptance nakalya. Ni counter-offer, kabili ilonaula offer ya kubalilapo: Hyde v Wrench (1840). Wrench apeele ifamu yakwe pa mapaundi 1,000; Hyde asukile ukupeela 950; ilyo bakeene, Hyde afwaile ukusumina 1,000 iya kubalilapo. Tacikwene - counter-offer yakwe yaipeye offer.\n\nPusanya ne cipusho ca kufwaya ubwishibisho fye, ico tacionaula offer. Muli Stevenson, Jaques & Co v McLean (1880) icipusho pa kuti bushe ukutwala kuti kwacitwa mu myeshi ibili capingulwilwe ukuba icipusho ca bwishibisho, kabili offer yashelepo.\n\nIcipimo ca cine: bushe icasuko cilefwaya ukwaluka icalandwa, nangu cileipusha fye pali ico? Ukwaluka kulepaya; ukwipusha takulepaya.",
+              "recap": "Acceptance ilingile ukupalana ne offer. Counter-offer ilaionaula; icipusho ca bwishibisho tacionaula."
+            },
+            "s2": {
+              "heading": "Acceptance ilingile ukwishibishiwa",
+              "body": "Ifunde likalamba lya kuti acceptance ibomba ilyo yaishibishiwa ku offeror. Ilyo cishilacitika, takuli contract.\n\nUkutalala te acceptance iyo, kabili offeror te kuti abike ifunde lya kuti kutalala kuli acceptance. Muli Felthouse v Bindley (1862) uyu wishi alembele ukuti nga taumfwile cimbi, akamona kabalwe kwati wakwe. Ici tacikakile umwipwa. Ifunde licingilila offeree: tamufwile ukulemba amakalata pa kucingilila ukwingishiwa mu contract.\n\nKu kwishibisha ukwa bwangu - telefoni, telex, kabili na email na mameseji - acceptance ibomba ilyo yapokelelwa kabili apo yapokelelwa: Entores v Miles Far East Corporation (1955).\n\nUmupaka uwaishibikwa ni postal rule ukufuma muli Adams v Lindsell (1818): apo positi ni nshila iyalinga iya acceptance, acceptance ibomba pa kutuma, te pa kufika iyo. E co kalata iyatumwa bwino kuti yapwisha contract nangu ca kuti taifikile. Ili funde lyaba ilinono, kabili kuti lyafumishiwapo ku offer iilefwaya ukupokelela kwa cine - kabili, mu bufumu, ukulemba bwino lyonse kucita ifi.",
+              "recap": "Acceptance ibomba pa kwishibisha; ukutalala takukaka nakalya; positi e mupaka uunono."
+            },
+            "s3": {
+              "heading": "Revocation no kupwa kwa offer",
+              "body": "Offer kuti yapwa ilyo ishilasuminwa mu nshila ishingi: ukukaanwa, counter-offer, ukupwa kwa nshita iyalandwa nangu iya kulinga, imfwa ya umo mu nshita shimo, nangu revocation ukufuma ku offeror.\n\nRevocation e ilubana sana. Amafunde yabili e yacindama.\n\nOffer kuti yafumishiwapo pa nshita iili yonse ilyo ishilasuminwa, nangu ca kuti offeror alaile ukwiisula - kano ulwalo lwakwe lwakwete consideration, ico cilenga option contract: Routledge v Grant (1828).\n\nLelo revocation ibomba fye ilyo yapokelelwa na offeree: Byrne v Van Tienhoven (1880). Mona ukupusana na postal rule. Acceptance iyatumwa ikaka pa kutuma; revocation iyatumwa taicita cimo ilyo ishilafika. E co revocation iyatumwa ilyo acceptance ishilatumwa, lelo iyafika pa numa, yaisa pa numa sana - contract yali naipangwa kale."
+            }
+          },
+          "items": {
+            "l2s1c": {
+              "prompt": "Mulenga apeela ukushitisha laptop yakwe pa K6,000. Phiri asuka ati, 'Bushe wingapokelela K5,500?' Mulenga akaana. Elyo Phiri asosa ati, 'Cisuma, nkalipila K6,000.' Bushe kuli contract?",
+              "options": [
+                "Awe - icasuko ca kwa Phiri ica K5,500 cali counter-offer, kabili caonawile offer ya kubalilapo.",
+                "Ee - offer ya K6,000 yashelepo iyaisula inshita yonse.",
+                "Ee - pantu Phiri asukile ukusumina umutengo wine uwalombelwe.",
+                "Awe - pantu offer taalembelwe."
+              ]
+            },
+            "l2s2c": {
+              "prompt": "Offer isosa ati 'asuka pa positi'. Offeree atuma acceptance pa Cibili. Kalata yaluba kabili taifikile. Ni lilali, nangu takuli, contract yapangilwe?",
+              "options": [
+                "Pa Cibili, ilyo kalata yatumwine.",
+                "Nakalya, pantu offeror taipokelele.",
+                "Ilyo offeror akaishiba ukuti kalata yatumwine.",
+                "Pa bushiku kalata yali no kufika."
+              ]
+            },
+            "l2s3c": {
+              "prompt": "Pa 1 October offeror atuma revocation. Pa 3 October, ilyo ashilapokelela, offeree atuma acceptance. Revocation yafika pa 4 October. Bushe ni shani?",
+              "options": [
+                "Kuli contract - acceptance yabombele pa 3 October, ilyo revocation ishilapokelelwa.",
+                "Takuli contract - revocation yatumwine ubutanshi, pa 1 October.",
+                "Takuli contract - yonse yabili yali mu positi, e co takuli iyabombele.",
+                "Icilye cikakanya ubucushi pakati pa bonse babili."
+              ]
+            },
+            "l2p1": {
+              "prompt": "Offeror alemba ati, 'Nga nshaumfwa kuli iwe ukufika pa Cisano, nkamona kwati nawasumina.' Offeree tasosele cimo. Bushe kuli contract pa Cisano?",
+              "options": [
+                "Awe - ukutalala te kuti kubikwe kwati ni acceptance.",
+                "Ee - offeree ali no mwakukaanina lelo tacitile.",
+                "Ee - offeror abikile inshila ya acceptance kabili yakonkelwe.",
+                "Nga fye offeree alefwaya ukusumina."
+              ],
+              "hint": "Felthouse v Bindley."
+            },
+            "l2p2": {
+              "prompt": "Ni casuko nshi cileka offer ya kubalilapo ukushalapo iyaisula?",
+              "options": [
+                "'Bushe kuti wanjeba nga ukutwala mu ndupili shibili kuti kwacitwa?'",
+                "'Nasumina, lelo pa K5,500 te pa K6,000.'",
+                "'Nasumina, nga ulebikako na chaja.'",
+                "'Nasumina, nga ukutwala kukaba pa Cisano te pa Cibili.'"
+              ],
+              "hint": "Fitatu pali ifi filefwaya ukwaluula icalandwa. Cimo fye cileipusha."
+            },
+            "l2p3": {
+              "prompt": "Londolola mu misongo ibili nangu itatu umulandu amafunde yamonena acceptance iyatumwa na revocation iyatumwa mu nshila ishapusana.",
+              "answer": [
+                "acceptance",
+                "revocation",
+                "ukupokelela",
+                "ukutuma"
+              ]
+            },
+            "l2a1": {
+              "prompt": "Ulelemba offer ya kutwala ku mwine mulimo wa mu Zambia uushilefwaya ukwikatwa na postal rule. Ni calandwa nshi cimo ico wingabikamo, kabili mulandu nshi cibombela?",
+              "answer": [
+                "ukupokelela",
+                "acceptance",
+                "ukulemba",
+                "ukubomba"
+              ]
+            }
+          },
+          "worked_example": {
+            "prompt": "Pa 1 March Zulu alembela Banda ukupeela ukushitisha amasaka 200 ya cementi pa K120 pa saka, 'iyi offer yaisula ukufika pa 10 March'. Pa 4 March Banda alemba ukwipusha nga ukutwala kuti kwacitwa mu ndupili shibili. Pa 6 March Zulu atuma kalata iyafumyapo offer. Pa 7 March Banda atuma acceptance. Ukufumyapo kwa kwa Zulu kwafika kuli Banda pa 8 March. Peela ubufunda.",
+            "steps": [
+              "Tampa na kalata ya 4 March. Ukwipusha pa kutwala mu ndupili shibili takwaluula icalandwa - kulefwaya ubwishibisho fye. Ukukonka Stevenson, Jaques & Co v McLean ici cipusho ca bwishibisho kabili offer yashalapo.",
+              "Tontonkanya pa bulayo bwa kwiisula offer ukufika pa 10 March. Ukukonka Routledge v Grant, ubu bulayo tabukaka ukwabula consideration, e co Zulu ali no kufumyapo bwangu.",
+              "Lelo revocation yabombele lilali? Ukukonka Byrne v Van Tienhoven, pa kupokelelwa fye - 8 March.",
+              "Acceptance yabombele lilali? Positi imoneka kwati e nshila iyalinga apa, apo abantu babomfeshe positi inshita yonse, e co Adams v Lindsell ibomba kabili acceptance yabombele pa kutuma - 7 March.",
+              "Palanya inshiku: acceptance 7 March, revocation yabombele 8 March. Contract yapangilwe ilyo revocation ishilabomba.",
+              "Sondwelela: kuli contract iikaka iya masaka 200 pa K120. Ukufumyapo kwa kwa Zulu kwaishile pa numa sana.",
+              "Landa umupaka: nga offer ya kwa Zulu yalefwaya ukupokelela kwa cine kwa acceptance iili yonse, postal rule nga yafumishiwepo kabili icasuko nga cabwelela ku numa. Lyonse cebeta amashiwi ya offer nga yalikwete ici calandwa."
+            ]
+          },
+          "recap": [
+            "Acceptance ilingile ukupwa, ukwabula ukwaluka, kabili ukupalana ne offer.",
+            "Counter-offer ilonaula offer ya kubalilapo (Hyde v Wrench); icipusho ca bwishibisho tacionaula (Stevenson, Jaques).",
+            "Acceptance ilingi ibomba pa kwishibisha; ukutalala takukaka nakalya (Felthouse v Bindley).",
+            "Ukwishibisha ukwa bwangu: kubomba pa kupokelela (Entores). Positi: ibomba pa kutuma (Adams v Lindsell).",
+            "Offer kuti yafumishiwapo ilyo ishilasuminwa (Routledge v Grant), lelo fye ilyo revocation yapokelelwa (Byrne v Van Tienhoven)."
+          ],
+          "misconceptions": {
+            "m1": {
+              "signal": "Ukumona offer kwati icili iyaisula pa numa ya kuti offeree napeela ifyalandwa ifyapusana.",
+              "repair": "Hyde v Wrench yalikosa: counter-offer ilonaula offer ya kubalilapo, kabili te kuti ibuushiwe ku uupeele counter-offer eka. Ikala ne cibelesho ca kulemba timeline no kulemba inshita offer ya kubalilapo yafwile. Elyo cebeta nga icasuko caalwile icalandwa nangu caipwishe fye pali ico - ica kubalilapo fye e cipaya."
+            },
+            "m2": {
+              "signal": "Ukubomfya ifunde lya kupokelela ku acceptance iyatumwa pa positi, nangu ukubomfya postal rule ku fintu fyonse.",
+              "repair": "Akanya ifyacitike ukulingana ne nshila ya kwishibisha ilyo ushilasala ifunde. Inshila sha bwangu - telefoni, telex, email, mameseji - shitambalikwa na Entores kabili shibomba pa kupokelela. Positi e mupaka uunono uwa Adams v Lindsell kabili ibomba pa kutuma, lelo fye apo positi yali nshila iyalinga kabili offer taileefwaya ukupokelela kwa cine."
+            },
+            "m3": {
+              "signal": "Ukutontonkanya ukuti kalata iyatumwine ubutanshi e icimfya.",
+              "repair": "Amakalata yabili yatambalikwa na mafunde ayapusana, e co inshiku sha kutuma sheka tashipingula cimo. Lemba imisongo ibili: acceptance ibomba pa kutuma; revocation ibomba pa kupokelela. Palanya inshiku shibili isho shabombela, te nshiku shibili isha kutuma iyo. E citeyo cine ico Byrne v Van Tienhoven ipwisha."
+            },
+            "m4": {
+              "signal": "Ukusumina ukuti offeror kuti alenga ukutalala ukuba acceptance.",
+              "repair": "Offeror kuti alanda inshila acceptance ilingile ukucitwamo, lelo te kuti afumyepo ubukankala bwa kuti offeree acite cimo. Felthouse v Bindley icingilila offeree ku kucita ifintu pa kucingilila contract iyo ashafwaile. Ipusha nga offeree acitile cimo nangu cimo; nga awe, cine cine takuli acceptance."
+            }
+          }
+        }
+      },
+      "provenance": {
+        "translator": "Claude (MACHINE DRAFT - not a human translation)",
+        "translated_on": "2026-08-28",
+        "reviewed_by": null,
+        "reviewed_on": null,
+        "method": "machine-draft",
+        "notes": ""
+      }
+    },
+    "loz": {
+      "lessons": {
+        "l1": {
+          "title": "Offer, kamba ki invitation to treat fela?",
+          "hook": "Mulekisi wa kwa Soweto Market u beya radio ye ñozwi K450. Muleki u beya K450 fa counter, mi mulekisi u li teko i nanuhile. Kana mulekisi u lobile contract? Kalabo i itingile fa ku shutana ko ku bonahala inge ki ko kunyinyani kono ki ona mutomo wa tuto kaufela: ku shutana mwahalaa offer ni invitation to treat.",
+          "segments": {
+            "s1": {
+              "heading": "Se si tisa manzwi ku ba offer",
+              "body": "Offer ki ku bonisa kuli mutu u itatela ku kena mwa contract fa lika ze bulezwi, ka mulelo wa kuli i ka tama honafo i lumelwa ki yena ya bulelezwi.\n\nLika ze peli ki zona ze sebeza.\n\nSa pili, lika ze bulezwi li lukela ku utwahala hande kuli li kone ku lumelwa. Manzwi a sa utwahali, ao kuta i sa koni ku bulela se ne si sepisizwe, haki offer.\n\nSa bubeli, mi ki sona sa butokwa, ya bulela u lukela ku bata ku tamiwa ha ku lumelwa, ku si na ku eza se siñwi hape. Mulelo wo u atulwa ka nzila ya niti (objectively) - ka mo mutu wa ngana ya inzi mwa sibaka sa yo muñwi na ka utwisiseza ku zwa kwa manzwi ni likezo, isiñi ka mwa nahanela ya bulela mwa pilu ya hae.\n\nOffer i kona ku ezwa kwa mutu a li muñwi, kwa sikwata, kamba kwa batu kaufela mwa lifasi.",
+              "recap": "Offer i na ni lika ze utwahala ni mulelo wa ku tamiwa ha ku lumelwa, o atulwa ka nzila ya niti."
+            },
+            "s2": {
+              "heading": "Invitation to treat",
+              "body": "Invitation to treat ki muhato o si ka fita kale kwa offer: ki ku memela ba bañwi kuli ba fe ma-offer. Ha i koni ku lumelwa, kacwalo ha ku na contract ye zwa ku yona.\n\nLikwata ze zibahala:\n\nLika ze beilwe mwa sitolo. Mwa Pharmaceutical Society of Great Britain v Boots Cash Chemists (1953) ku beya lika fa shelufu ya self-service ne ku atuzwi ku ba invitation to treat. Muleki ki yena ya fa offer kwa till; sitolo sa lumela kamba sa hana.\n\nLika ze mwa window ya sitolo. Mwa Fisher v Bell (1961) mukwale o ne u beilwe mwa window ni tikiti ya teko neli invitation to treat, isiñi offer ya ku lekisa - ki lona libaka muñaa sitolo na bandukile katulo ya mulao o ne u li teñi ka nako yeo.\n\nLipapatiso. Mwa Partridge v Crittenden (1968) papatiso ya linyunywani ze lekiswa neli invitation to treat. Libaka la niti ki lika ze li teñi: ya lekisa ya biza batu ba bañata ha koni ku tamiwa ku fa mutu ni mutu.\n\nKu bulela teko mwa ku alaba puzo. Mwa Harvey v Facey (1893) telegram ye ne i alabile puzo ya 'teko ya hao ye tuzi ki mañi?' ka palo ne i atuzwi ku ba ku fa litaba fela, isiñi offer ya ku lekisa.\n\nSe si swalisa ze ne kaufela ki se: ya bulela ha si ka itama kale.",
+              "recap": "Lika ze beilwe mwa sitolo, mwa window, lipapatiso ze ñata ni ku bulela teko fela - kaufela ki ma-invitation to treat."
+            },
+            "s3": {
+              "heading": "Papatiso ha i ba offer",
+              "body": "Mulao wa lipapatiso ki mubonelo fela, isiñi limota. Mwa Carlill v Carbolic Smoke Ball Co (1893) kampani ne i papatize kuli i ka lifa mapaundi 100 kwa mutu kaufela ya itusisa smoke ball ya bona ka mo ne ku bulelezwi kono a kula influenza, mi ne i bulezi kuli ne i beile mapaundi 1,000 kwa banka ku bonisa niti ya yona.\n\nKuta ya Appeal ne i atuzi kuli yeo neli offer, isiñi invitation to treat, mi ne i ezizwe kwa batu kaufela mwa lifasi. Taba ya masheleñi a beilwe kwa banka ne i sinyize ngambolo kaufela ya kuli neli papatiso fela, mi lika ze ne li bulezwi ne li utwahala hande ku lumelwa.\n\nCarlill hape ki taba ye tuna ya unilateral contract - offer ye lumelwa ka ku eza musebezi, isiñi ka ku sepisa se siñwi. Kakuli offeree ha fi sepiso, ha ku na se si swanela ku zibiswa: ku eza musebezi ki kona ku lumela.\n\nTuto ki ye: mabizo ha a atuli lipuzo ze. Papatiso hañata ki invitation to treat kakuli ba ba papatisa hañata ha ba bati ku tamiwa; kono ha manzwi a bonisa kuli ne ba bata, ki offer."
+            }
+          },
+          "items": {
+            "l1s1c": {
+              "prompt": "Kuta i atula cwañi haiba mutu na bata ku tamiwa ki manzwi a hae?",
+              "options": [
+                "Ka nzila ya niti (objectively) - se mutu wa ngana ya inzi mwa sibaka sa yo muñwi na ka utwisisa.",
+                "Ka nzila ya pilu (subjectively) - se ya bulela a li ne a bata luli.",
+                "Ka ku buza haiba ya bulela hamulaho na inyazi manzwi a hae.",
+                "Ka ku latelela taluso ye tisa katulo ye lukile fa litaba."
+              ]
+            },
+            "l1s2c": {
+              "prompt": "Supermarket i beya bupi fa shelufu ye ñozwi K180. Fa till, mubeleki u hana ku lekisa fa teko yeo. Ka taluso ye tuna, ki mañi ya file offer?",
+              "options": [
+                "Muleki, ha na tisa lika kwa till.",
+                "Supermarket, ha ne i beile lika fa shelufu ni teko.",
+                "Ha ku na - contract ne i ezizwe muleki ha na ngile lika.",
+                "Bubeli ka nako i liñwi, kacwalo teko ye nyinyani ki yona ye busa."
+              ]
+            },
+            "l1s3c": {
+              "prompt": "Ki taba mañi ye ne i kolwisize hahulu kuta mwa Carlill kuli papatiso neli offer isiñi puff?",
+              "options": [
+                "Taba ya kuli mapaundi 1,000 ne a beilwe kwa banka ku bonisa niti.",
+                "Kuli sisebeliso ne si lekiswa mwa lisitolo za milyani mwa naha kaufela.",
+                "Kuli Bo Carlill ne ba itusisize smoke ball ka mo ne ku bulelezwi.",
+                "Kuli kampani ne i hanile ku lifa ha na kupile."
+              ]
+            },
+            "l1p1": {
+              "prompt": "Ki ye kai kwa ze ye kona ku ba offer ku fita invitation to treat?",
+              "options": [
+                "Zibiso ye sepisa K500 kwa mutu kaufela ya ka kutisa nja ye latehile.",
+                "Papatiso ya mwa mutende ye bonisa tunja to tu lekiswa.",
+                "Litapi za mwa makopo ze beilwe fa shelufu ya supermarket ni tikiti ya teko.",
+                "Telegram ye alaba kuli 'teko ye tuzi K900' kwa puzo."
+              ],
+              "hint": "Ze talu kwa ze ki likwata ze zibahala za invitation to treat. Ki ye kai ye tama ya bulela ha ku ezwa musebezi?"
+            },
+            "l1p2": {
+              "prompt": "Mwansa u buza Banda ka text kuli, 'Kana wa ka ni lekisa mota ya hao? Teko ya hao ye tuzi ki mañi?' Banda u alaba kuli, 'Teko ye tuzi K40,000.' Mwansa u alaba kuli, 'Na lumela, K40,000.' Kana ku na ni contract?",
+              "options": [
+                "Batili - kalabo ya Banda neli ku fa litaba fela, isiñi offer.",
+                "Eni - kalabo ya Banda neli offer mi Mwansa a i lumela.",
+                "Eni - kakuli Mwansa u itusisize linzwi la 'na lumela'.",
+                "Batili - kakuli ma-contract a limota a swanela ku ñolwa."
+              ],
+              "hint": "Bapanya ni ze ne li ezahezi mwa Harvey v Facey."
+            },
+            "l1p3": {
+              "prompt": "Mwa mipuzo ye mibeli kamba ye milalu, talusa libaka la niti le li tisa mulao ku nga lipapatiso ze ñata inge ma-invitation to treat.",
+              "answer": [
+                "lika ze li teñi",
+                "ku tamiwa",
+                "papatiso"
+              ]
+            },
+            "l1a1": {
+              "prompt": "Supermarket i papatiza kuli: 'Bareki ba 50 ba pili la Mukibelo kakusasana ba ka fumana mukotana wa bupi wa 10 kg wa mpo - lu beile mikotana ye 50 kwa musebezi wo.' Kana ye ki offer kamba invitation to treat? Fa mabaka a hao.",
+              "answer": [
+                "offer",
+                "carlill",
+                "ku tamiwa",
+                "ku utwahala"
+              ]
+            }
+          },
+          "worked_example": {
+            "prompt": "Mulekisi u beya njinga mwa window ya sitolo sa hae ni tikiti ye ñozwi 'K1,200'. Chanda u kena mi u li 'Ni ka nga njinga fa K1,200.' Mulekisi u alaba kuli teko cwale ki K1,500. Eleza Chanda.",
+            "steps": [
+              "Ziba puzo: kana contract i ezizwe, kuli mulekisi u tamilwe fa K1,200?",
+              "Beya se si beilwe mwa window mwa sikwata sa sona. Ka ku latelela Fisher v Bell, lika ze beilwe ni tikiti ya teko ki invitation to treat, isiñi offer.",
+              "Kacwalo se si beilwe ne si sa koni ku lumelwa, mi manzwi a Chanda haki acceptance.",
+              "Beya manzwi a Chanda mwa sikwata se siñwi. Ku bulela kuli 'Ni ka nga fa K1,200' ki yona offer ya ku leka fa teko yeo.",
+              "Buza haiba offer yeo ne i lumezwi. Kalabo ya mulekisi ki ku hana - mi, haiba i balwa inge ku itatela ku lekisa fa K1,500, ki counter-offer.",
+              "Feleleza: ha ku na contract fa K1,200. Chanda a kona ku lumela counter-offer ya K1,500 kamba ku funduka.",
+              "Ziba mululwani wa kalabo: ye ki taluso ya contract fela. Haiba teko ye fosahalile ye beilwe i loba milao ya consumer protection kamba trade descriptions, yeo ki puzo ye ñwi ya mulao, mi muinelo wa Zambia u swanela ku talimiwa."
+            ]
+          },
+          "recap": [
+            "Offer ki ku bonisa kuli mutu u itatela ku tamiwa fa lika ze utwahala, honafo ha ku lumelwa.",
+            "Invitation to treat ki ku memela ba bañwi ku fa ma-offer; ha i koni ku lumelwa.",
+            "Lika ze beilwe mwa sitolo, mwa window, lipapatiso, ni ku bulela teko mwa ku alaba - hañata ki ma-invitation to treat.",
+            "Carlill i bonisa kuli papatiso i kona ku ba offer haiba manzwi a bonisa mulelo wa ku tamiwa.",
+            "Mulelo wa ku tamiwa u atulwa ka nzila ya niti, isiñi ka mwa nahanela mutu mwa pilu ya hae."
+          ],
+          "misconceptions": {
+            "m1": {
+              "signal": "Ku nga teko ye ñozwi inge kamita ki offer.",
+              "repair": "Teko i bonisa kuli mutu u bata ku lekisa, kono ha i bonisi kuli u itamile. Buza puzo i liñwi: kana ya bulela u lumezi ku tamiwa cwale, kamba u bata ba bañwi ku taha ku yena? Lika ze beilwe ni lipapatiso hañata haki ku itama - ki lona libaka Fisher v Bell ni Partridge v Crittenden li atulile mo li atulezi."
+            },
+            "m2": {
+              "signal": "Ku nga Carlill inge i sinyize mulao wa lipapatiso.",
+              "repair": "Carlill ha i si ka sinya mulao; ne i bonisize mululwani wa ona. Mulao ki mubonelo fela wa kuli ba ba papatisa ha ba bati ku tamiwa. Mwa Carlill manzwi ne a sinyize mubonelo wo - sihulu masheleñi a ne a beilwe kwa banka. Kacwalo buza kamita: kana manzwi a papatiso a bonisa mulelo wa ku tamiwa?"
+            },
+            "m3": {
+              "signal": "Ku itusisa libizo le li beilwe fa manzwi (inge 'offer') inge ki lona le li atula.",
+              "repair": "Mabizo ha a atuli. Kuta i talima lika ze bulezwi ni likezo, isiñi libizo le mutu a beile. Manzwi a bizwa 'offer' a kona ku ba invitation to treat, mi papatiso i kona ku ba offer, ka ku ya ka mo mutu wa ngana na ka utwisiseza."
+            },
+            "m4": {
+              "signal": "Ku nahana kuli linzwi la 'na lumela' li eza contract ku si na taba ni ze ne li ezahezi pili.",
+              "repair": "Acceptance i kona ku ezahala fela haiba ku na ni offer ye inzi teñi ya ku lumela. Latelela ze ne ezahezi ka tatamano: kana ne ku na ni offer, mi kana ne i sa li teñi? Haiba manzwi a pili neli ku fa litaba fela (Harvey v Facey) kamba invitation to treat, cwale ya bulela kuli 'na lumela' ki yena ya fa offer, mi yo muñwi u siyala a lukuluhile ku hana."
+            }
+          }
+        },
+        "l2": {
+          "title": "Acceptance, counter-offer ni ku zibisa",
+          "hook": "Milatu ye miñata ya contract ye fita kwa kuta haki ya kuli kana batu ne ba bata ku eza tumelelano. Ki ya kuli kana se ne si bulezwi ki mutu wa bubeli neli acceptance, kamba ne si bulaile offer. Mupuzo u li muñwi mwa kalabo u kona ku atula.",
+          "segments": {
+            "s1": {
+              "heading": "Acceptance i lukela ku swana ni offer",
+              "body": "Acceptance ki ku lumela ko ku felile mi ko ku si na ku cinca fa lika kaufela za offer. Ba mulao ba biza seo mirror image rule.\n\nKalabo ye cinca lika ze bulezwi haki acceptance ni hanyinyani. Ki counter-offer, mi i sinya offer ya pili: Hyde v Wrench (1840). Wrench na file simu ya hae fa mapaundi 1,000; Hyde a alaba ka ku fa 950; ha ne ku haniwa, Hyde a lika ku lumela 1,000 ya pili. Ha na si ka kona - counter-offer ya hae ne i i bulaile.\n\nKauhanya ni puzo ya ku bata litaba fela, ye sa sinyi offer. Mwa Stevenson, Jaques & Co v McLean (1880) puzo ya kuli kana ku tisa ku kona ku ezwa mwa likweli ze peli ne i atuzwi ku ba puzo ya litaba, mi offer ya pili ya siyala.\n\nTeko ya niti: kana kalabo i lika ku cinca nto ye bulezwi, kamba i buza fela ka za yona? Ku cinca kwa bulaya; ku buza ha ku bulai.",
+              "recap": "Acceptance i lukela ku swana ni offer. Counter-offer ya i sinya; puzo ya litaba ha i sinyi."
+            },
+            "s2": {
+              "heading": "Acceptance i lukela ku zibiswa",
+              "body": "Ka mulao o mutuna, acceptance i sebeza ha i zibiswa kwa offeror. Ku fitela fo, ha ku na contract.\n\nKu kuza haki acceptance, mi offeror ha koni ku beya mulao wa kuli ku kuza ki acceptance. Mwa Felthouse v Bindley (1862) malume na ñozi kuli haiba ha utwi se siñwi hape, u ka nga pizi inge ya hae. Seo ne si si ka tama mwanaa munyanaa hae. Mulao u sileleza offeree: ha u swaneli ku ñola mañolo kuli u itibele ku kena mwa contract.\n\nKwa ku zibisa ko ku potela kapili - luwaile, telex, mi hape ni email ni mameseji - acceptance i sebeza ha i amuhelwa ni ko i amuhelezwi: Entores v Miles Far East Corporation (1955).\n\nMululwani o zibahala ki postal rule ye zwa kwa Adams v Lindsell (1818): ha posita ki nzila ye lukile ya acceptance, acceptance i sebeza fa ku lumiwa, isiñi fa ku fita. Kacwalo liñolo le li lumilwe hande li kona ku feza contract nihaike ha li si ka fita. Mulao wo ki o munyinyani, mi u kona ku zwiswa ki offer ye tokwa ku amuhelwa luli - mi, mwa niti, ku ñola hande kamita ku eza cwalo.",
+              "recap": "Acceptance i sebeza fa ku zibisa; ku kuza ha ku tami ni kamuta; posita ki mululwani o munyinyani."
+            },
+            "s3": {
+              "heading": "Revocation ni mafelelezo a offer",
+              "body": "Offer i kona ku felisiwa pili ku si ka lumelwa ka linzila ze ñata: ku haniwa, counter-offer, ku fela kwa nako ye bulezwi kamba ye lukile, lifu la yo muñwi mwa miinelo ye miñwi, kamba revocation ye zwa kwa offeror.\n\nRevocation ki yona ye fosezwanga hahulu. Milao ye mibeli ki ya butokwa.\n\nOffer i kona ku zwiswa ka nako ifi kamba ifi pili i si ka lumelwa, nihaike offeror na sepisize ku i siya i kwaluhile - konji haiba sepiso yeo ne i na ni consideration, ye eza option contract: Routledge v Grant (1828).\n\nKono revocation i sebeza fela ha i amuhelwa luli ki offeree: Byrne v Van Tienhoven (1880). Bona ku shutana ni postal rule. Acceptance ye lumilwe ya tama fa ku lumiwa; revocation ye lumilwe ha i ezi se siñwi ku fitela i fita. Kacwalo revocation ye lumilwe pili acceptance i si ka lumiwa, kono ye fita hamulaho, i taha ka nako ye fitile - contract ne i se i ezizwe."
+            }
+          },
+          "items": {
+            "l2s1c": {
+              "prompt": "Mulenga u fa ku lekisa laptop ya hae fa K6,000. Phiri u alaba kuli, 'Kana wa ka amuhela K5,500?' Mulenga wa hana. Cwale Phiri u li, 'Ku lukile, ni ka lifa K6,000.' Kana ku na ni contract?",
+              "options": [
+                "Batili - kalabo ya Phiri ya K5,500 neli counter-offer, mi ne i sinyize offer ya pili.",
+                "Eni - offer ya K6,000 ne i siyezi i kwaluhile nako kaufela.",
+                "Eni - kakuli Phiri kwa mafelelezo u lumezi teko ye ne i kupilwe.",
+                "Batili - kakuli offer ne i si ka ñolwa."
+              ]
+            },
+            "l2s2c": {
+              "prompt": "Offer i li 'alaba ka posita'. Offeree u luma acceptance la Mubulo. Ya latehela mi ha i fiti. Ki lili, haiba ne ku ezahezi, contract ne i ezizwe?",
+              "options": [
+                "La Mubulo, liñolo ha ne li lumilwe.",
+                "Ni kamuta, kakuli offeror ha si ka i amuhela.",
+                "Offeror ha ka ziba kuli liñolo ne li lumilwe.",
+                "Fa lizazi le liñolo ne li ka fita ka nako."
+              ]
+            },
+            "l2s3c": {
+              "prompt": "La 1 October offeror u luma revocation. La 3 October, a si ka i amuhela kale, offeree u luma acceptance. Revocation i fita la 4 October. Ki muinelo mañi?",
+              "options": [
+                "Ku na ni contract - acceptance ne i sebelize la 3 October, pili revocation i si ka amuhelwa.",
+                "Ha ku na contract - revocation ne i lumilwe pili, la 1 October.",
+                "Ha ku na contract - kaufela ne li mwa posita, kacwalo ha ku na ye ne i sebelize.",
+                "Kuta i ka kauhanya sinyehelo mwahalaa bubeli."
+              ]
+            },
+            "l2p1": {
+              "prompt": "Offeror u ñola kuli, 'Haiba ha ni utwi ku wena ku fitela la Mukibelo, ni ka nga kuli wa lumela.' Offeree ha bulelangi se siñwi. Kana ku na ni contract la Mukibelo?",
+              "options": [
+                "Batili - ku kuza ha ku koni ku beiwa inge acceptance.",
+                "Eni - offeree na na ni kolo ya ku hana kono ha si ka eza.",
+                "Eni - offeror na tomile nzila ya acceptance mi ne i latelezwi.",
+                "Fela haiba offeree na bata ku lumela."
+              ],
+              "hint": "Felthouse v Bindley."
+            },
+            "l2p2": {
+              "prompt": "Ki kalabo mañi ye siya offer ya pili i inzi teñi?",
+              "options": [
+                "'Kana wa kona ku ni bulelela haiba ku tisa ka misipili ye mibeli ku konahala?'",
+                "'Na lumela, kono fa K5,500 isiñi K6,000.'",
+                "'Na lumela, haiba u ekeza ni chaja.'",
+                "'Na lumela, haiba ku tisa ku ka ba la Mukibelo isiñi la Mubulo.'"
+              ],
+              "hint": "Ze talu kwa ze li lika ku cinca nto ye bulezwi. I liñwi i buza fela."
+            },
+            "l2p3": {
+              "prompt": "Talusa mwa mipuzo ye mibeli kamba ye milalu libaka mulao ha u nga acceptance ye lumilwe ni revocation ye lumilwe ka linzila ze shutana.",
+              "answer": [
+                "acceptance",
+                "revocation",
+                "ku amuhela",
+                "ku luma"
+              ]
+            },
+            "l2a1": {
+              "prompt": "U ñola offer ya ku fa lika kwa mueleli wa Zambia ya sa bati ku swaliwa ki postal rule. Ki taba mañi i liñwi ye u ka beya, mi ki kabakalañi ha i sebeza?",
+              "answer": [
+                "ku amuhela",
+                "acceptance",
+                "ku ñola",
+                "ku sebeza"
+              ]
+            }
+          },
+          "worked_example": {
+            "prompt": "La 1 March Zulu u ñolela Banda ku fa ku lekisa mikotana ye 200 ya samende fa K120 fa mukotana, 'offer ye i kwaluhile ku isa la 10 March'. La 4 March Banda u ñola ku buza haiba ku tisa ku kona ku ezwa ka misipili ye mibeli. La 6 March Zulu u luma liñolo la ku zwisa offer. La 7 March Banda u luma acceptance. Ku zwisa kwa Zulu ku fita ku Banda la 8 March. Eleza.",
+            "steps": [
+              "Kala ka liñolo la 4 March. Ku buza ka za ku tisa ka misipili ye mibeli ha ku cinci nto ye bulezwi - ku bata litaba fela. Ka Stevenson, Jaques & Co v McLean ye ki puzo ya litaba mi offer ya siyala.",
+              "Nahana ka za sepiso ya ku siya offer i kwaluhile ku isa la 10 March. Ka Routledge v Grant, sepiso ye cwalo ha i tami ku si na consideration, kacwalo Zulu na lukuluhile ku zwisa kapili.",
+              "Kono revocation ne i sebelize lili? Ka Byrne v Van Tienhoven, fela fa ku amuhelwa - la 8 March.",
+              "Acceptance ne i sebelize lili? Posita i bonahala inge ki nzila ye lukile fa, kakuli batu ne ba itusisize posita nako kaufela, kacwalo Adams v Lindsell ya sebeza mi acceptance ne i sebelize fa ku lumiwa - la 7 March.",
+              "Bapanya mazazi: acceptance 7 March, revocation ye sebelize 8 March. Contract ne i felisizwe pili revocation i si ka sebeza.",
+              "Feleleza: ku na ni contract ye tama ya mikotana ye 200 fa K120. Ku zwisa kwa Zulu ne ku tile ka nako ye fitile.",
+              "Bulela mululwani: kambe offer ya Zulu ne i tokwa ku amuhelwa luli kwa acceptance ifi kamba ifi, postal rule ne i ka zwisiwa mi kalabo ne i ka fetuha. Kamita talima manzwi a offer haiba a na ni taba ye cwalo."
+            ]
+          },
+          "recap": [
+            "Acceptance i lukela ku fela, ku si na ku cinca, mi i swane ni offer.",
+            "Counter-offer i sinya offer ya pili (Hyde v Wrench); puzo ya litaba ha i sinyi (Stevenson, Jaques).",
+            "Acceptance hañata i sebeza fa ku zibisa; ku kuza ha ku tami ni kamuta (Felthouse v Bindley).",
+            "Ku zibisa ko ku potela kapili: ku sebeza fa ku amuhela (Entores). Posita: ku sebeza fa ku luma (Adams v Lindsell).",
+            "Offer i kona ku zwisiwa pili i si ka lumelwa (Routledge v Grant), kono fela ha revocation i amuhelwa (Byrne v Van Tienhoven)."
+          ],
+          "misconceptions": {
+            "m1": {
+              "signal": "Ku nga offer inge i sa li teñi hamulaho wa kuli offeree u file lika ze shutana.",
+              "repair": "Hyde v Wrench i tiile: counter-offer i sinya offer ya pili, mi ha i koni ku zusiwa ki ya file counter-offer a nosi. Ba ni mukwa wa ku ñola timeline ni ku swaya nako offer ya pili ha i shwa. Cwale talima haiba kalabo ne i cincize nto ye bulezwi kamba ne i buzize fela ka za yona - ye pili fela ki yona ye bulaya."
+            },
+            "m2": {
+              "signal": "Ku itusisa mulao o mutuna wa ku amuhela kwa acceptance ye lumilwe ka posita, kamba ku itusisa postal rule kwa lika kaufela.",
+              "repair": "Kauhanya litaba ka nzila ya ku zibisa pili u si ka keta mulao. Linzila ze potela kapili - luwaile, telex, email, mameseji - li busiwa ki Entores mi li sebeza fa ku amuhela. Posita ki mululwani o munyinyani wa Adams v Lindsell mi i sebeza fa ku luma, kono fela ha posita neli nzila ye lukile mi offer ha i tokwi ku amuhelwa luli."
+            },
+            "m3": {
+              "signal": "Ku nahana kuli liñolo le li lumilwe pili ki lona le li tula.",
+              "repair": "Mañolo a mabeli a busiwa ki milao ye shutana, kacwalo mazazi a ku luma a nosi ha a atuli se siñwi. Ñola mihala ye mibeli: acceptance i sebeza fa ku luma; revocation i sebeza fa ku amuhela. Bapanya mazazi ao a mabeli a ku sebeza, isiñi mazazi a mabeli a ku luma. Ki sona fela silaba se Byrne v Van Tienhoven i tatulula."
+            },
+            "m4": {
+              "signal": "Ku lumela kuli offeror a kona ku eza ku kuza ku ba acceptance.",
+              "repair": "Offeror a kona ku bulela nzila ya ku lumela ka yona, kono ha koni ku zwisa tokwahalo ya kuli offeree a eze se siñwi. Felthouse v Bindley i sileleza offeree kwa ku eza lika kuli a itibele contract ya na si ka bata. Buza haiba offeree na ezize se siñwi ni hanyinyani; haiba kutokwa, ka niti ha ku na acceptance."
+            }
+          }
+        }
+      },
+      "provenance": {
+        "translator": "Claude (MACHINE DRAFT - not a human translation)",
+        "translated_on": "2026-08-28",
+        "reviewed_by": null,
+        "reviewed_on": null,
+        "method": "machine-draft",
+        "notes": "FULL DRAFT, PRODUCED BY A LANGUAGE MODEL, REVIEWED BY NOBODY. Expect errors in grammar, noun-class concord and above all in legal register. Every case name and every legal term of art is kept in English on purpose - offer, acceptance, invitation to treat, counter-offer, revocation, offeror, offeree, contract, consideration, unilateral contract, option contract, postal rule, mirror image rule, puff - because the UNZA LLB is taught and examined in English. This pack already carries a jurisdiction note: the authorities are the English cases applied in Zambia, and the Zambian position must be confirmed with a lecturer. That warning matters more, not less, in translation. NOTE FOR LOZI SPECIFICALLY: no text-to-speech model for Silozi exists anywhere, so this can only be read on screen, never aloud. DO NOT PUT THIS IN FRONT OF A STUDENT until a Lozi-speaking lawyer has been through it."
+      }
+    }
+  },
+  "integrity": {
+    "algorithm": "sha256",
+    "sha256": "25d797240467fcc4c402b8fd3ad531ae563948a4cf84519990a50182242c47b1"
+  }
+}

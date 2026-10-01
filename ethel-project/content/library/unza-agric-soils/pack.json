@@ -1,0 +1,599 @@
+{
+  "schema": "ethel.pack/1",
+  "id": "unza-agric-soils",
+  "course": {
+    "code": "",
+    "title": "Soil Acidity and Nutrient Availability (foundation)",
+    "institution": "unza",
+    "programme": "unza-bagsc",
+    "year": 2
+  },
+  "source": {
+    "authored_by": "The Ethel Project",
+    "authored_on": "2026-08-26",
+    "licence": "CC BY-SA 4.0",
+    "reviewed_by": null,
+    "syllabus_reference": "This pack is NOT mapped to a published UNZA course code. The University of Zambia School of Agricultural Sciences confirms the Bachelor of Agricultural Sciences and its majors but does not publish a year-by-year course list (https://www.unza.zm/agricultural-sciences, retrieved 2026-08-26). This is therefore a foundation pack: general soil-science material that underlies the Plant Science and Land Management majors. It must be replaced by, or mapped to, the real syllabus course once the School's scheme of work is imported.",
+    "field_note": "Agronomic recommendations here are general principles only. Lime rates, fertiliser rates and variety choice depend on an actual soil test for the actual field. Never give a farmer a rate from a textbook; give them the reason to test."
+  },
+  "languages": [
+    "en",
+    "bem",
+    "loz"
+  ],
+  "lessons": [
+    {
+      "id": "l1",
+      "title": "Soil pH and why fertiliser sometimes does nothing",
+      "skill": "soil-ph",
+      "prerequisites": [],
+      "estimated_minutes": 25,
+      "hook": "A farmer applies the recommended basal fertiliser to two fields the same day, from the same bag. One field yields well. The other barely responds, and the maize is stunted with poor roots. The fertiliser was not the problem. The soil was refusing to hand it over - and a single measurement would have predicted it.",
+      "segments": [
+        {
+          "id": "s1",
+          "heading": "What pH actually measures",
+          "body": "Soil pH measures how acidic or alkaline the soil solution is, on a scale from 0 to 14. Seven is neutral, below seven is acidic, above seven is alkaline.\n\nThe scale is logarithmic, and this is the part people miss. Each whole step is a tenfold change. A soil at pH 5 is ten times more acidic than one at pH 6, and a hundred times more acidic than one at pH 7. So a drop from 6.0 to 5.0 is not a small drift - it is a large change in the chemistry the roots are sitting in.\n\nMost field crops do best between about pH 5.5 and 7.0. Within that band the major nutrients stay available and the soil's biology works normally.",
+          "recap": "pH is logarithmic: one unit is a tenfold change in acidity.",
+          "check": {
+            "id": "l1s1c",
+            "type": "mcq",
+            "skill": "soil-ph",
+            "difficulty": 2,
+            "prompt": "A soil at pH 4.5 compared with a soil at pH 6.5 is:",
+            "options": [
+              "One hundred times more acidic",
+              "Two times more acidic",
+              "Twenty times more acidic",
+              "Slightly less acidic"
+            ],
+            "answer": 0,
+            "misconception": {
+              "1": "m1",
+              "2": "m1",
+              "3": "m1"
+            },
+            "hint": "Two whole units. Each unit is a factor of ten.",
+            "explanation": "Two units on a logarithmic scale means 10 x 10 = 100 times more acidic. This is why a two-point difference between fields matters so much."
+          }
+        },
+        {
+          "id": "s2",
+          "heading": "Why acidity starves a crop that has been fertilised",
+          "body": "Nutrients have to be in a soluble form before a root can take them up. Whether they are depends heavily on pH.\n\nPhosphorus is the clearest case. In strongly acid soils, phosphate binds tightly to iron and aluminium oxides and becomes fixed - present in the soil, but not available to the plant. In strongly alkaline soils it is locked up by calcium instead. Phosphorus availability is greatest in the middle of the range, roughly pH 6 to 7. This is why a phosphate fertiliser can be applied correctly and still produce almost no response on an acid field: the soil takes it out of circulation before the crop reaches it.\n\nBelow about pH 5.0 a second problem appears. Aluminium becomes soluble and is toxic to roots. It damages root tips, so the root system stays shallow and stunted. A shallow root system cannot reach water in a dry spell or nutrients deeper in the profile, so the damage compounds.\n\nAcid soils are also short of calcium and magnesium, and the bacteria that fix nitrogen in legume nodules work poorly.",
+          "recap": "Acidity fixes phosphorus and frees toxic aluminium; both starve the crop even when fertiliser is present.",
+          "check": {
+            "id": "l1s2c",
+            "type": "mcq",
+            "skill": "soil-ph",
+            "difficulty": 3,
+            "prompt": "A farmer applies the correct rate of phosphate fertiliser to a strongly acid field and sees almost no yield response. What is the most likely explanation?",
+            "options": [
+              "The phosphate has been fixed by iron and aluminium and is not available to the crop.",
+              "The fertiliser was of poor quality.",
+              "Phosphate is not needed by maize.",
+              "The rate applied was far too high."
+            ],
+            "answer": 0,
+            "misconception": {
+              "1": "m2",
+              "2": "m2",
+              "3": "m2"
+            },
+            "hint": "The nutrient is in the soil. Ask whether the plant can reach it.",
+            "explanation": "Applying more of a nutrient does not help if the soil chemistry removes it from solution. In strongly acid soils, phosphate binds to iron and aluminium oxides. Correcting pH is what unlocks the phosphorus already there - and makes the next application worth buying."
+          }
+        },
+        {
+          "id": "s3",
+          "heading": "Correcting acidity, and why you test first",
+          "body": "Acidity is corrected by liming - applying agricultural lime, which is ground limestone. Calcitic lime supplies mainly calcium; dolomitic lime supplies calcium and magnesium, and is the better choice where magnesium is also low.\n\nThree practical points.\n\nLime is slow. It must dissolve and react, so it is applied and incorporated well before planting - commonly in the previous dry season - not broadcast at sowing and expected to work.\n\nThe rate depends on the soil, not on the crop. Two fields at the same pH can need very different amounts of lime, because a clay soil with high organic matter resists a change in pH far more than a sandy one. That resistance is called buffering capacity, and it is why a lime recommendation comes from a laboratory test, never from a pH reading alone.\n\nOverliming is a real error, not a theoretical one. Pushing pH too high locks phosphorus up again with calcium and induces deficiencies of zinc, iron and manganese. More is not better.\n\nSo the sequence is: test the soil, get a lime recommendation for that field, apply and incorporate early, then fertilise.",
+          "check": {
+            "id": "l1s3c",
+            "type": "mcq",
+            "skill": "soil-ph",
+            "difficulty": 4,
+            "prompt": "Two fields both test at pH 4.8. Why might they need different amounts of lime?",
+            "options": [
+              "They differ in buffering capacity, which depends on clay and organic matter content.",
+              "They cannot - the same pH always requires the same lime rate.",
+              "Because different crops will be planted on them.",
+              "Because one was fertilised more recently than the other."
+            ],
+            "answer": 0,
+            "misconception": {
+              "1": "m3",
+              "2": "m3",
+              "3": "m3"
+            },
+            "hint": "pH tells you the current acidity. What tells you how hard the soil will resist changing it?",
+            "explanation": "pH says where the soil is now; buffering capacity says how strongly it will resist being moved. A heavy clay with high organic matter has many exchange sites holding acidity in reserve and needs much more lime than a sandy soil at the same pH. That is why the recommendation comes from a laboratory, not from the pH figure alone."
+          }
+        }
+      ],
+      "worked_example": {
+        "prompt": "A farmer reports stunted maize with poor root development on one field, despite applying the same fertiliser that worked on a neighbouring field. How would you diagnose this?",
+        "steps": [
+          "Do not start with the fertiliser. It worked next door, so the variable is the field, not the bag.",
+          "Look at the symptom: poor root development, not just poor top growth. That points at something attacking the roots directly.",
+          "Aluminium toxicity below about pH 5.0 damages root tips and produces exactly this stunted, shallow root system.",
+          "Test the pH of both fields, sampling several points across each and to the depth the roots occupy.",
+          "If the poor field is strongly acid, the diagnosis is consistent: aluminium damaging roots, and phosphorus fixed and unavailable at the same time.",
+          "Send a sample for a full test - pH plus buffering - to get a lime rate for that specific field.",
+          "Plan the correction: lime applied and incorporated well ahead of the next crop, then resume normal fertiliser practice.",
+          "Say plainly what you have not established: this is a hypothesis consistent with the symptoms, and only the soil test confirms it. Waterlogging, compaction, nematodes and herbicide carryover can all produce poor roots too, and should be ruled out."
+        ]
+      },
+      "practice": [
+        {
+          "id": "l1p1",
+          "type": "mcq",
+          "skill": "soil-ph",
+          "difficulty": 2,
+          "prompt": "Which pH range suits most field crops best?",
+          "options": [
+            "About 5.5 to 7.0",
+            "About 3.0 to 4.5",
+            "About 8.5 to 10.0",
+            "Exactly 7.0 and nothing else"
+          ],
+          "answer": 0,
+          "hint": "Slightly acid to neutral.",
+          "explanation": "Roughly 5.5 to 7.0. Within that band the major nutrients stay available and aluminium stays insoluble."
+        },
+        {
+          "id": "l1p2",
+          "type": "mcq",
+          "skill": "soil-ph",
+          "difficulty": 3,
+          "prompt": "Below about pH 5.0, which element becomes soluble enough to damage roots?",
+          "options": [
+            "Aluminium",
+            "Nitrogen",
+            "Potassium",
+            "Carbon"
+          ],
+          "answer": 0,
+          "hint": "It is not a plant nutrient at all - that is the point.",
+          "explanation": "Aluminium. It is not a nutrient; it becomes soluble as acidity rises and is toxic to root tips, producing shallow, stunted root systems."
+        },
+        {
+          "id": "l1p3",
+          "type": "mcq",
+          "skill": "soil-ph",
+          "difficulty": 4,
+          "prompt": "Which is the strongest reason to lime well before planting rather than at sowing?",
+          "options": [
+            "Lime reacts slowly and needs time and incorporation to change soil pH.",
+            "Lime would burn the seed if applied at sowing.",
+            "Lime is cheaper in the dry season.",
+            "Lime washes away if it rains soon after application."
+          ],
+          "answer": 0,
+          "hint": "Think about the speed of the chemistry, not the logistics.",
+          "explanation": "Lime must dissolve and react with the soil's exchange sites, which takes months. Applied at sowing it cannot correct the pH in time to help that crop."
+        },
+        {
+          "id": "l1p4",
+          "type": "short",
+          "skill": "soil-ph",
+          "difficulty": 5,
+          "prompt": "An extension officer suggests simply doubling the lime rate to be safe. Give two reasons why that is poor advice.",
+          "answer": [
+            "overliming",
+            "phosphorus",
+            "zinc",
+            "cost"
+          ],
+          "min_match": 2,
+          "placeholder": "Two or three sentences.",
+          "explanation": "First, overliming pushes pH too high, which locks phosphorus up again with calcium and induces deficiencies of zinc, iron and manganese - trading one problem for another. Second, lime is a real cost and often has to be transported a long way; doubling it wastes money that could have gone on seed or fertiliser. The correct rate comes from a soil test for that field."
+        }
+      ],
+      "apply": {
+        "id": "l1a1",
+        "type": "short",
+        "skill": "soil-ph",
+        "difficulty": 5,
+        "prompt": "A farmer with limited cash asks whether to spend it on more fertiliser or on lime, on a field that tests at pH 4.6. What do you advise, and why?",
+        "answer": [
+          "lime",
+          "phosphorus",
+          "available",
+          "test"
+        ],
+        "min_match": 2,
+        "placeholder": "Four or five sentences.",
+        "explanation": "Lime first. At pH 4.6 much of the phosphorus already in the soil is fixed and unavailable, and aluminium is likely damaging the roots, so additional fertiliser will give a poor return - the farmer would be buying nutrients the field cannot deliver. Correcting the pH unlocks phosphorus already present and lets the root system develop, which raises the return on every future bag of fertiliser. The honest caveat is that lime is slow, so the benefit comes to the following crop rather than this one, and the rate must come from a proper soil test for that field rather than from a general figure."
+      },
+      "recap": [
+        "pH is logarithmic - one unit is a tenfold change in acidity.",
+        "Most crops do best between about pH 5.5 and 7.0.",
+        "Strong acidity fixes phosphorus with iron and aluminium, so applied fertiliser gives no response.",
+        "Below about pH 5.0, soluble aluminium damages root tips and stunts the root system.",
+        "Lime is slow, rate depends on the soil's buffering capacity, and overliming causes its own deficiencies - so test the field first."
+      ],
+      "misconceptions": [
+        {
+          "id": "m1",
+          "signal": "Reading pH as a linear scale, so 4.5 and 6.5 look like a small difference.",
+          "repair": "Each whole unit is a factor of ten. Two units is a hundredfold difference in acidity, not a difference of two. When you compare two fields, subtract the pH values and then count that many tens - it changes how serious the gap looks, and it should."
+        },
+        {
+          "id": "m2",
+          "signal": "Responding to a poor fertiliser response by recommending more fertiliser.",
+          "repair": "Separate two different questions: is the nutrient present, and can the plant reach it? Acid soils commonly hold plenty of phosphorus in a fixed, unavailable form. Adding more of a nutrient the soil is actively removing from solution wastes the farmer's money. Fix the availability problem, then fertilise."
+        },
+        {
+          "id": "m3",
+          "signal": "Treating a pH reading as sufficient to set a lime rate.",
+          "repair": "pH tells you the current acidity; it says nothing about how hard the soil will resist changing. That is buffering capacity, and it rises with clay content and organic matter. Two fields at identical pH can need very different lime rates, which is why the rate comes from a laboratory recommendation for that field and never from the pH figure alone."
+        }
+      ]
+    }
+  ],
+  "diagnostic": [
+    {
+      "id": "d1",
+      "skill": "soil-ph",
+      "difficulty": 1,
+      "type": "mcq",
+      "prompt": "A soil with pH below 7 is:",
+      "options": [
+        "Acidic",
+        "Alkaline",
+        "Neutral",
+        "Saline"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "d2",
+      "skill": "soil-ph",
+      "difficulty": 2,
+      "type": "mcq",
+      "prompt": "How much more acidic is pH 5 than pH 6?",
+      "options": [
+        "Ten times",
+        "Twice",
+        "One unit, so a small amount",
+        "The same"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "d3",
+      "skill": "soil-ph",
+      "difficulty": 3,
+      "type": "mcq",
+      "prompt": "Which nutrient is most notoriously fixed and made unavailable in strongly acid soils?",
+      "options": [
+        "Phosphorus",
+        "Nitrogen",
+        "Sulphur",
+        "Chlorine"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "d4",
+      "skill": "soil-ph",
+      "difficulty": 4,
+      "type": "mcq",
+      "prompt": "Agricultural lime is applied mainly to:",
+      "options": [
+        "Raise soil pH",
+        "Lower soil pH",
+        "Supply nitrogen",
+        "Improve drainage"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "d5",
+      "skill": "soil-ph",
+      "difficulty": 5,
+      "type": "mcq",
+      "prompt": "What determines how much lime a field needs, beyond its current pH?",
+      "options": [
+        "Its buffering capacity",
+        "The crop to be planted",
+        "The season",
+        "The fertiliser brand"
+      ],
+      "answer": 0
+    }
+  ],
+  "translations": {
+    "bem": {
+      "lessons": {
+        "l1": {
+          "title": "pH ya mushili ne mulandu fatilaiza limo limo abulwa ukubomba",
+          "hook": "Umulimi abika ifumbe (basal fertiliser) mu mabala yabili ubushiku bumo, ukufuma mu saka limo line. Ibala limo lyatwala bwino. Ilyabili talyacita cimo, no mataba yaba ayanono ne mishila iyabipile. Ifumbe te lyali ubwafya. Umushili e wali uukaana ukupeela ifyakulya ku fimenwa - kabili ukupima kumo fye kwali no kutusokolwela ici.",
+          "segments": {
+            "s1": {
+              "heading": "Ico pH ipima cine cine",
+              "body": "pH ya mushili ipima ifyo umushili wabipa (acid) nangu ifyo waba alkaline, pa scale ya kufuma pa 0 ukufika pa 14. Cinelubali (7) e pakati, panshi ya 7 kwaba acid, pa mulu ya 7 kwaba alkaline.\n\nIyi scale ni logarithmic, kabili apa e po abantu abengi balufyanya. Icipimo cimo cimo ni ukwaluka kwa miku ikumi. Umushili uuli pa pH 5 wabipa imiku ikumi ukucila uuli pa pH 6, kabili imiku umwanda ukucila uuli pa pH 7. E co ukutentemuka ukufuma pa 6.0 ukufika pa 5.0 te kwaluka kunono - kwaluka kukalamba mu chemistry umo imishila ikala.\n\nIfyakulimwa ifingi filacita bwino pakati pa pH 5.5 na 7.0. Muli iyi ntambo ifyakulya ifikalamba filaba ifya kupokelela kabili ubumi bwa mushili bulabomba bwino.",
+              "recap": "pH ni logarithmic: icipimo cimo ni ukwaluka kwa miku ikumi mu acid."
+            },
+            "s2": {
+              "heading": "Umulandu acid ilepeela insala ku cakulimwa icabikwapo ifumbe",
+              "body": "Ifyakulya filingile ukusungulushiwa mu menshi ilyo umushila ushilafisenda. Nga fyaba ifyo nangu awe, cishintilila sana pali pH.\n\nPhosphorus e cilangililo icaumfwika bwino. Mu mishili iya acid sana, phosphate ilaikatana na iron na aluminium oxides no kuba iyaikatwa - ilipo mu mushili, lelo te ya kupokelela ku cimenwa. Mu mishili iya alkaline sana, ilaikatwa na calcium. Phosphorus ilaba iya kupokelela sana pakati pa pH 6 na 7. E mulandu fatilaiza wa phosphate engabikwa bwino lelo talepeela cimo mwi bala ilya acid: umushili ulamusenda ilyo icakulimwa cishilafika kuli wene.\n\nPanshi ya pH 5.0 kwaisa ubwafya bumbi. Aluminium ilasungulushiwa kabili ilaba ubulozi ku mishila. Ilonaula imitwe ya mishila, e co imishila taikula, ilekala panono pa mulu. Imishila iyanono te ingafika ku menshi mu nshita ya cilala nangu ku fyakulya ifili panshi, e co ubwafya bulakulilako.\n\nImishili iya acid kabili ilabulwa calcium na magnesium, kabili utushishi utupeela nitrogen mu nodules sha legumes tatubomba bwino.",
+              "recap": "Acid ilaikata phosphorus no kwisula aluminium iya bulozi; fyonse fibili filepeela insala ku cakulimwa nangu ca kuti ifumbe lilipo."
+            },
+            "s3": {
+              "heading": "Ukuwamya acid, ne mulandu upimina ubutanshi",
+              "body": "Acid ilawamishiwa ku kubika laimu (agricultural lime), iyaba limestone iyapelwa. Calcitic lime ileta maka calcium; dolomitic lime ileta calcium na magnesium, kabili e isuma nga magnesium na yene inono.\n\nIfintu fitatu ifya kwibukisha.\n\nLaimu te ya bwangu. Ilingile ukusungulushiwa no kubomba, e co ibikwa no kusakanishiwa ilyo kushilaba ukubyala - ilingi mu nshita ya cilala iyapitile - te kumwaya pa kubyala no kwenekela ukuti ilabomba bwangu.\n\nUbwingi bushintilila pa mushili, te pa cakulimwa iyo. Amabala yabili aya pH imo yene yengafwaya laimu iyapusanako sana, pantu umushili wa clay uukwete organic matter iingi ulakaana ukwaluka kwa pH ukucila uwa musenga. Uku kukaana kwitwa buffering capacity, kabili e mulandu ubwingi bwa laimu bufuma ku kupima kwa mu laboratory, te ku pH fye iyo.\n\nUkubika laimu iingi sana kuli lubembu lwa cine cine, te lwa mu matontonkanyo fye. Ukunyanta pH pa mulu sana kulaikata phosphorus na calcium kabili kuleta ubulwele bwa zinc, iron na manganese. Ifingi te fisuma iyo.\n\nE co inshila ni iyi: pima umushili, ufwaye ubwingi bwa laimu ubwa lilya bala, ubike no kusakanya ilyo cishilaba ukubyala, elyo ubike ifumbe."
+            }
+          },
+          "items": {
+            "l1s1c": {
+              "prompt": "Umushili uuli pa pH 4.5 nga wapalanishiwa ku uuli pa pH 6.5, waba:",
+              "options": [
+                "Acid imiku umwanda ukucila",
+                "Acid imiku ibili ukucila",
+                "Acid imiku amakumi yabili ukucila",
+                "Acid panono ukucepako"
+              ]
+            },
+            "l1s2c": {
+              "prompt": "Umulimi abika fatilaiza wa phosphate mu bwingi ubwalinga mwi bala ilya acid sana, lelo tamona ukukula nangu panono. Cinshi cingaba icalenga?",
+              "options": [
+                "Phosphate naikatwa na iron na aluminium, e co tayakupokelela ku cakulimwa.",
+                "Ifumbe lyali libi.",
+                "Umataba tayafwaya phosphate.",
+                "Ubwingi ubwabikilwe bwali bukalamba sana."
+              ]
+            },
+            "l1s3c": {
+              "prompt": "Amabala yabili yonse yapimwa pa pH 4.8. Mulandu nshi yengafwaila laimu iyapusanako?",
+              "options": [
+                "Yalipusana mu buffering capacity, iyashintilila pali clay na organic matter.",
+                "Te kuti - pH imo yene lyonse ifwaya laimu imo yene.",
+                "Pantu kuli fyakulimwa ifyapusana ifyakubyalwa.",
+                "Pantu limo lyabikilwe ifumbe mu nshita ya nomba line."
+              ]
+            },
+            "l1p1": {
+              "prompt": "Ni ntambo nshi ya pH iyawamina ifyakulimwa ifingi?",
+              "options": [
+                "Mupepi na 5.5 ukufika ku 7.0",
+                "Mupepi na 3.0 ukufika ku 4.5",
+                "Mupepi na 8.5 ukufika ku 10.0",
+                "7.0 fye, takuli cimbi"
+              ],
+              "hint": "Acid panono ukufika pa pakati."
+            },
+            "l1p2": {
+              "prompt": "Panshi ya pH 5.0, ni cinshi icisungulushiwa ica kwonaula imishila?",
+              "options": [
+                "Aluminium",
+                "Nitrogen",
+                "Potassium",
+                "Carbon"
+              ],
+              "hint": "Te cakulya ca cimenwa nakalya - e co cine."
+            },
+            "l1p3": {
+              "prompt": "Ni mulandu nshi uukalamba uulenga ukubika laimu ilyo kushilaba ukubyala ukucila pa kubyala kwine?",
+              "options": [
+                "Laimu ilabomba panono kabili ilafwaya inshita no kusakanishiwa pa kwaluka kwa pH ya mushili.",
+                "Laimu ingoca imbuto nga yabikwa pa kubyala.",
+                "Laimu yalipo umutengo unono mu nshita ya cilala.",
+                "Laimu ilasendwa na menshi nga imfula yaloka bwangu pa numa ya kubika."
+              ],
+              "hint": "Tontonkanya pa bwangu bwa chemistry, te pa fya kutwala iyo."
+            },
+            "l1p4": {
+              "prompt": "Kafundisha wa balimi alanda ati babike laimu iyafula imiku ibili pa kuti bacingililwe. Landa imilandu ibili iilenga ubu bufunda ukuba ububi.",
+              "answer": [
+                "laimu iingi",
+                "phosphorus",
+                "zinc",
+                "indalama"
+              ]
+            },
+            "l1a1": {
+              "prompt": "Umulimi uwakwete indalama shinono aipusha nga engashishita ifumbe ilingi nangu laimu, mwi bala ilyapimwa pa pH 4.6. Ni bufunda nshi wingamupeela, kabili mulandu nshi?",
+              "answer": [
+                "laimu",
+                "phosphorus",
+                "ukupokelela",
+                "ukupima"
+              ]
+            }
+          },
+          "worked_example": {
+            "prompt": "Umulimi asosa ukuti umataba tayakula kabili imishila yabipa mwi bala limo, nangu ca kuti abikile ifumbe lyene ilyabombele mwi bala ilya mupalamano. Wingasokolola shani ubu bwafya?",
+            "steps": [
+              "Wilatampa ku fumbe. Lyabombele ku mupalamano, e co icapusana ni ibala, te saka iyo.",
+              "Lolesha icishibilo: imishila taikula bwino, te kukula kwa pa mulu fye iyo. Ici cilanga ukuti cimo cilelwisha imishila.",
+              "Aluminium toxicity panshi ya pH 5.0 ilonaula imitwe ya mishila kabili ileta imishila iyanono, iyakala pa mulu, filya fine.",
+              "Pima pH ya mabala yonse yabili, ubuule umushili pa ncende ishingi mwi bala limo na limo, ukufika panshi umo imishila ikala.",
+              "Nga ibala ilibipile lyaba acid sana, ubulwele bwaumfwana: aluminium ilonaula imishila, kabili phosphorus naikatwa, tayakupokelela.",
+              "Tuma icipimo ku kupima konse - pH pamo na buffering - pa kufwaya ubwingi bwa laimu ubwa lilya bala.",
+              "Pekanya ukuwamya: bika laimu no kusakanya ilyo cishilaba icakulimwa cikonkelepo, elyo ubwelele ku kubika ifumbe kwa cine.",
+              "Landa apabuuta ifyo ushilashininkisha: ici ni matontonkanyo ayaumfwana ne fishibilo, kabili ukupima kwa mushili fye e kushininkisha. Amenshi ayengi, umushili uukomele, nematodes na herbicide iyashelepo na fyene fingaleta imishila iyabipile, e co filingile ukufumishiwapo."
+            ]
+          },
+          "recap": [
+            "pH ni logarithmic - icipimo cimo ni ukwaluka kwa miku ikumi mu acid.",
+            "Ifyakulimwa ifingi filacita bwino pakati pa pH 5.5 na 7.0.",
+            "Acid iingi ilaikata phosphorus na iron na aluminium, e co ifumbe ilyabikwa talipeela cimo.",
+            "Panshi ya pH 5.0, aluminium iyasungulushiwa ilonaula imitwe ya mishila no kulesha imishila ukukula.",
+            "Laimu ilabomba panono, ubwingi bushintilila pa buffering capacity ya mushili, kabili ukubika iingi sana kuleta ubulwele bumbi - e co pima ibala ubutanshi."
+          ],
+          "misconceptions": {
+            "m1": {
+              "signal": "Ukubelenga pH kwati ni scale iyalungana, e co 4.5 na 6.5 filemoneka kwati tafyapusana sana.",
+              "repair": "Icipimo cimo cimo ni imiku ikumi. Ifipimo fibili ni ukupusana kwa miku umwanda mu acid, te kupusana kwa fibili iyo. Nga ulepalanya amabala yabili, fumyapo pH imo ku imbi elyo upende amakumi ayo - cilaaluka ifyo ubwafya bumoneka, kabili e fyo cifwile ukuba."
+            },
+            "m2": {
+              "signal": "Ukwasuka ku fumbe ilyashilepeela ifyo bafwaya ku kulanda ati babike ifumbe iingi.",
+              "repair": "Pusanya amepusho yabili: bushe icakulya cilipo, kabili bushe icimenwa kuti cafika kuli ico? Imishili iya acid ilingi ikwete phosphorus iingi iyaikatwa, tayakupokelela. Ukubikako ifingi ifya cakulya umushili uulesenda kulonaula indalama sha mulimi. Wamya ubwafya bwa kupokelela, elyo ubike ifumbe."
+            },
+            "m3": {
+              "signal": "Ukumona pH fye kwati ekwana ukupeela ubwingi bwa laimu.",
+              "repair": "pH ilanga acid iyalipo nomba; tailanda cimo pa fyo umushili ukakaana ukwaluka. Ico ni buffering capacity, kabili ilakulilako na clay na organic matter. Amabala yabili aya pH imo yene yengafwaya laimu iyapusanako sana, e mulandu ubwingi bufuma ku kupima kwa laboratory kwa lilya bala, te ku namba ya pH fye iyo."
+            }
+          }
+        }
+      },
+      "provenance": {
+        "translator": "Claude (MACHINE DRAFT - not a human translation)",
+        "translated_on": "2026-08-28",
+        "reviewed_by": null,
+        "reviewed_on": null,
+        "method": "machine-draft",
+        "notes": ""
+      }
+    },
+    "loz": {
+      "lessons": {
+        "l1": {
+          "title": "pH ya mubu ni libaka manyalala ha a sa sebezi ka linako ze ñwi",
+          "hook": "Mulimi u lekelela manyalala (basal fertiliser) mwa masimu a mabeli ka lizazi le liñwi, ku zwa mwa mukotana o muñwi. Simu ye ñwi i beya hande. Ye ñwi ha i ezi se siñwi, mi mbonyi ki ye nyinyani ni mihoko ye maswe. Manyalala ne a si na mulatu. Mubu ki ona o ne u hana ku fa lico kwa limela - mi ku lika ha ku ñwi ne ku ka bonisa taba yeo.",
+          "segments": {
+            "s1": {
+              "heading": "Se pH i lika luli",
+              "body": "pH ya mubu i lika mo mubu u bulukezi acid kamba alkaline, fa scale ye zwa fa 0 ku isa fa 14. Supa (7) ki fahali, mwatasa a supa ki acid, fahalimu a supa ki alkaline.\n\nScale ye ki logarithmic, mi ki fona batu ba bañata fo ba fosezanga. Sikuka si li siñwi ki cinceho ya likweli ze lishumi. Mubu o li fa pH 5 ki acid hañata ka lishumi ku fita o li fa pH 6, mi hañata ka mwanda ku fita o li fa pH 7. Kacwalo ku shetumuka ku zwa fa 6.0 ku isa fa 5.0 haki cinceho ye nyinyani - ki cinceho ye tuna mwa chemistry mo mihoko i inzi.\n\nLimela ze ñata za mwa masimu li beya hande mwahalaa pH 5.5 ni 7.0. Mwa sikuka seo lico ze tuna li zwelapili ku fumaneha mi bupilo bwa mubu bu sebeza hande.",
+              "recap": "pH ki logarithmic: sikuka si li siñwi ki cinceho ya likweli ze lishumi mwa acid."
+            },
+            "s2": {
+              "heading": "Libaka acid ha i tokwisa limela ze lekezwi manyalala",
+              "body": "Lico li tokwa ku shengunuka mwa mezi pili muhoko u si ka li nga kale. Kuli li shengunuke kamba kutokwa, ku itingile hahulu fa pH.\n\nPhosphorus ki mutala o utwahala hande. Mwa mibu ye acid hahulu, phosphate i swalisana ni iron ni aluminium oxides mi i swalwa - i teñi mwa mubu, kono ha i fumanehi kwa limela. Mwa mibu ye alkaline hahulu, i swalwa ki calcium. Phosphorus i fumaneha hahulu fahali a sikuka, ibato ba pH 6 ku isa 7. Ki lona libaka manyalala a phosphate a kona ku lekelelwa ka nzila ye lukile kono a sa fi se siñwi mwa simu ye acid: mubu wa i nga pili limela li si ka fita kwateñi.\n\nMwatasa a pH 5.0 ku taha butata bo buñwi. Aluminium ya shengunuka mi ki sifanu kwa mihoko. I sinya litoho za mihoko, kacwalo mihoko ha i huli, i siyala fahalimu. Mihoko ye nyinyani ha i koni ku fita kwa mezi mwa nako ya linanga kamba kwa lico ze mwatasa, kacwalo butata bwa ekezeha.\n\nMibu ye acid hape i tokwa calcium ni magnesium, mi tunyunywani to tu fa nitrogen mwa nodules za legumes ha tu sebezi hande.",
+              "recap": "Acid i swala phosphorus mi i lukulula aluminium ye li sifanu; ze peli kaufela li tokwisa limela nihaike manyalala a li teñi."
+            },
+            "s3": {
+              "heading": "Ku lukisa acid, ni libaka ha u lika pili",
+              "body": "Acid i lukiswa ka ku lekelela laimu (agricultural lime), ye li limestone ye sinyauzwi. Calcitic lime i fa sihulu calcium; dolomitic lime i fa calcium ni magnesium, mi ki yona ye nde ha magnesium ni yona i li ye nyinyani.\n\nLika ze talu za butokwa.\n\nLaimu ha i sebezi kapili. I tokwa ku shengunuka ni ku sebeza, kacwalo i lekelelwa ni ku kopanyiwa ni mubu pili ku si ka calwa kale - hañata mwa nako ya linanga ye felile - isiñi ku kaswa fa ku cala ni ku libelela kuli i ka sebeza kapili.\n\nBuñata bu itingile fa mubu, isiñi fa limela. Masimu a mabeli a pH i liñwi a kona ku tokwa laimu ye shutana hahulu, kakuli mubu wa clay o na ni organic matter ye ñata wa hana cinceho ya pH ku fita wa mushabati. Ku hana koo ku bizwa buffering capacity, mi ki lona libaka buñata bwa laimu bu zwa kwa ku lika kwa laboratory, isiñi fa palo ya pH fela.\n\nKu lekelela laimu ye ñata hahulu ki mafosisa a niti, isiñi a mihupulo fela. Ku nanulela pH kwahalimu hahulu ku swala phosphorus hape ni calcium mi ku tisa butokwi bwa zinc, iron ni manganese. Ze ñata haki ze nde.\n\nKacwalo nzila ki ye: lika mubu, u fumane buñata bwa laimu bwa simu yeo, u lekelele ni ku kopanya kapili, cwale u lekelele manyalala."
+            }
+          },
+          "items": {
+            "l1s1c": {
+              "prompt": "Mubu o li fa pH 4.5 ha u bapanywa ni mubu o li fa pH 6.5, ki:",
+              "options": [
+                "Acid hañata ka mwanda ku fita",
+                "Acid hañata ka bubeli ku fita",
+                "Acid hañata ka mashumi a mabeli ku fita",
+                "Acid ye nyinyani ku fita"
+              ]
+            },
+            "l1s2c": {
+              "prompt": "Mulimi u lekelela manyalala a phosphate ka buñata bo bu lukile mwa simu ye acid hahulu kono ha boni ku hula. Ki taba mañi ye kona ku talusa?",
+              "options": [
+                "Phosphate i swalilwe ki iron ni aluminium mi ha i fumanehi kwa limela.",
+                "Manyalala neli a maswe.",
+                "Mbonyi ha i tokwi phosphate.",
+                "Buñata bo ne bu lekelezwi ne bu tuna hahulu."
+              ]
+            },
+            "l1s3c": {
+              "prompt": "Masimu a mabeli kaufela a likilwe fa pH 4.8. Ki kabakalañi ha a kona ku tokwa laimu ye shutana?",
+              "options": [
+                "A shutana mwa buffering capacity, ye itingile fa clay ni organic matter.",
+                "Ha ku konahali - pH ye swana kamita i tokwa laimu ye swana.",
+                "Kakuli ku ka calwa limela ze shutana teñi.",
+                "Kakuli se siñwi ne si lekelezwi manyalala cwanoñu fa."
+              ]
+            },
+            "l1p1": {
+              "prompt": "Ki sikuka mañi sa pH se si swanela limela ze ñata za mwa masimu?",
+              "options": [
+                "Ibato ba 5.5 ku isa 7.0",
+                "Ibato ba 3.0 ku isa 4.5",
+                "Ibato ba 8.5 ku isa 10.0",
+                "7.0 fela, ha ku na se siñwi"
+              ],
+              "hint": "Acid ye nyinyani ku isa fahali."
+            },
+            "l1p2": {
+              "prompt": "Mwatasa a pH 5.0, ki nto mañi ye shengunuka mi ye sinya mihoko?",
+              "options": [
+                "Aluminium",
+                "Nitrogen",
+                "Potassium",
+                "Carbon"
+              ],
+              "hint": "Haki sico sa limela ni hanyinyani - ki sona sisupo."
+            },
+            "l1p3": {
+              "prompt": "Ki libaka mañi le lituna la ku lekelela laimu pili ku si ka calwa ku fita fa ku cala?",
+              "options": [
+                "Laimu i sebeza ka bunya mi i tokwa nako ni ku kopanywa kuli i cince pH ya mubu.",
+                "Laimu ne i ka cisa peu haiba i lekelelwa fa ku cala.",
+                "Laimu ki ye shwau mwa nako ya linanga.",
+                "Laimu i kukiwa ki mezi haiba pula i nela kapili hamulaho."
+              ],
+              "hint": "Nahana ka za bubebe bwa chemistry, isiñi ka za ku tisa."
+            },
+            "l1p4": {
+              "prompt": "Nduna wa balimi u akaleza kuli ba ekeze laimu hañata ka bubeli kuli ba sileleze. Fa mabaka a mabeli a supeza kuli keleto yeo ki ye maswe.",
+              "answer": [
+                "laimu ye ñata",
+                "phosphorus",
+                "zinc",
+                "masheleñi"
+              ]
+            },
+            "l1a1": {
+              "prompt": "Mulimi ya na ni masheleñi a manyinyani u buza haiba a lekele manyalala a mañata kamba laimu, mwa simu ye likilwe fa pH 4.6. U mu eleza cwañi, mi ki kabakalañi?",
+              "answer": [
+                "laimu",
+                "phosphorus",
+                "ku fumaneha",
+                "ku lika"
+              ]
+            }
+          },
+          "worked_example": {
+            "prompt": "Mulimi u bulela kuli mbonyi ha i huli mi mihoko ki ye maswe mwa simu ye ñwi, niha na lekelezi manyalala a swana a ne a sebelize mwa simu ya bukaufi. Ne u ka lika cwañi ku fumana butata bo?",
+            "steps": [
+              "U si ke wa kala ka manyalala. A sebelize kwa simu ya bukaufi, kacwalo se si shutana ki simu, isiñi mukotana.",
+              "Bona sisupo: mihoko ha i huli hande, isiñi fela ku hula kwa fahalimu. Seo si supeza kwa nto ye lwanisa mihoko ka ku nonga.",
+              "Aluminium toxicity mwatasa a pH 5.0 i sinya litoho za mihoko mi i tisa mihoko ye nyinyani, ye siyala fahalimu, sina fela seo.",
+              "Lika pH ya masimu kaufela a mabeli, u nge mubu fa libaka ze ñata mwa simu ni simu, ku isa mwatasa mo mihoko i inzi.",
+              "Haiba simu ye maswe ki ye acid hahulu, katulo ya utwahala: aluminium i sinya mihoko, mi phosphorus i swalilwe, ha i fumanehi.",
+              "Luma sisupo kwa ku lika kaufela - pH hamoho ni buffering - kuli u fumane buñata bwa laimu bwa simu yeo.",
+              "Lukisa mulelo: lekelela laimu ni ku i kopanya pili limela ze tatama li si ka calwa, cwale u kutele kwa ku lekelela manyalala ka mukwa o munde.",
+              "Bulela patalaza se u si ka kolwisisa: ye ki mihupulo ye utwahala ni lisupo, mi fela ku lika mubu ku ka kolwisisa. Mezi a mañata, mubu o tiile, nematodes ni herbicide ye siyezi ni zona za kona ku tisa mihoko ye maswe, kacwalo li lukela ku zwiswa."
+            ]
+          },
+          "recap": [
+            "pH ki logarithmic - sikuka si li siñwi ki cinceho ya likweli ze lishumi mwa acid.",
+            "Limela ze ñata li beya hande mwahalaa pH 5.5 ni 7.0.",
+            "Acid ye tuna i swala phosphorus ni iron ni aluminium, kacwalo manyalala a lekelezwi ha a fi se siñwi.",
+            "Mwatasa a pH 5.0, aluminium ye shengunuzwi i sinya litoho za mihoko mi i palelwisa mihoko ku hula.",
+            "Laimu i sebeza ka bunya, buñata bu itingile fa buffering capacity ya mubu, mi ku lekelela ye ñata hahulu ku tisa butokwi bo buñwi - kacwalo lika simu pili."
+          ],
+          "misconceptions": {
+            "m1": {
+              "signal": "Ku bala pH inge scale ye lukile, kacwalo 4.5 ni 6.5 li bonahala inge ha li shutani hahulu.",
+              "repair": "Sikuka si li siñwi ki likweli ze lishumi. Likuka ze peli ki ku shutana ka mwanda mwa acid, isiñi ku shutana ka bubeli. Ha u bapanya masimu a mabeli, zwisa pH ye ñwi kwa ye ñwi cwale u bale mashumi ao - ku cinca mo butata bu bonahalela, mi ki mo bu swanela ku bonahala."
+            },
+            "m2": {
+              "signal": "Ku alaba kwa manyalala a sa fi ze ba libelela ka ku bulela kuli ba ekeze manyalala.",
+              "repair": "Kauhanya lipuzo ze peli: kana sico si teñi, mi kana simela si kona ku si fita? Mibu ye acid hañata i na ni phosphorus ye ñata ye swalilwe, ye sa fumanehi. Ku ekeza sico se mubu u nze u si nga ku sinya masheleñi a mulimi. Lukisa butata bwa ku fumaneha, cwale u lekelele manyalala."
+            },
+            "m3": {
+              "signal": "Ku nga palo ya pH inge i likani ku toma buñata bwa laimu.",
+              "repair": "pH i bonisa acid ye li teñi cwale; ha i buleli se siñwi ka za mo mubu u ka hanela cinceho. Seo ki buffering capacity, mi sa ekezeha ni clay ni organic matter. Masimu a mabeli a pH ye swana a kona ku tokwa laimu ye shutana hahulu, ki lona libaka buñata bu zwa kwa katulo ya laboratory ya simu yeo, isiñi kwa palo ya pH fela."
+            }
+          }
+        }
+      },
+      "provenance": {
+        "translator": "Claude (MACHINE DRAFT - not a human translation)",
+        "translated_on": "2026-08-28",
+        "reviewed_by": null,
+        "reviewed_on": null,
+        "method": "machine-draft",
+        "notes": "FULL DRAFT, PRODUCED BY A LANGUAGE MODEL, REVIEWED BY NOBODY. Expect errors in grammar, noun-class concord and agronomic terminology. Technical terms are kept in English on purpose - pH, phosphate, phosphorus, aluminium, calcium, magnesium, zinc, iron, manganese, nitrogen, buffering capacity, organic matter, clay, legumes, nodules, toxicity, nematodes, herbicide - because UNZA teaches and examines agriculture in English and a student must recognise these words in a lecture and an exam paper. 'Laimu' is kept as the established loan for agricultural lime. NOTE FOR LOZI SPECIFICALLY: there is no text-to-speech model for Silozi anywhere, so this content can only ever be read on screen, never aloud. Recorded audio in the pack is the only route to spoken Lozi. See glossary-loz.json. DO NOT PUT THIS IN FRONT OF A STUDENT until a Lozi-speaking agronomist has been through it."
+      }
+    }
+  },
+  "integrity": {
+    "algorithm": "sha256",
+    "sha256": "4ab1cb15af693870ac9ba5b961cc7863abf6e0f5b9ce6aba0ac53670d2bc6f52"
+  }
+}

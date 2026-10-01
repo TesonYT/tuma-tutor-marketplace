@@ -1,0 +1,23 @@
+{
+  "schema": "ethel.source/1",
+  "id": "unza-land-management-ii-lecture-notes",
+  "title": "UNZA Land Management II - lecture notes",
+  "programme": "unza-beng-civil",
+  "course_code": "Land Management II",
+  "year": 3,
+  "note": "Scanned notes from the department, 2026.",
+  "uploaded_by": "20260500",
+  "uploaded_on": "2026-08-29",
+  "reviewed_by": null,
+  "files": [
+    {
+      "name": "land-mgmt-notes.md",
+      "original_name": "land-mgmt-notes.md",
+      "bytes": 564,
+      "format": "markdown",
+      "sections": 3,
+      "words": 73,
+      "added_on": "2026-08-29"
+    }
+  ]
+}

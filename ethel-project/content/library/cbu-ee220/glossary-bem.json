@@ -1,0 +1,194 @@
+{
+  "_instructions": [
+    "Decide each term ONCE, before translating cbu-ee220.",
+    "Set keep_english to true for terms of art the student will meet in English in lectures and exams - then leave the \"bem\" field blank.",
+    "Set keep_english to false and fill in \"bem\" for ordinary words that should be translated.",
+    "If you are unsure, keep_english true is the safer default: a student who knows the English term can follow the lecture, and one who only knows an invented word cannot.",
+    "Hand this back with the translation file; it becomes the pack's provenance.notes so the next translator is consistent with you."
+  ],
+  "pack": "cbu-ee220",
+  "course": "EE 220 Electrical & Electronics Principles I",
+  "language": "bem",
+  "terms": [
+    {
+      "term": "current",
+      "occurrences": 34,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "voltage",
+      "occurrences": 26,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "resistance",
+      "occurrences": 17,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "resistor",
+      "occurrences": 14,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "parallel",
+      "occurrences": 12,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "series",
+      "occurrences": 10,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "law",
+      "occurrences": 9,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "branch",
+      "occurrences": 8,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "loop",
+      "occurrences": 8,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "component",
+      "occurrences": 7,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "node",
+      "occurrences": 7,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "direction",
+      "occurrences": 7,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "circuit",
+      "occurrences": 6,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "charge",
+      "occurrences": 6,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "resistors",
+      "occurrences": 6,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "add",
+      "occurrences": 6,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "sum",
+      "occurrences": 6,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "total",
+      "occurrences": 6,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "ohm's",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "measured",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "flows",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "components",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "know",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "energy",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "potential",
+      "occurrences": 5,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "use",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "fixed",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "back",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "ohmic",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    },
+    {
+      "term": "power",
+      "occurrences": 4,
+      "bem": "",
+      "keep_english": null
+    }
+  ]
+}
