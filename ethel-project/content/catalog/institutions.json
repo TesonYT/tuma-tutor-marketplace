@@ -1,0 +1,47 @@
+{
+  "schema": "ethel.institutions/1",
+  "retrieved_on": "2026-08-26",
+  "note": "Every field with \"verified\": true was read off the institution's own website on retrieved_on. Anything the institution does not publish is left empty and flagged - the tutor tells the student it does not know rather than inventing a syllabus.",
+  "institutions": [
+    {
+      "id": "unza",
+      "name": "The University of Zambia",
+      "short": "UNZA",
+      "city": "Lusaka",
+      "country": "ZM",
+      "website": "https://www.unza.zm/",
+      "verified": true,
+      "structure_notes": [
+        "Engineering, Agricultural Sciences and Natural Sciences students spend Year 1 in the School of Natural Sciences taking foundational Mathematics, Physics, Chemistry and Biology, then enter their specialist School in Year 2.",
+        "Law students spend Year 1 in the School of Humanities and Social Sciences, then apply for entry into the School of Law in Year 2.",
+        "Engineering and Agricultural Sciences degrees run 5 years; the LLB runs 4 years."
+      ]
+    },
+    {
+      "id": "cbu",
+      "name": "The Copperbelt University",
+      "short": "CBU",
+      "city": "Kitwe",
+      "country": "ZM",
+      "website": "https://www.cbu.ac.zm/",
+      "verified": true,
+      "structure_notes": [
+        "Engineering programmes publish course codes from Year 2 onward (Year 1 is the common foundation year).",
+        "The School of Information and Communication Technology (SICT) was approved in March 2018; its BSc in Computer Science has run since the 1996 academic year and follows ACM curriculum recommendations."
+      ]
+    },
+    {
+      "id": "knu",
+      "name": "Kwame Nkrumah University",
+      "short": "KNU",
+      "city": "Kabwe",
+      "country": "ZM",
+      "website": "https://www.nkrumah.edu.zm/",
+      "verified": true,
+      "structure_notes": [
+        "Four schools: Business Studies, Humanities and Social Sciences, Natural Sciences, and Education.",
+        "The university publishes its programme list but not its course-by-course structures; the Bachelor of Business Administration page reads \"Details Coming Soon\" as of 2026-08-26."
+      ]
+    }
+  ]
+}
