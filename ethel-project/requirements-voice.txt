@@ -1,0 +1,30 @@
+# Ethel - OPTIONAL voice dependencies.
+#
+# The core app installs nothing. This file exists only for setup-voice.bat,
+# which builds .venv/ so Piper can speak. Delete .venv and Ethel still runs;
+# she just stays silent and says so on the System check page.
+#
+# Pinned rather than floating: this is the version verified working on
+# Python 3.14 with the shipped en_GB voices, and a machine that gets one
+# offline software delivery a year should not have its TTS change under it.
+piper-tts==1.7.0
+
+# OPTIONAL EXTRA - only for Meta MMS voices (Bemba, and other languages Piper
+# does not cover). Adds about 900 MB to the venv, and MMS synthesis runs about
+# nine times slower than Piper, so install it only if you need those languages:
+#   .venv\Scripts\python.exe -m pip install --index-url https://download.pytorch.org/whl/cpu torch
+#   .venv\Scripts\python.exe -m pip install transformers
+# The CPU index matters: the default wheel pulls CUDA packages that are useless
+# on a machine with Intel graphics and cost gigabytes.
+# Verified on Python 3.14: torch==2.13.0+cpu, transformers==5.16.1
+
+# DO NOT install pyctcdecode on Python 3.14.
+# Some Zambezi Voice recognition checkpoints ship a 5-gram language model, and
+# transformers wants pyctcdecode + kenlm to use it. pyctcdecode pins numpy<2,
+# pip silently downgrades numpy 2.5 -> 1.26.4, and numpy 1.26 predates Python
+# 3.14: finfo(longdouble) then raises
+#     OverflowError: cannot convert longdouble infinity to integer
+# which breaks torch, transformers and the Bemba voice - not just the decoder.
+# kenlm does not build on Windows anyway, so the language model was never going
+# to work. ethel/asr_worker.py falls back to greedy decoding and reports
+# `wav2vec2` instead of `wav2vec2+lm`, which is the right trade.

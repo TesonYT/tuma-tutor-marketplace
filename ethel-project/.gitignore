@@ -1,0 +1,15 @@
+data/
+__pycache__/
+*.pyc
+
+# The optional voice virtualenv. Rebuilt by setup-voice.bat from
+# requirements-voice.txt; never committed.
+.venv/
+
+# Piper voice files are ~63 MB each - over GitHub's file limit, and they are
+# distributed the same way course packs are: copied onto the machine, not
+# cloned. Keep them out of version control but ship them on the USB stick.
+models/piper/*.onnx
+
+# Built distribution bundles.
+dist/
