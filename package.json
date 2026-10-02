@@ -8,13 +8,15 @@
     "node": ">=18"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "db:init": "node scripts/db-init.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "express": "^4.19.2",
     "express-session": "^1.19.0",
     "multer": "^2.2.0",
+    "pg": "^8.23.1",
     "qrcode": "^1.5.4"
   }
 }

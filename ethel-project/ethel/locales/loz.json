@@ -1,0 +1,64 @@
+{
+  "_meta": {
+    "status": "draft",
+    "language": "Silozi",
+    "reviewed_by": null,
+    "needs_native_review": true,
+    "note": "Interface strings only. Short, everyday words are filled in; long explanatory sentences are deliberately left out and fall back to English, because a wrong sentence in a student's own language is worse than a right one in English. Lesson content is NOT translated here - that lives in the course packs, via 'packtool translate-export'.",
+    "how_to_complete": "Copy a key from en.json, translate the value, save. Nothing else needs changing; the tutor picks it up on restart. Any key left out simply shows English.",
+    "review_these_first": [
+      "enrol.institution", "enrol.year", "plan.title", "plan.in_progress",
+      "install.missing", "install.done", "app.tagline", "ask.title"
+    ],
+    "reviewer_notes": "The keys listed in review_these_first are the ones I am least sure of - abstract or administrative words rather than everyday ones. Check those before anything else. Silozi has no text-to-speech voice anywhere, so nothing here is ever read aloud; the interface disables the read-aloud button in this language rather than using an English voice."
+  },
+  "strings": {
+    "app.tagline": "Muluti wa hao ya sa itusisi Intaneti",
+    "app.offline_badge": "Ha ku na Intaneti",
+
+    "nav.learn": "Kuituta",
+    "nav.ask": "Buza",
+    "nav.courses": "Lituto za ka",
+    "nav.signout": "Zwa",
+
+    "login.title": "Ki mañi ya ituta?",
+    "login.existing": "Zwelapili",
+    "login.new": "Ni munca fa",
+    "login.name": "Libizo la hao",
+    "login.id": "Nombolo ya muituti",
+    "login.pin": "PIN",
+    "login.start": "Kalisa",
+
+    "enrol.field": "U ituta nto mañi?",
+    "enrol.year": "Silimo sa tuto",
+
+    "install.done": "Ku felile",
+
+    "placement.title": "Pili ha lu si ka kalisa",
+    "placement.begin": "Kalisa",
+    "placement.dont_know": "Ha ni zibi",
+    "placement.finish": "Feza",
+
+    "lesson.next": "Zwelapili",
+    "lesson.submit": "Alaba",
+    "lesson.correct": "Ku lukile",
+    "lesson.incorrect": "Ha ku si ka luka",
+    "lesson.speak": "Ni balele se",
+
+    "ask.placeholder": "Ñola puzo ya hao",
+    "ask.send": "Buza",
+
+    "plan.in_progress": "I sweli ku ezahala",
+    "plan.not_started": "Ha i si ka kalisa",
+    "plan.review": "Kuta hape",
+
+    "voice.male": "Linzwi la munna",
+    "voice.female": "Linzwi la musali",
+    "voice.off": "Ha ku na linzwi",
+
+    "common.yes": "Eni",
+    "common.no": "Batili",
+    "common.back": "Kutela",
+    "common.cancel": "Tuhela"
+  }
+}

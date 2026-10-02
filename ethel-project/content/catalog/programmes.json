@@ -1,0 +1,377 @@
+{
+  "schema": "ethel.programmes/1",
+  "retrieved_on": "2026-08-26",
+  "fields": [
+    {"id": "law", "name": "Law"},
+    {"id": "business_administration", "name": "Business Administration"},
+    {"id": "agriculture", "name": "Agriculture"},
+    {"id": "civil_engineering", "name": "Civil Engineering"},
+    {"id": "computer_science", "name": "Computer Science"},
+    {"id": "software_engineering", "name": "Software Engineering"},
+    {"id": "cybersecurity", "name": "Cybersecurity"},
+    {"id": "electrical_engineering", "name": "Electrical Engineering"}
+  ],
+  "coverage_legend": {
+    "full": "Year-by-year course list taken from the institution's published programme page.",
+    "partial": "Some years published, others not. The missing years are named explicitly.",
+    "none": "The institution confirms the programme exists but does not publish the course structure online. The tutor says so and refuses to guess."
+  },
+  "programmes": [
+    {
+      "id": "unza-llb",
+      "institution": "unza",
+      "field": "law",
+      "name": "Bachelor of Laws (LLB)",
+      "duration_years": 4,
+      "verified": true,
+      "coverage": "partial",
+      "source_url": "https://www.unza.zm/undergraduate/school-of-law/private-law/bachelor-of-law",
+      "entry_requirements": "Criterion A: five O-level passes including English at credit or better, plus acceptance into and completion of first year in the School of Humanities. Criterion B (direct entry): full Grade 12 certificate with five O-level credits plus three Cambridge A-level passes including English, or a first degree, or an equivalent professional qualification.",
+      "notes": [
+        "Year 1 is taken in the School of Humanities and Social Sciences. UNZA does not publish that first-year course list on the LLB page, so it is left empty here."
+      ],
+      "years": {
+        "1": [],
+        "2": [
+          {"code": "LPU2910", "title": "Legal Process & Legal Writing", "status": "compulsory"},
+          {"code": "LPR2920", "title": "Law of Contract", "status": "compulsory"},
+          {"code": "LPR2930", "title": "Law of Torts", "status": "compulsory"},
+          {"code": "LPU2940", "title": "Criminal Law", "status": "compulsory"},
+          {"code": "LPU2951", "title": "Constitutional Law", "status": "compulsory", "load": "half course, first half"},
+          {"code": "LPU2962", "title": "Administrative Law", "status": "compulsory", "load": "half course, second half"}
+        ],
+        "3": [
+          {"code": "LPU3911", "title": "Law of Evidence", "status": "compulsory", "load": "half course, first half"},
+          {"code": "LPR3920", "title": "Land Law and Property Relations", "status": "compulsory"},
+          {"code": "LPR3930", "title": "Commercial Law", "status": "compulsory"},
+          {"code": "LPR3945", "title": "Family Law and Succession", "status": "compulsory", "load": "half course"},
+          {"code": "LPR3952", "title": "Civil and Criminal Procedure", "status": "compulsory", "load": "half course, second half"},
+          {"code": "LPR3964", "title": "Moot Court", "status": "compulsory", "load": "project"},
+          {"code": "LPU3975", "title": "Human Rights", "status": "compulsory", "load": "half course"},
+          {"code": "LPU3085", "title": "Gender Law", "status": "elective", "track": "public law", "load": "half course"},
+          {"code": "LPU3095", "title": "Media Law", "status": "elective", "track": "public law", "load": "half course"},
+          {"code": "LPU3105", "title": "Customary Law", "status": "elective", "track": "public law", "load": "half course"},
+          {"code": "LPR3115", "title": "Employment Law", "status": "elective", "track": "private law", "load": "half course"},
+          {"code": "LPR3125", "title": "Medical Law", "status": "elective", "track": "private law", "load": "half course"},
+          {"code": "LPR3135", "title": "Competition Law", "status": "elective", "track": "private law", "load": "half course"}
+        ],
+        "4": [
+          {"code": "LPU4914", "title": "Directed Research", "status": "compulsory", "load": "project"},
+          {"code": "LPU4920", "title": "Jurisprudence", "status": "compulsory"},
+          {"code": "LPR4930", "title": "Business and Corporate Law", "status": "compulsory"},
+          {"code": "LPU4041", "title": "International Law", "status": "elective", "track": "public law", "load": "half course, first half"},
+          {"code": "LPU4052", "title": "Law of International Institutions", "status": "elective", "track": "public law", "load": "half course, second half"},
+          {"code": "LPU4061", "title": "International Trade Law", "status": "elective", "track": "public law", "load": "half course, first half"},
+          {"code": "LPU4072", "title": "Investment Law", "status": "elective", "track": "public law", "load": "half course, second half"},
+          {"code": "LPU4085", "title": "Environmental Law", "status": "elective", "track": "public law", "load": "half course"},
+          {"code": "LPU4092", "title": "International and Humanitarian Law", "status": "elective", "track": "public law", "load": "half course, second half"},
+          {"code": "LPU4102", "title": "Refugee Law", "status": "elective", "track": "public law", "load": "half course, second half"},
+          {"code": "LPU4114", "title": "Clinical Legal Education", "status": "elective", "track": "public law", "load": "project"},
+          {"code": "LPU4125", "title": "Taxation", "status": "elective", "track": "public law", "load": "half course"},
+          {"code": "LPU4135", "title": "Disability Law", "status": "elective", "track": "public law", "load": "half course"},
+          {"code": "LPR4131", "title": "Conflict of Laws", "status": "elective", "track": "private law", "load": "half course, first half"},
+          {"code": "LPR4155", "title": "Alternative Dispute Resolutions", "status": "elective", "track": "private law", "load": "half course"},
+          {"code": "LPR4165", "title": "Intellectual Property", "status": "elective", "track": "private law", "load": "half course"},
+          {"code": "LPR4175", "title": "International Commercial Arbitration", "status": "elective", "track": "private law", "load": "half course"},
+          {"code": "LPR4185", "title": "Mining Law", "status": "elective", "track": "private law", "load": "half course"}
+        ]
+      }
+    },
+    {
+      "id": "unza-beng-civil",
+      "institution": "unza",
+      "field": "civil_engineering",
+      "name": "Bachelor of Engineering (Civil and Environmental Engineering)",
+      "duration_years": 5,
+      "verified": true,
+      "coverage": "full",
+      "source_url": "https://www.unza.zm/undergraduate/school-of-engineering/civil-and-environmental-engineering/bachelor-of-engineering-civil-and-environmental-engineering",
+      "entry_requirements": "A-level route: at least three A passes (grade C) with a pass grade B in either Mathematics or Physics, plus credit or better in O-level Mathematics and an acceptable Science subject. Diploma route: credit or better in five O-levels including Mathematics, English and a science subject, a credit or better in a Technologist Diploma or higher in a relevant technical field, and one year of verified relevant work experience.",
+      "notes": [
+        "UNZA publishes course titles but not course codes for this programme.",
+        "Year 1 is taken in the School of Natural Sciences; Year 2 is General Engineering; specialisation begins in Year 3."
+      ],
+      "years": {
+        "1": [
+          {"title": "Mathematics Methods", "status": "compulsory", "host": "School of Natural Sciences"},
+          {"title": "Introduction to Physics", "status": "compulsory", "host": "School of Natural Sciences"},
+          {"title": "Cell Biology and Genetics", "status": "compulsory", "host": "School of Natural Sciences"},
+          {"title": "Introduction to Chemistry", "status": "compulsory", "host": "School of Natural Sciences"}
+        ],
+        "2": [
+          {"title": "Statistics and Introduction to Mechanics of Materials", "status": "compulsory"},
+          {"title": "Principles of Electrical and Electronic Engineering", "status": "compulsory"},
+          {"title": "Engineering Communication", "status": "compulsory"},
+          {"title": "Introduction to Information Technology", "status": "compulsory"},
+          {"title": "Engineering Workshop Technology", "status": "compulsory"},
+          {"title": "Engineering Mathematics I", "status": "compulsory"},
+          {"title": "Engineering Drawing I", "status": "compulsory"},
+          {"title": "Properties of Engineering Materials I", "status": "compulsory"}
+        ],
+        "3": [
+          {"title": "Civil Engineering Materials and Construction Practices", "status": "compulsory"},
+          {"title": "Mechanics of Materials", "status": "compulsory"},
+          {"title": "Engineering Geology", "status": "compulsory"},
+          {"title": "Land Management II", "status": "compulsory"},
+          {"title": "Fluid Mechanics", "status": "compulsory"},
+          {"title": "Engineering Mathematics II", "status": "compulsory"},
+          {"title": "Civil Engineering Drawing", "status": "compulsory"},
+          {"title": "Theory of Structures", "status": "compulsory"}
+        ],
+        "4": [
+          {"title": "Geotechnical Engineering", "status": "compulsory"},
+          {"title": "Design of Masonry & Timber Structures", "status": "compulsory"},
+          {"title": "Hydrology", "status": "compulsory"},
+          {"title": "Principles of Geomatics", "status": "compulsory"},
+          {"title": "Engineering Mathematics III", "status": "compulsory"},
+          {"title": "Highway Engineering", "status": "compulsory"},
+          {"title": "Environmental Engineering", "status": "compulsory"},
+          {"title": "Engineering, Management and Entrepreneurship", "status": "compulsory"},
+          {"title": "Industrial Training I", "status": "compulsory"}
+        ],
+        "5": [
+          {"title": "Design of Reinforced and Pre-stressed Concrete Structures", "status": "compulsory"},
+          {"title": "Water Resources Management and Hydraulic Structures", "status": "compulsory"},
+          {"title": "Construction Management", "status": "compulsory"},
+          {"title": "Design of Steel Structures", "status": "compulsory"},
+          {"title": "Project", "status": "compulsory"},
+          {"title": "Engineering, Management and Society", "status": "compulsory"},
+          {"title": "Industrial Training II", "status": "compulsory"},
+          {"title": "Transport Planning and Traffic Engineering", "status": "elective"},
+          {"title": "Contract Management", "status": "elective"},
+          {"title": "Structural Dynamics", "status": "elective"},
+          {"title": "Environmental Engineering II", "status": "elective"},
+          {"title": "Rural and Urban Planning", "status": "elective"},
+          {"title": "Bridge Engineering", "status": "elective"},
+          {"title": "Integrated Water Resources Management", "status": "elective"}
+        ]
+      }
+    },
+    {
+      "id": "unza-beng-eee",
+      "institution": "unza",
+      "field": "electrical_engineering",
+      "name": "Bachelor of Engineering (Electrical and Electronic Engineering)",
+      "duration_years": 5,
+      "verified": true,
+      "coverage": "full",
+      "source_url": "https://www.unza.zm/undergraduate/school-of-engineering/electrical-and-electronic-engineering/bachelor-of-engineering-electrical-and-electronic-engineering",
+      "entry_requirements": "A-level route: at least three A passes (grade C) with a pass grade B in either Mathematics or Physics, plus credit or better in O-level Mathematics and an acceptable Science subject. Diploma route: credit or better in five O-levels including Mathematics, English and a science subject, a Technologist Diploma or higher at credit or better in a relevant technical field, and at least one year of relevant work experience after graduating with the Diploma.",
+      "tracks": [
+        {"id": "emp", "name": "Electrical Machines and Power Engineering"},
+        {"id": "et", "name": "Electronic and Telecommunications Engineering"}
+      ],
+      "notes": [
+        "UNZA publishes course titles but not course codes for this programme.",
+        "Students are allocated their track after Year 2, based on performance. Tracks diverge from Year 4."
+      ],
+      "years": {
+        "1": [
+          {"title": "Mathematical Methods", "status": "compulsory", "host": "School of Natural Sciences"},
+          {"title": "Introduction to Physics", "status": "compulsory", "host": "School of Natural Sciences"},
+          {"title": "Cell Biology and Genetics", "status": "compulsory", "host": "School of Natural Sciences"},
+          {"title": "Introduction to Chemistry", "status": "compulsory", "host": "School of Natural Sciences"}
+        ],
+        "2": [
+          {"title": "Statistics and Introduction to Mechanics of Materials", "status": "compulsory"},
+          {"title": "Principles of Electrical and Electronic Engineering", "status": "compulsory"},
+          {"title": "Engineering Communication", "status": "compulsory"},
+          {"title": "Introduction to Information Technology", "status": "compulsory"},
+          {"title": "Engineering Workshop Technology", "status": "compulsory"},
+          {"title": "Engineering Mathematics I", "status": "compulsory"},
+          {"title": "Engineering Drawing I", "status": "compulsory"},
+          {"title": "Properties of Engineering Materials I", "status": "compulsory"}
+        ],
+        "3": [
+          {"title": "Electrical Engineering Practice", "status": "compulsory"},
+          {"title": "Signals and Systems", "status": "compulsory"},
+          {"title": "Digital Electronics", "status": "compulsory"},
+          {"title": "Computer Engineering", "status": "compulsory"},
+          {"title": "Electro Mechanics and Machines", "status": "compulsory"},
+          {"title": "Electronic Engineering", "status": "compulsory"},
+          {"title": "Fluid Mechanics & Thermodynamics", "status": "compulsory"},
+          {"title": "Engineering Mathematics II", "status": "compulsory"}
+        ],
+        "4": [
+          {"title": "Engineering Electromagnetics", "status": "compulsory"},
+          {"title": "Digital Signal Processing", "status": "compulsory"},
+          {"title": "Electrical Instrumentation", "status": "compulsory"},
+          {"title": "Microcontroller Technology and Embedded Systems", "status": "compulsory"},
+          {"title": "Engineering Management & Entrepreneurship", "status": "compulsory"},
+          {"title": "Engineering Mathematics III", "status": "compulsory"},
+          {"title": "Industrial Training I", "status": "compulsory"},
+          {"title": "Electrical Machines", "status": "compulsory", "track": "emp"},
+          {"title": "Electrical Power Systems I", "status": "compulsory", "track": "emp"},
+          {"title": "Electronic Engineering I", "status": "compulsory", "track": "emp"},
+          {"title": "Electronic Engineering III", "status": "compulsory", "track": "et"},
+          {"title": "Communications Principles", "status": "compulsory", "track": "et"}
+        ],
+        "5": [
+          {"title": "Project", "status": "compulsory"},
+          {"title": "Dynamic Systems and Control Engineering", "status": "compulsory"},
+          {"title": "Engineering Management & Society", "status": "compulsory"},
+          {"title": "Industrial Training II", "status": "compulsory"},
+          {"title": "Advanced Electrical Machines", "status": "compulsory", "track": "emp"},
+          {"title": "Power Electronics", "status": "compulsory", "track": "emp"},
+          {"title": "Electrical Power Systems II", "status": "compulsory", "track": "emp"},
+          {"title": "Communications Networks", "status": "compulsory", "track": "et"},
+          {"title": "Communication Theory", "status": "compulsory", "track": "et"},
+          {"title": "Communication Systems", "status": "compulsory", "track": "et"}
+        ]
+      }
+    },
+    {
+      "id": "unza-bagsc",
+      "institution": "unza",
+      "field": "agriculture",
+      "name": "Bachelor of Agricultural Sciences",
+      "duration_years": 5,
+      "verified": true,
+      "coverage": "none",
+      "source_url": "https://www.unza.zm/agricultural-sciences",
+      "entry_requirements": "Candidates who complete Year 1 in the School of Natural Sciences may enter at Year 2 if they have passed at least three of the four full courses taken in the first year. Diploma and A-level entry routes also exist; see the School of Agricultural Sciences.",
+      "majors": [
+        "Agricultural Economics",
+        "Agricultural Extension",
+        "Animal Science",
+        "Plant Science",
+        "Land Management",
+        "Food Science and Technology",
+        "Human Nutrition"
+      ],
+      "notes": [
+        "UNZA confirms the programme, its five-year duration and its majors, but does not publish the year-by-year course list on the public site.",
+        "Import the official School of Agricultural Sciences syllabus with tools/packbuild.py before the tutor can plan this programme in detail."
+      ],
+      "years": {}
+    },
+    {
+      "id": "unza-bcs-cs",
+      "institution": "unza",
+      "field": "computer_science",
+      "name": "Bachelor of Computer Science (Computer Science)",
+      "duration_years": null,
+      "verified": true,
+      "coverage": "none",
+      "source_url": "https://www.unza.zm/undergraduate/school-of-natural-sciences/computer-science/bachelor-of-computer-science-computer-science",
+      "entry_requirements": "Grade 6 or better in English Language; Grade 4 or better in O-level Mathematics; plus Grade 6 or better in Biology, Chemistry and Physics, or Grade 6 or better in Science, Biology (or Agricultural Science) and one other acceptable subject.",
+      "notes": [
+        "Offered by the Department of Computing and Informatics.",
+        "UNZA lists the programme and its entry requirements but shows \"coming soon\" for duration and publishes no course structure. Nothing here is guessed."
+      ],
+      "years": {}
+    },
+    {
+      "id": "unza-bcs-se",
+      "institution": "unza",
+      "field": "software_engineering",
+      "name": "Bachelor of Computer Science (Software Engineering)",
+      "duration_years": null,
+      "verified": true,
+      "coverage": "none",
+      "source_url": "https://www.unza.zm/undergraduate/school-of-natural-sciences/computer-science/bachelor-of-computer-science-software-engineering",
+      "entry_requirements": "Grade 6 or better in English Language; Grade 4 or better in O-level Mathematics; plus Grade 6 or better in Biology, Chemistry and Physics, or Grade 6 or better in Science, Biology (or Agricultural Science) and one other acceptable subject.",
+      "notes": [
+        "Offered by the Department of Computing and Informatics. No public course structure."
+      ],
+      "years": {}
+    },
+    {
+      "id": "unza-bcs-nis",
+      "institution": "unza",
+      "field": "cybersecurity",
+      "name": "Bachelor of Computer Science (Networking and Information Security)",
+      "duration_years": null,
+      "verified": true,
+      "coverage": "none",
+      "source_url": "https://www.unza.zm/undergraduate/school-of-natural-sciences/computer-science/bachelor-of-computer-science-networking-and-information-security",
+      "entry_requirements": "Grade 6 or better in English Language; Grade 4 or better in O-level Mathematics; plus Grade 6 or better in Biology, Chemistry and Physics, or Grade 6 or better in Science, Biology (or Agricultural Science) and one other acceptable subject.",
+      "notes": [
+        "This is UNZA's cybersecurity pathway. Offered by the Department of Computing and Informatics. No public course structure."
+      ],
+      "years": {}
+    },
+    {
+      "id": "cbu-beng-electrical",
+      "institution": "cbu",
+      "field": "electrical_engineering",
+      "name": "Bachelor of Engineering in Electrical Engineering",
+      "duration_years": 5,
+      "verified": true,
+      "coverage": "partial",
+      "source_url": "https://www.cbu.ac.zm/schoolsAndUnits/schoolofengineering/courses-under-electrical-engineering/",
+      "notes": [
+        "CBU publishes course codes from Year 2 onward. Year 1 is the common Engineering foundation year and is not listed on that page, so it is left empty here.",
+        "CBU's own page titles both MA 210 and MA 310 \"Engineering Maths II\". That is reproduced verbatim rather than silently corrected."
+      ],
+      "years": {
+        "1": [],
+        "2": [
+          {"code": "MA 210", "title": "Engineering Maths II", "status": "compulsory"},
+          {"code": "CS 211", "title": "Applied Computing", "status": "compulsory"},
+          {"code": "EG 233", "title": "Engineering Application and Survey", "status": "compulsory"},
+          {"code": "EG 244", "title": "Materials Science", "status": "compulsory"},
+          {"code": "EE 220", "title": "Electrical & Electronics Principles I", "status": "compulsory"},
+          {"code": "ED 241", "title": "Engineering Design Principles", "status": "compulsory"},
+          {"code": "EG 230", "title": "Applied Mechanics", "status": "compulsory"}
+        ],
+        "3": [
+          {"code": "MA 310", "title": "Engineering Maths II", "status": "compulsory"},
+          {"code": "EE 320", "title": "Electrical & Electronics Principles II", "status": "compulsory"},
+          {"code": "ET 382", "title": "Signals and Systems", "status": "compulsory"},
+          {"code": "EF 340", "title": "Digital Electronics", "status": "compulsory"},
+          {"code": "EE 321", "title": "Electrical Machines I", "status": "compulsory"},
+          {"code": "ET 380", "title": "Communication Systems", "status": "compulsory"}
+        ],
+        "4": [
+          {"code": "MA 411", "title": "Numerical Computation & Statistics", "status": "compulsory"},
+          {"code": "EE 420", "title": "Electrical Power Systems I", "status": "compulsory"},
+          {"code": "EE 422", "title": "Electric Fields", "status": "compulsory"},
+          {"code": "EE 440", "title": "Electrical Machines II", "status": "compulsory"},
+          {"code": "EF 461", "title": "Microprocessors", "status": "compulsory"},
+          {"code": "EF 451", "title": "Control Systems", "status": "compulsory"},
+          {"code": "EG 400", "title": "Group Projects", "status": "compulsory"}
+        ],
+        "5": [
+          {"code": "EF 510", "title": "BEng Power Electronics", "status": "compulsory"},
+          {"code": "EE 521", "title": "Power Systems Analysis II", "status": "compulsory"},
+          {"code": "EE 541", "title": "Electrical Drives", "status": "compulsory"},
+          {"code": "EF 551", "title": "Control Systems II", "status": "compulsory"},
+          {"code": "MG 531", "title": "Management Studies", "status": "compulsory"},
+          {"code": "EE 500", "title": "Individual Final Year Project", "status": "compulsory"},
+          {"code": "EE 531", "title": "Electrical Power Systems Protection", "status": "compulsory"}
+        ]
+      }
+    },
+    {
+      "id": "cbu-bsc-cs",
+      "institution": "cbu",
+      "field": "computer_science",
+      "name": "Bachelor of Science in Computer Science",
+      "duration_years": null,
+      "verified": true,
+      "coverage": "none",
+      "source_url": "https://www.cbu.ac.zm/schoolsAndUnits/schoolofinformationandcommunicationtechnology/2021/04/06/computer-science-department/",
+      "notes": [
+        "Offered by the Computer Science Department in the School of Information and Communication Technology (SICT), approved March 2018.",
+        "The department states the degree has run since the 1996 academic year and follows ACM curriculum recommendations, but publishes no course list."
+      ],
+      "years": {}
+    },
+    {
+      "id": "knu-bba",
+      "institution": "knu",
+      "field": "business_administration",
+      "name": "Bachelor of Business Administration",
+      "duration_years": null,
+      "verified": true,
+      "coverage": "none",
+      "source_url": "https://www.nkrumah.edu.zm/home/sbs/bachelor%20of%20business%20administration.html",
+      "notes": [
+        "Offered by the Department of Marketing & Management, School of Business Studies.",
+        "The programme page reads \"Details Coming Soon\" for curriculum, duration and entry requirements as of 2026-08-26."
+      ],
+      "years": {}
+    }
+  ]
+}

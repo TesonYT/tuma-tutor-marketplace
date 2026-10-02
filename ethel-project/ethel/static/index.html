@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ethel</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="shell">
+
+<!-- Navigation lives in a rail, not a top bar. It collapses to icons on a
+     desktop and slides away entirely on a phone. -->
+<aside class="rail" id="rail">
+  <div class="railtop">
+    <button class="iconbtn" id="railToggle" type="button" aria-label="Collapse the menu" title="Menu">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+    <span class="railhead">Menu</span>
+  </div>
+
+  <button class="newbtn" id="newAsk" type="button" hidden>
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+    <span class="lbl">Ask something</span>
+  </button>
+
+  <nav id="nav" class="railnav" hidden>
+    <button data-view="learn" class="raillink navbtn" type="button" title="Learn">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+      <span class="lbl">Learn</span>
+    </button>
+    <button data-view="ask" class="raillink navbtn" type="button" title="Ask">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg>
+      <span class="lbl">Ask</span>
+    </button>
+    <button data-view="admin" class="raillink navbtn" id="navAdmin" type="button" title="Administration" hidden>
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8l-2-2z"/></svg>
+      <span class="lbl">Administration</span>
+    </button>
+    <button data-view="doctor" class="raillink navbtn" type="button" title="System check">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg>
+      <span class="lbl">System check</span>
+    </button>
+  </nav>
+
+  <div class="railfoot">
+    <div class="railrule"></div>
+    <button id="signout" class="raillink" type="button" title="Sign out" hidden>
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5-5-5zM4 5h8V3H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8v-2H4V5z"/></svg>
+      <span class="lbl">Sign out</span>
+    </button>
+  </div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<div class="pane">
+
+<header class="appbar">
+  <button class="iconbtn railopen" id="railOpen" type="button" aria-label="Open the menu">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+  </button>
+  <div class="brand">
+    <span class="wordmark">Ethel<small>offline tutor</small></span>
+  </div>
+  <div class="topright">
+    <span class="pill offline" id="offlinePill" title="This machine cannot reach the internet.">Offline</span>
+    <span id="who" class="who"></span>
+    <span id="avatar" class="avatar" hidden></span>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- LOGIN -->
+  <section class="view" id="view-login">
+    <div class="card narrow">
+      <h1>Who is studying?</h1>
+      <p class="lede">This tutor runs entirely on this machine. Nothing you type here leaves it.</p>
+
+      <div id="studentList" class="studentlist"></div>
+
+      <div class="tabs">
+        <button class="tab is-active" data-tab="existing" type="button">Continue</button>
+        <button class="tab" data-tab="new" type="button">I'm new here</button>
+      </div>
+
+      <form id="loginForm" class="stack">
+        <label class="field" id="nameField" hidden>
+          <span>Your name</span>
+          <input name="name" autocomplete="off">
+        </label>
+        <label class="field">
+          <span>Student ID</span>
+          <input name="id" autocomplete="off" placeholder="e.g. 2021458392">
+        </label>
+        <label class="field">
+          <span>PIN</span>
+          <input name="pin" type="password" inputmode="numeric" autocomplete="off">
+          <small>Four digits or more. It keeps your progress separate from other students on this machine.</small>
+        </label>
+        <button class="primary" type="submit">Start</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ENROL -->
+  <section class="view" id="view-enrol" hidden>
+    <div class="card">
+      <h1>Tell me where you study</h1>
+      <p class="lede">I'll build your course from your institution's own published programme structure.
+        Where an institution doesn't publish one, I'll tell you that rather than invent it.</p>
+
+      <ol class="steps">
+        <li>
+          <h3>Institution</h3>
+          <div id="instChoices" class="choices"></div>
+        </li>
+        <li id="fieldStep" hidden>
+          <h3>What are you studying?</h3>
+          <p class="hint">You can study one programme at a time.</p>
+          <div id="fieldChoices" class="choices"></div>
+        </li>
+        <li id="progStep" hidden>
+          <h3>Programme</h3>
+          <div id="progChoices" class="choices"></div>
+        </li>
+        <li id="yearStep" hidden>
+          <h3>Year of study</h3>
+          <div id="yearChoices" class="choices tight"></div>
+          <div id="trackWrap" hidden>
+            <h3>Specialisation</h3>
+            <div id="trackChoices" class="choices"></div>
+          </div>
+          <button id="enrolBtn" class="primary" disabled>Build my course</button>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- INSTALL -->
+  <section class="view" id="view-install" hidden>
+    <div class="card">
+      <h1>Loading your courses onto this machine</h1>
+      <p class="lede">Nothing is downloaded from the internet &mdash; this machine cannot reach it.
+        Your courses are copied from the material already stored here and checked against
+        their signatures before they're installed.</p>
+      <div id="installBody"></div>
+      <div class="actions">
+        <button id="installBtn" class="primary">Install these</button>
+        <button id="skipInstallBtn" class="ghost">Continue without installing</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLACEMENT -->
+  <section class="view" id="view-placement" hidden>
+    <div class="card">
+      <div id="placementIntro">
+        <h1>Before we start</h1>
+        <p class="lede">A short test so I know where to begin. There's no pass mark.
+          If you don't know something, say so &mdash; a wrong answer here saves us both time later.</p>
+        <button id="placementBegin" class="primary">Begin</button>
+      </div>
+      <div id="placementQuiz" hidden></div>
+      <div id="placementPrefs" hidden></div>
+      <div id="placementResult" hidden></div>
+    </div>
+  </section>
+
+  <!-- LEARN -->
+  <section class="view" id="view-learn" hidden>
+    <div class="split">
+      <aside class="card side">
+        <h2>Your study plan</h2>
+        <div id="planBody" class="plan"></div>
+        <div id="courseMeta" class="meta"></div>
+      </aside>
+
+      <div class="card lesson" id="socraticCard" hidden>
+        <div class="progress">
+          <span id="socHead"></span>
+          <span class="bar"><i id="socBar"></i></span>
+          <span id="socCount"></span>
+        </div>
+        <p class="qprompt" id="socProbe"></p>
+        <div id="socReveal" hidden>
+          <div class="feedback" id="socFeedback"></div>
+          <div class="saybody" id="socLine"></div>
+        </div>
+        <form id="socForm" class="askrow">
+          <input id="socInput" placeholder="Say what you think, in your own words" autocomplete="off">
+          <button class="sendbtn" id="socSend" type="submit" aria-label="Answer" title="Answer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          </button>
+        </form>
+        <div class="actions">
+          <button id="socVoice" class="ghost" type="button">Voice mode: off</button>
+          <button id="socSpeak" class="ghost" type="button">Read it to me</button>
+          <button id="socQuit" class="linkbtn" type="button">Leave Socratic mode</button>
+        </div>
+        <p class="hint" id="socNote"></p>
+      </div>
+
+      <div class="card lesson" id="lessonCard">
+        <div id="lessonEmpty" class="empty">
+          <h2>Pick a lesson to begin</h2>
+          <p>I'll teach it in pieces and check you've followed before moving on.</p>
+        </div>
+        <div id="lessonBody" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASK -->
+  <section class="view" id="view-ask" hidden>
+    <div id="askGreeting">
+      <h1 class="greeting" id="greetLine">Hello</h1>
+      <p class="greetsub">What shall we go over?</p>
+    </div>
+    <div id="askLog" class="asklog"></div>
+    <div class="composerwrap">
+      <form id="askForm" class="askrow">
+        <textarea id="askInput" rows="1" placeholder="Ask about anything in your courses" autocomplete="off"></textarea>
+        <button class="sendbtn" id="askSend" type="submit" disabled aria-label="Ask" title="Ask">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </form>
+      <p class="hint">Ethel answers only from the material installed on this machine.
+        If it isn't in there, she says she doesn't know rather than guess.</p>
+    </div>
+  </section>
+
+  <!-- ADMIN -->
+  <section class="view" id="view-admin" hidden>
+    <div class="card">
+      <h1>Reference material</h1>
+      <p class="lede">Upload syllabuses, lecture notes and chapters. Students can ask
+        questions and get answers grounded in them, cited to the document and heading.</p>
+      <p class="hint" id="adminExplain"></p>
+
+      <h3>Add a source</h3>
+      <form id="sourceForm" class="stack">
+        <label class="field">
+          <span>Title</span>
+          <input name="title" autocomplete="off" placeholder="e.g. Land Management II - lecture notes">
+          <small>This is what a student sees in the citation, so name it the way they would.</small>
+        </label>
+        <div class="row2">
+          <label class="field">
+            <span>Programme</span>
+            <select name="programme" id="sourceProgramme"></select>
+          </label>
+          <label class="field">
+            <span>Year</span>
+            <input name="year" inputmode="numeric" placeholder="any">
+          </label>
+        </div>
+        <label class="field">
+          <span>Course code <small>optional</small></span>
+          <input name="course_code" autocomplete="off" placeholder="e.g. LPR2920">
+        </label>
+        <button class="primary" type="submit">Create source</button>
+      </form>
+
+      <div id="sourceList" class="sourcelist"></div>
+    </div>
+  </section>
+
+  <!-- DOCTOR -->
+  <section class="view" id="view-doctor" hidden>
+    <div class="card">
+      <h1>System check</h1>
+      <p class="lede">What this machine can and cannot do right now.</p>
+      <div id="doctorBody"></div>
+    </div>
+  </section>
+
+</main>
+</div><!-- /pane -->
+</div><!-- /shell -->
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="/app.js"></script>
+</body>
+</html>

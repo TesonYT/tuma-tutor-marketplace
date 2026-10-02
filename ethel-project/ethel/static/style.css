@@ -1,0 +1,711 @@
+/* Ethel
+
+   The visual language here follows Google's Gemini: a tinted rail on the left,
+   flat surfaces rather than shadowed cards, generously rounded geometry, pill
+   buttons, and one gradient - blue through violet to rose - used sparingly for
+   identity and for the tutor's own voice.
+
+   Three deliberate departures from the previous design, worth naming because
+   they were not accidents:
+
+   1. The serif is gone. It used to mark "anything the tutor says in its own
+      name", which was good pedagogy, but Gemini is single-typeface throughout
+      and mixing the two reads as a different product. --serif is still defined
+      and still applied to the same elements, so flipping it back is one line.
+
+   2. Cards no longer carry shadows. Elevation now comes from the tint
+      difference between the rail, the page and the surface, which is what makes
+      the layout feel flat and quiet rather than stacked.
+
+   3. Radii went up sharply - 16px on cards, 28px on composers, full round on
+      every button. This is the single strongest signal of the idiom.
+
+   Fonts stay a system stack. This app is served from a machine with no
+   internet, so a webfont request would fail; Google Sans is named first for the
+   rare machine that has it and Roboto/Segoe carry everyone else. */
+
+:root {
+  --bg:        #FFFFFF;   /* the page itself */
+  --rail:      #F0F4F9;   /* navigation, and any sunk surface */
+  --surface:   #FFFFFF;   /* cards */
+  --sunk:      #F0F4F9;
+  --sunk-2:    #E9EEF6;
+  --ink:       #1F1F1F;
+  --ink-soft:  #444746;
+  --muted:     #5F6368;
+  --rule:      #E3E3E3;
+  --rule-firm: #C4C7C5;
+
+  --primary:   #0B57D0;   /* filled buttons, links */
+  --primary-2: #0842A0;
+  --on-primary:#FFFFFF;
+  --accent:    #1A73E8;   /* selection, focus, progress */
+  --accent-soft:#E8F0FE;
+
+  --ok:        #146C2E;
+  --ok-soft:   #E6F4EA;
+  --warn:      #9A6700;
+  --warn-soft: #FEF7E0;
+  --bad:       #B3261E;
+  --bad-soft:  #FCE8E6;
+
+  /* The Gemini gradient. Used on the mark, on the greeting, and on the bar
+     that fills as a student works - never as a background behind text. */
+  --grad: linear-gradient(74deg, #4285F4 0%, #9B72CB 45%, #D96570 100%);
+
+  --r-sm: 8px;
+  --r:    16px;
+  --r-lg: 24px;
+  --r-pill: 999px;
+  --radius: var(--r);           /* older name, still referenced */
+
+  --shadow: 0 1px 2px rgba(0,0,0,.06), 0 4px 14px rgba(0,0,0,.06);
+  --shadow-float: 0 4px 10px rgba(0,0,0,.10), 0 12px 32px rgba(0,0,0,.14);
+
+  --sans: "Google Sans", "Product Sans", Roboto, "Segoe UI", -apple-system,
+          "Helvetica Neue", Arial, sans-serif;
+  --serif: var(--sans);
+  --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  --rail-w: 260px;
+  --ease: cubic-bezier(.2, 0, 0, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:        #131314;
+    --rail:      #1B1C1D;
+    --surface:   #1E1F20;
+    --sunk:      #282A2C;
+    --sunk-2:    #303234;
+    --ink:       #E3E3E3;
+    --ink-soft:  #C4C7C5;
+    --muted:     #9AA0A6;
+    --rule:      #333537;
+    --rule-firm: #444746;
+
+    --primary:   #A8C7FA;
+    --primary-2: #C2E7FF;
+    --on-primary:#062E6F;
+    --accent:    #8AB4F8;
+    --accent-soft:#1F3760;
+
+    --ok:        #6DD58C;
+    --ok-soft:   #12281A;
+    --warn:      #F0C36A;
+    --warn-soft: #2C2413;
+    --bad:       #F2B8B5;
+    --bad-soft:  #33201E;
+
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.3);
+    --shadow-float: 0 6px 18px rgba(0,0,0,.5), 0 16px 40px rgba(0,0,0,.45);
+  }
+}
+
+* { box-sizing: border-box; }
+
+/* The UA rule for [hidden] is display:none, but any author rule with an
+   explicit display beats it. Several elements here are flex or grid containers
+   that also get toggled with the hidden attribute, so make hidden win. */
+[hidden] { display: none !important; }
+
+html, body {
+  margin: 0; padding: 0; min-height: 100%;
+  font-family: var(--sans);
+  font-size: 16px; line-height: 1.6;
+  color: var(--ink); background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Anyone who has asked their system to stop animating things means it. Every
+   transition below is decoration; none of them carry information. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important; scroll-behavior: auto !important;
+  }
+}
+
+/* ============================ shell ============================ */
+
+.shell { display: flex; min-height: 100vh; }
+
+/* --- left rail --- */
+.rail {
+  width: var(--rail-w); flex: 0 0 var(--rail-w);
+  background: var(--rail);
+  padding: 10px 12px 14px;
+  display: flex; flex-direction: column; gap: 4px;
+  transition: width .22s var(--ease), flex-basis .22s var(--ease);
+  overflow: hidden; position: sticky; top: 0; height: 100vh;
+}
+/* Collapsed, the rail keeps its icons and drops its words. Width is the only
+   thing that animates; labels simply stop taking part in layout, because
+   animating their width produces a smear of half-clipped text. */
+body.rail-tight .rail { width: 72px; flex-basis: 72px; }
+body.rail-tight .rail .lbl,
+body.rail-tight .railhead { display: none; }
+body.rail-tight .raillink { justify-content: center; padding-left: 0; padding-right: 0; }
+body.rail-tight .newbtn { padding: 0; width: 48px; justify-content: center; }
+
+.railtop { display: flex; align-items: center; gap: 6px; padding: 2px 2px 8px; }
+.railhead {
+  font-size: 14px; color: var(--muted); letter-spacing: .01em;
+  white-space: nowrap; overflow: hidden;
+}
+
+/* A 40px circular target with the icon centred: the standard Google icon
+   button. The state layer is a background tint, not a border, so nothing
+   shifts by a pixel when it lights up. */
+.iconbtn {
+  width: 40px; height: 40px; flex: 0 0 40px;
+  border: 0; border-radius: 50%; background: transparent; color: var(--ink-soft);
+  display: grid; place-items: center; cursor: pointer; padding: 0;
+  transition: background .15s var(--ease), color .15s var(--ease);
+}
+.iconbtn:hover { background: rgba(31,31,31,.08); color: var(--ink); }
+.iconbtn:active { background: rgba(31,31,31,.14); }
+@media (prefers-color-scheme: dark) {
+  .iconbtn:hover { background: rgba(227,227,227,.10); }
+  .iconbtn:active { background: rgba(227,227,227,.16); }
+}
+.iconbtn svg { width: 22px; height: 22px; display: block; }
+
+.newbtn {
+  display: flex; align-items: center; gap: 10px;
+  height: 48px; padding: 0 22px 0 16px; margin: 4px 0 14px;
+  background: var(--sunk-2); color: var(--ink-soft);
+  border: 0; border-radius: var(--r-pill);
+  font: inherit; font-size: 14px; font-weight: 500; cursor: pointer;
+  white-space: nowrap; align-self: flex-start;
+  transition: background .15s var(--ease), box-shadow .15s var(--ease);
+}
+.newbtn:hover { background: var(--rule-firm); }
+.newbtn svg { width: 20px; height: 20px; flex: 0 0 20px; }
+
+.railnav { display: flex; flex-direction: column; gap: 2px; }
+.raillink {
+  display: flex; align-items: center; gap: 14px;
+  height: 44px; padding: 0 16px;
+  border: 0; border-radius: var(--r-pill);
+  background: transparent; color: var(--ink-soft);
+  font: inherit; font-size: 14px; text-align: left; cursor: pointer;
+  white-space: nowrap; width: 100%;
+  transition: background .15s var(--ease), color .15s var(--ease);
+}
+.raillink svg { width: 20px; height: 20px; flex: 0 0 20px; }
+.raillink:hover { background: var(--sunk-2); color: var(--ink); }
+.raillink.is-active { background: var(--accent-soft); color: var(--accent); font-weight: 500; }
+.railfoot { margin-top: auto; display: flex; flex-direction: column; gap: 2px; }
+.railrule { height: 1px; background: var(--rule); margin: 10px 4px; }
+
+/* Under a phone width the rail slides over the page instead of sharing it,
+   because 72px of icons plus a lesson does not fit on a 360px screen. */
+@media (max-width: 760px) {
+  .rail {
+    position: fixed; z-index: 40; left: 0; top: 0;
+    transform: translateX(0); transition: transform .22s var(--ease);
+    box-shadow: var(--shadow-float);
+  }
+  body.rail-tight .rail { width: var(--rail-w); flex-basis: var(--rail-w); transform: translateX(-100%); }
+  body.rail-tight .rail .lbl, body.rail-tight .railhead { display: block; }
+  body.rail-tight .raillink { justify-content: flex-start; padding: 0 16px; }
+  body.rail-tight .newbtn { padding: 0 22px 0 16px; width: auto; justify-content: flex-start; }
+  .scrim { position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 39; }
+  body.rail-tight .scrim { display: none; }
+}
+@media (min-width: 761px) { .scrim { display: none; } }
+
+/* --- the page beside it --- */
+.pane { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+
+.appbar {
+  display: flex; align-items: center; gap: 14px;
+  padding: 10px 20px; min-height: 60px;
+  position: sticky; top: 0; z-index: 12;
+  background: var(--bg);
+}
+.railopen { display: none; }
+@media (max-width: 760px) { .railopen { display: grid; } }
+
+.brand { display: flex; align-items: baseline; gap: 10px; }
+.wordmark {
+  font-size: 22px; font-weight: 500; letter-spacing: -.01em;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+.wordmark small {
+  font-size: 12px; font-weight: 400; letter-spacing: 0;
+  color: var(--muted); margin-left: 8px;
+  -webkit-text-fill-color: var(--muted);
+}
+.topright { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.who { color: var(--muted); font-size: 13.5px; }
+
+/* The avatar is the student's initial in a tinted circle - Gemini's account
+   button, and the only place a name appears once you are signed in. */
+.avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent);
+  display: grid; place-items: center; font-size: 14px; font-weight: 500;
+  flex: 0 0 32px; user-select: none;
+}
+
+.pill {
+  font-size: 11.5px; padding: 5px 12px; border-radius: var(--r-pill);
+  font-weight: 500; letter-spacing: .01em;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.pill.offline { color: var(--ok); background: var(--ok-soft); }
+.pill.online  { color: var(--bad); background: var(--bad-soft); }
+
+.linkbtn {
+  background: none; border: 0; color: var(--muted); cursor: pointer;
+  font: inherit; font-size: 14px; padding: 8px 12px; border-radius: var(--r-pill);
+  transition: background .15s var(--ease), color .15s var(--ease);
+}
+.linkbtn:hover { color: var(--ink); background: var(--sunk); }
+
+@media (max-width: 620px) {
+  .appbar { padding: 8px 12px; gap: 8px; }
+  .wordmark { font-size: 19px; }
+  .wordmark small { display: none; }
+  .who { display: none; }
+  main { padding: 8px 14px 96px; }
+  .card { padding: 20px 18px; }
+  .kv { grid-template-columns: 1fr; gap: 2px 0; }
+  .kv dt { margin-top: 10px; }
+}
+
+/* ============================ layout ============================ */
+
+main { width: 100%; max-width: 1000px; margin: 0 auto; padding: 12px 24px 96px; flex: 1; }
+
+/* Views fade up as they arrive. 140ms is short enough that it reads as the
+   page settling rather than as an animation to sit through. */
+.view { animation: rise .18s var(--ease) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-lg);
+  padding: 30px 34px;
+}
+.card + .card { margin-top: 16px; }
+.narrow { max-width: 460px; margin: 4vh auto; }
+.split { display: grid; grid-template-columns: 300px 1fr; gap: 16px; align-items: start; }
+.side { position: sticky; top: 76px; padding: 22px; background: var(--rail); border-color: transparent; }
+@media (max-width: 900px) { .split { grid-template-columns: 1fr; } .side { position: static; } }
+
+h1 { font-weight: 400; font-size: 30px; line-height: 1.25; margin: 0 0 10px; letter-spacing: -.01em; }
+h2 { font-weight: 500; font-size: 20px; margin: 0 0 12px; }
+h3 { font-size: 12px; margin: 0 0 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
+.lede { color: var(--ink-soft); margin: 0 0 22px; max-width: 62ch; }
+.hint { color: var(--muted); font-size: 14px; margin: -2px 0 12px; max-width: 68ch; }
+
+/* The signed-in greeting, in the gradient. Gemini opens on the student's name
+   and nothing else; it is the one moment of colour in the product. */
+.greeting {
+  font-size: clamp(30px, 5vw, 44px); font-weight: 500; letter-spacing: -.02em;
+  line-height: 1.15; margin: 6vh 0 4px;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+.greetsub { font-size: clamp(22px, 3.6vw, 30px); font-weight: 500; color: var(--rule-firm); margin: 0 0 26px; }
+
+/* ============================ buttons ============================ */
+
+/* Every button in the app is one of four shapes: filled, tonal, outlined or
+   text. All of them are fully round, all of them are 40-48px tall, and none of
+   them move on hover - the state layer changes, the geometry does not. */
+
+button.primary {
+  background: var(--primary); color: var(--on-primary);
+  border: 0; font: inherit; font-size: 14px; font-weight: 500;
+  height: 44px; padding: 0 26px; border-radius: var(--r-pill); cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  transition: background .15s var(--ease), box-shadow .15s var(--ease), opacity .15s var(--ease);
+}
+button.primary:hover:not(:disabled) { background: var(--primary-2); box-shadow: var(--shadow); }
+button.primary:active:not(:disabled) { box-shadow: none; }
+button.primary:disabled { background: var(--sunk-2); color: var(--muted); cursor: not-allowed; }
+
+button.ghost {
+  background: var(--sunk); border: 0; color: var(--ink-soft);
+  font: inherit; font-size: 14px; font-weight: 500;
+  height: 44px; padding: 0 22px; border-radius: var(--r-pill); cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  transition: background .15s var(--ease), color .15s var(--ease);
+}
+button.ghost:hover:not(:disabled) { background: var(--sunk-2); color: var(--ink); }
+button.ghost:disabled { opacity: .5; cursor: not-allowed; }
+button.ghost.on { background: var(--accent-soft); color: var(--accent); }
+
+/* Keyboard users get a visible ring on every interactive element. :focus-visible
+   rather than :focus, so clicking a button does not leave a ring behind. */
+button:focus-visible, input:focus-visible, select:focus-visible,
+textarea:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+
+.actions { display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap; align-items: center; }
+
+/* ============================ forms ============================ */
+
+.stack { display: flex; flex-direction: column; gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+.field > span { font-weight: 500; color: var(--ink); }
+.field small { color: var(--muted); font-weight: 400; line-height: 1.45; }
+
+input, textarea, select {
+  font: inherit; font-size: 15px; padding: 12px 16px;
+  border-radius: var(--r-sm); border: 1px solid var(--rule-firm);
+  background: var(--surface); color: var(--ink);
+  transition: border-color .15s var(--ease), background .15s var(--ease);
+}
+input::placeholder, textarea::placeholder { color: var(--muted); }
+input:focus, textarea:focus, select:focus {
+  outline: none; border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.tabs { display: flex; gap: 6px; margin: 22px 0 18px; }
+.tab {
+  background: var(--sunk); border: 0; font: inherit; font-size: 14px;
+  height: 36px; padding: 0 18px; border-radius: var(--r-pill); cursor: pointer;
+  color: var(--muted); transition: background .15s var(--ease), color .15s var(--ease);
+}
+.tab:hover { background: var(--sunk-2); color: var(--ink); }
+.tab.is-active { color: var(--accent); background: var(--accent-soft); font-weight: 500; }
+
+.studentlist { display: flex; flex-wrap: wrap; gap: 8px; }
+.studentlist button {
+  background: var(--sunk); border: 0; border-radius: var(--r-pill);
+  height: 36px; padding: 0 16px; cursor: pointer; font: inherit; font-size: 14px; color: var(--ink-soft);
+  transition: background .15s var(--ease), color .15s var(--ease);
+}
+.studentlist button:hover { background: var(--accent-soft); color: var(--accent); }
+
+/* ============================ choice grids ============================ */
+
+.steps { list-style: none; padding: 0; margin: 0; }
+.steps > li { padding: 0 0 28px 0; }
+.choices { display: grid; grid-template-columns: repeat(auto-fill, minmax(228px, 1fr)); gap: 10px; }
+.choices.tight { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); }
+
+.choice {
+  text-align: left; background: var(--surface);
+  border: 1px solid var(--rule); border-radius: var(--r);
+  padding: 16px 18px; cursor: pointer; font: inherit; color: var(--ink);
+  display: flex; flex-direction: column; gap: 4px; align-items: flex-start;
+  transition: background .15s var(--ease), border-color .15s var(--ease);
+}
+.choice:hover:not(:disabled) { background: var(--sunk); border-color: var(--rule-firm); }
+.choice.is-active {
+  border-color: var(--accent); background: var(--accent-soft); color: var(--accent);
+}
+.choice.is-active small { color: var(--accent); opacity: .85; }
+.choice:disabled { opacity: .45; cursor: not-allowed; }
+.choice b { font-weight: 500; }
+.choice small { color: var(--muted); font-size: 12.5px; line-height: 1.45; }
+
+/* ============================ badges ============================ */
+
+.badge {
+  display: inline-block; font-size: 11px; letter-spacing: .02em;
+  padding: 3px 10px; border-radius: var(--r-pill); font-weight: 500;
+}
+.badge.full    { background: var(--ok-soft);   color: var(--ok); }
+.badge.partial { background: var(--warn-soft); color: var(--warn); }
+.badge.none    { background: var(--bad-soft);  color: var(--bad); }
+
+/* ============================ install list ============================ */
+
+.packlist { list-style: none; padding: 0; margin: 0 0 20px; }
+.packlist li {
+  display: flex; gap: 14px; align-items: baseline; padding: 12px 18px;
+  background: var(--sunk); border-radius: var(--r); margin-bottom: 6px;
+}
+.packlist li.miss { background: transparent; border: 1px dashed var(--rule); color: var(--muted); }
+.packlist code {
+  /* Course codes are identity-critical - a student matches these against a
+     printed timetable - so they get a little more size and tracking than the
+     surrounding metadata. */
+  font-family: var(--mono); font-size: 13px; letter-spacing: .02em;
+  color: var(--accent); font-weight: 600; min-width: 96px;
+}
+.packlist li.miss code { color: var(--muted); }
+.packlist .why { color: var(--muted); font-size: 12.5px; margin-left: auto; text-align: right; }
+
+/* ============================ lesson ============================ */
+
+.lesson { min-height: 440px; }
+.progress { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; font-size: 12.5px; color: var(--muted); }
+.bar { flex: 1; height: 4px; background: var(--sunk-2); border-radius: var(--r-pill); overflow: hidden; }
+/* Width starts at zero and is set from JavaScript. A block child fills its
+   parent by default, so without this an untouched bar reads as complete. */
+.bar i { display: block; width: 0; height: 100%; background: var(--grad); transition: width .35s var(--ease); }
+
+.saybody { white-space: pre-wrap; font-size: 16.5px; line-height: 1.75; color: var(--ink); }
+.saybody + .actions { margin-top: 28px; }
+.qprompt { font-size: 18px; font-weight: 500; margin: 0 0 18px; line-height: 1.45; }
+
+.opts { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+.opt {
+  text-align: left; background: var(--surface);
+  border: 1px solid var(--rule); border-radius: var(--r);
+  padding: 14px 18px; cursor: pointer; font: inherit; color: var(--ink); line-height: 1.45;
+  display: flex; align-items: baseline; gap: 12px;
+  transition: background .15s var(--ease), border-color .15s var(--ease);
+}
+.opt:hover { background: var(--sunk); border-color: var(--rule-firm); }
+.opt.is-active { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+/* The number in front of each option is not decoration: the keys 1-9 pick
+   them, and a student cannot use a shortcut they cannot see. */
+.opt .k {
+  flex: 0 0 22px; height: 22px; border-radius: 6px;
+  background: var(--sunk-2); color: var(--muted);
+  font-size: 11.5px; font-weight: 600; display: grid; place-items: center;
+  transform: translateY(1px);
+}
+.opt.is-active .k { background: var(--accent); color: var(--on-primary); }
+@media (prefers-color-scheme: dark) { .opt.is-active .k { color: #062E6F; } }
+
+.feedback {
+  border-radius: var(--r); padding: 16px 20px; margin: 4px 0 18px;
+  background: var(--sunk); animation: rise .18s var(--ease) both;
+}
+.feedback.good { background: var(--ok-soft);  color: var(--ok); }
+.feedback.bad  { background: var(--bad-soft); color: var(--bad); }
+.feedback b { display: block; margin-bottom: 5px; font-weight: 500; }
+.feedback div + div { margin-top: 6px; }
+.feedback.good div, .feedback.bad div { color: var(--ink-soft); }
+
+.sources { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--muted); }
+
+/* Shown under any passage that has not been translated into the student's
+   language. Amber, not red: nothing is wrong, it simply has not been done, and
+   the student needs to know which words a person actually checked. */
+.untranslated {
+  margin: 16px 0 0; padding: 12px 16px; border-radius: var(--r);
+  background: var(--warn-soft); color: var(--ink-soft);
+  font-size: 13px; line-height: 1.5;
+}
+
+/* Auto-advance. The bar under the button drains for its two seconds so the
+   student can see the wait coming and stop it; a timer that fires with no
+   warning feels like the page moved on its own. */
+.autonext { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); }
+.autonext .track { width: 54px; height: 3px; border-radius: var(--r-pill); background: var(--sunk-2); overflow: hidden; }
+.autonext .track i { display: block; height: 100%; width: 100%; background: var(--accent); transform-origin: left; animation: drain 2s linear both; }
+@keyframes drain { to { transform: scaleX(0); } }
+
+/* ============================ plan ============================ */
+
+.plan { display: flex; flex-direction: column; gap: 4px; }
+.planrow {
+  text-align: left; background: transparent; border: 0; border-radius: var(--r);
+  padding: 12px 14px; cursor: pointer; font: inherit; color: var(--ink); width: 100%;
+  transition: background .15s var(--ease);
+}
+.planrow:hover:not(:disabled) { background: var(--sunk-2); }
+.planrow.is-active { background: var(--accent-soft); color: var(--accent); }
+.planrow.is-active .code, .planrow.is-active .sub { color: inherit; opacity: .9; }
+.planrow .top { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+.planrow .code { font-family: var(--mono); font-size: 12px; letter-spacing: .02em; color: var(--accent); font-weight: 600; }
+.planrow .title { font-size: 14.5px; line-height: 1.35; margin-top: 2px; }
+.planrow .sub { font-size: 12px; color: var(--muted); }
+.mastery { height: 3px; background: var(--rule); border-radius: var(--r-pill); margin-top: 10px; overflow: hidden; }
+.mastery i { display: block; width: 0; height: 100%; background: var(--grad); transition: width .35s var(--ease); }
+.meta { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--muted); }
+.meta summary { cursor: pointer; color: var(--accent); margin-top: 4px; }
+.meta p { margin: 6px 0; line-height: 1.5; }
+
+/* ============================ composer ============================ */
+
+/* Gemini's input: one tall rounded field with the controls inside it. The
+   border lights up on focus-within rather than on the field itself, so the
+   whole capsule responds as one object. */
+.askrow {
+  display: flex; align-items: flex-end; gap: 8px;
+  background: var(--sunk); border: 1px solid transparent;
+  border-radius: 28px; padding: 6px 6px 6px 20px;
+  transition: border-color .15s var(--ease), background .15s var(--ease);
+}
+.askrow:focus-within { border-color: var(--rule-firm); background: var(--surface); }
+.askrow input, .askrow textarea {
+  flex: 1; border: 0; background: transparent; padding: 12px 0;
+  font-size: 15.5px; line-height: 1.5; resize: none; max-height: 190px; min-width: 0;
+}
+.askrow input:focus, .askrow textarea:focus { outline: none; box-shadow: none; }
+.askrow button.primary, .askrow button.ghost { height: 44px; flex: 0 0 auto; }
+.askrow .iconbtn { flex: 0 0 44px; width: 44px; height: 44px; }
+/* Send is round and only takes colour once there is something to send. */
+.sendbtn {
+  width: 44px; height: 44px; flex: 0 0 44px; border-radius: 50%; border: 0; padding: 0;
+  background: transparent; color: var(--muted); cursor: pointer;
+  display: grid; place-items: center;
+  transition: background .15s var(--ease), color .15s var(--ease);
+}
+.sendbtn svg { width: 20px; height: 20px; }
+.sendbtn.ready { background: var(--primary); color: var(--on-primary); }
+.sendbtn.ready:hover { background: var(--primary-2); }
+.sendbtn:disabled { cursor: default; }
+
+.composerwrap { position: sticky; bottom: 0; padding: 14px 0 8px; background: var(--bg); }
+.composerwrap .hint { margin: 10px auto 0; text-align: center; font-size: 12px; max-width: 60ch; }
+
+/* ============================ ask ============================ */
+
+/* The question box sits at the foot of the window, not directly under the
+   greeting, so an empty conversation looks like somewhere to start rather than
+   like a form. The log takes whatever height is left. */
+/* 168px is the app bar plus main's own vertical padding. Getting this
+   wrong by even a few pixels puts a scrollbar on a page that has nothing
+   to scroll, which is the most visible kind of small mistake. */
+#view-ask { display: flex; flex-direction: column; min-height: calc(100vh - 168px); }
+#askLog { flex: 1 1 auto; }
+
+.asklog { margin-top: 8px; display: flex; flex-direction: column; gap: 28px; }
+.qa { animation: rise .2s var(--ease) both; }
+.qa .q {
+  font-weight: 400; font-size: 15.5px; line-height: 1.5;
+  background: var(--sunk); border-radius: 20px; padding: 12px 20px;
+  margin: 0 0 18px auto; width: fit-content; max-width: 80%;
+}
+.qa .a { font-size: 16px; line-height: 1.75; white-space: pre-wrap; }
+.qa .mode {
+  font-size: 12px; font-weight: 500; color: var(--muted); margin-bottom: 8px;
+  display: flex; align-items: center; gap: 8px;
+}
+/* The gradient dot in front of an answer is the tutor's mark - the equivalent
+   of Gemini's sparkle. It says "this line came from the tutor" without a word. */
+.qa .mode::before {
+  content: ""; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--grad); flex: 0 0 16px;
+}
+.qa.refused .mode::before { background: var(--warn); }
+.qa .src { font-size: 12.5px; color: var(--muted); margin-top: 10px; }
+
+/* Three dots that breathe while an answer is being found. Gemini shows motion
+   rather than a word, and the word here used to be a lie anyway - "Searching"
+   covered four separate stages. */
+.spin { display: inline-flex; gap: 5px; align-items: center; padding: 6px 0; }
+.spin i { width: 8px; height: 8px; border-radius: 50%; background: var(--rule-firm); animation: bob 1.1s var(--ease) infinite; }
+.spin i:nth-child(2) { animation-delay: .15s; }
+.spin i:nth-child(3) { animation-delay: .3s; }
+@keyframes bob { 0%, 60%, 100% { opacity: .35; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-4px); } }
+
+.waiting { margin: 2px 0 0; font-size: 13px; animation: rise .3s var(--ease) both; }
+
+/* ============================ doctor ============================ */
+
+.kv { display: grid; grid-template-columns: 220px 1fr; gap: 8px 20px; font-size: 14px; margin: 0; }
+.kv dt { color: var(--muted); }
+/* Values here include filesystem paths with no spaces to break on. Without
+   this they push the page into horizontal scroll on a narrow window. */
+.kv dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 9px; vertical-align: middle; }
+.dot.ok { background: var(--ok); } .dot.warn { background: var(--warn); } .dot.bad { background: var(--bad); }
+.section { margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--rule); }
+.section:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.section > .hint { margin-top: 14px; }
+.section > .hint + .hint { margin-top: 8px; }
+
+.empty { text-align: center; padding: 80px 20px; color: var(--muted); }
+.empty h2 { color: var(--muted); font-weight: 400; }
+
+/* ============================ toast ============================ */
+
+.toast {
+  position: fixed; bottom: 24px; left: 50%;
+  background: var(--ink); color: var(--bg);
+  padding: 14px 24px; border-radius: var(--r-pill);
+  box-shadow: var(--shadow-float); z-index: 50;
+  max-width: 90vw; font-size: 14px;
+  animation: toastin .22s var(--ease) both;
+}
+@keyframes toastin { from { opacity: 0; transform: translate(-50%, 14px); } to { opacity: 1; transform: translate(-50%, 0); } }
+.toast { transform: translateX(-50%); }
+.toast.bad { background: var(--bad); color: #FFF; }
+@media (prefers-color-scheme: dark) { .toast.bad { color: #33201E; } }
+
+/* ============================ voice ============================ */
+
+.voicepick { display: flex; gap: 6px; margin-left: auto; align-items: center; }
+.voicepick select {
+  font: inherit; font-size: 13px; color: var(--muted);
+  background: transparent; border: 1px solid transparent;
+  height: 36px; padding: 0 10px; border-radius: var(--r-pill); cursor: pointer;
+  transition: background .15s var(--ease), color .15s var(--ease);
+}
+.voicepick select:hover { background: var(--sunk); color: var(--ink); }
+.voicepick select:focus { outline: none; background: var(--sunk); color: var(--ink); box-shadow: none; }
+@media (max-width: 620px) { .voicepick { margin-left: 0; } }
+
+/* Shown in place of the voice picker when no installed voice can read the
+   student's current language - Bemba and Lozi, until a voice or a recording
+   exists. Better than a dropdown that implies an English voice will do. */
+.novoice { font-size: 12.5px; color: var(--muted); }
+
+/* Microphone. Hidden unless a recognition model for the student's language is
+   actually installed - offering to listen in a language Ethel cannot hear
+   would be the same dishonesty as offering a voice she lacks. */
+.mic.iconbtn { width: 44px; height: 44px; flex: 0 0 44px; }
+.mic.iconbtn svg { width: 21px; height: 21px; }
+.mic.rec {
+  background: var(--bad-soft); color: var(--bad);
+  animation: micpulse 1.6s var(--ease) infinite;
+}
+.mic.rec:hover { background: var(--bad-soft); color: var(--bad); }
+.mic:disabled { opacity: .5; cursor: default; }
+@keyframes micpulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(179,38,30,.35); } 50% { box-shadow: 0 0 0 8px rgba(179,38,30,0); } }
+
+/* ============================ administration ============================ */
+
+.row2 { display: grid; grid-template-columns: 1fr 120px; gap: 12px; }
+@media (max-width: 620px) { .row2 { grid-template-columns: 1fr; } }
+.sourcelist { margin-top: 30px; }
+.source { background: var(--sunk); border-radius: var(--r); padding: 18px 20px; margin-bottom: 10px; }
+.source .top { display: flex; align-items: baseline; gap: 10px; }
+.source > small { color: var(--muted); font-size: 12.5px; display: block; margin-top: 3px; }
+.source .files { list-style: none; padding: 0; margin: 14px 0 0; }
+.source .files li {
+  display: flex; gap: 12px; align-items: baseline;
+  padding: 8px 0; border-top: 1px solid var(--rule); font-size: 13.5px;
+}
+.source .fname { font-family: var(--mono); font-size: 12.5px; }
+.source .fmeta { color: var(--muted); font-size: 12.5px; margin-right: auto; }
+
+/* A file dropped anywhere on a source card uploads to it. The dashed outline
+   only appears while something is actually being dragged over it. */
+.source.drop { outline: 2px dashed var(--accent); outline-offset: 3px; background: var(--accent-soft); }
+
+/* ============================ Socratic ============================ */
+
+#socraticCard .qprompt { font-size: 19px; font-weight: 400; line-height: 1.5; }
+#socraticCard .saybody { margin-top: 12px; }
+#socraticCard .askrow { margin-top: 20px; }
+#socHead { font-weight: 500; color: var(--ink-soft); }
+
+/* ============================ keyboard help ============================ */
+
+kbd {
+  font-family: var(--sans); font-size: 11px; font-weight: 500;
+  background: var(--sunk-2); color: var(--muted);
+  border-radius: 5px; padding: 2px 6px; margin: 0 2px;
+}
+
+/* ================= what used to be written from JavaScript =================
+
+   The page is served under `style-src 'self'`, which logs a violation every
+   time a style is written inline. Only genuinely dynamic values - the width of
+   a progress bar, the height of a growing text box - are still set from
+   script. Everything with a fixed value lives here. */
+
+.prefblock { margin-bottom: 20px; }
+.planrow:disabled { opacity: .55; cursor: not-allowed; }
+.meta .course { margin-bottom: 8px; }
+textarea.wide { width: 100%; }
+.section .hint.indent { margin: 2px 0 2px 12px; }

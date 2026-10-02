@@ -1,0 +1,1356 @@
+{
+  "schema": "ethel.pack/1",
+  "id": "cbu-ee220",
+  "course": {
+    "code": "EE 220",
+    "title": "Electrical & Electronics Principles I",
+    "institution": "cbu",
+    "programme": "cbu-beng-electrical",
+    "year": 2
+  },
+  "source": {
+    "authored_by": "The Ethel Project",
+    "authored_on": "2026-08-26",
+    "licence": "CC BY-SA 4.0",
+    "reviewed_by": null,
+    "syllabus_reference": "Course code and title from the Copperbelt University School of Engineering Year 2 Electrical Engineering course list, https://www.cbu.ac.zm/schoolsAndUnits/schoolofengineering/courses-under-electrical-engineering/ (retrieved 2026-08-26). CBU does not publish the detailed syllabus for EE 220; the three lessons here cover standard first-course DC circuit theory and must be checked against the lecturer's actual scheme of work before use in class."
+  },
+  "languages": [
+    "en",
+    "bem",
+    "loz"
+  ],
+  "lessons": [
+    {
+      "id": "l1",
+      "title": "Voltage, current, resistance and Ohm's law",
+      "skill": "ohms-law",
+      "prerequisites": [],
+      "estimated_minutes": 25,
+      "hook": "A workshop runs off a solar array. Someone plugs a second welding set into the same socket and the fuse blows. Nobody touched the battery, nobody changed the panels - so why did it blow? By the end of this lesson you will be able to work that out on paper before you plug anything in, using one equation and three quantities.",
+      "segments": [
+        {
+          "id": "s1",
+          "heading": "The three quantities",
+          "body": "Three quantities describe what is happening in any circuit.\n\nCurrent (I, measured in amperes, A) is the rate at which charge flows past a point. It is a flow, like litres per second past a point in a pipe.\n\nVoltage (V, measured in volts) is the electrical push between two points. It is a difference between two places, never a property of one place on its own. This is why we speak of the voltage across a component.\n\nResistance (R, measured in ohms) is how strongly a component opposes that flow. A thin, long wire resists more than a thick, short one of the same material.\n\nThe water picture - pressure difference driving flow through a narrow pipe - is a useful starting point, but drop it as soon as it stops helping. Water leaks out of a broken pipe; charge does not leak out of a broken circuit, it simply stops flowing.",
+          "recap": "Current flows, voltage pushes, resistance opposes.",
+          "check": {
+            "id": "l1s1c",
+            "type": "mcq",
+            "skill": "ohms-law",
+            "difficulty": 1,
+            "prompt": "Which statement is correct?",
+            "options": [
+              "Voltage is measured across a component; current is measured through it.",
+              "Current is measured across a component; voltage is measured through it.",
+              "Both voltage and current are measured at a single point.",
+              "Voltage and current mean the same thing in a DC circuit."
+            ],
+            "answer": 0,
+            "misconception": {
+              "1": "m1",
+              "2": "m1",
+              "3": "m1"
+            },
+            "hint": "One of them is a difference between two points. The other is a flow past one point.",
+            "explanation": "Voltage is a difference between two points, so it is always measured across something. Current is a flow past a point, so it is measured through the path it flows along."
+          }
+        },
+        {
+          "id": "s2",
+          "heading": "Ohm's law",
+          "body": "For a great many components - resistors, wires, heating elements - current is directly proportional to the voltage across them. That is Ohm's law:\n\n    V = I x R\n\nwhich rearranges to I = V / R and R = V / I.\n\nUse it three ways. If you know the voltage across a resistor and its resistance, you get the current. If you know the voltage and the current, you get the resistance. If you know the current and the resistance, you get the voltage across it.\n\nDouble the voltage across a fixed resistor and you double the current through it. Halve the resistance at fixed voltage and you double the current.",
+          "recap": "V = IR, and its two rearrangements.",
+          "check": {
+            "id": "l1s2c",
+            "type": "numeric",
+            "skill": "ohms-law",
+            "difficulty": 2,
+            "prompt": "A 4 ohm resistor has 12 V across it. What current flows through it, in amperes?",
+            "answer": 3,
+            "unit": "A",
+            "tolerance": 0.02,
+            "hint": "You know V and R and you want I. Which rearrangement do you need?",
+            "explanation": "I = V / R = 12 / 4 = 3 A."
+          }
+        },
+        {
+          "id": "s3",
+          "heading": "Resistance belongs to the component",
+          "body": "The resistance of an ordinary resistor is a property of the component itself - its material, its length, its cross-section, its temperature. It is not set by the circuit you drop it into.\n\nSo when you raise the voltage across a 100 ohm resistor from 5 V to 10 V, the resistance stays at 100 ohms and the current doubles from 0.05 A to 0.1 A. The resistor does not fight back harder.\n\nComponents that keep a fixed resistance like this are called ohmic. Not everything is: a filament lamp gets hotter as more current flows, and its resistance rises with temperature. A diode is nowhere near ohmic. In this course, assume ohmic behaviour unless a question tells you otherwise.",
+          "recap": "For an ohmic component, R is fixed; changing V changes I.",
+          "check": {
+            "id": "l1s3c",
+            "type": "mcq",
+            "skill": "ohms-law",
+            "difficulty": 3,
+            "prompt": "The voltage across a 100 ohm resistor is increased from 5 V to 10 V. What happens?",
+            "options": [
+              "The current doubles and the resistance stays at 100 ohms.",
+              "The current stays the same and the resistance halves.",
+              "The resistance doubles, so the current stays the same.",
+              "Both the current and the resistance double."
+            ],
+            "answer": 0,
+            "misconception": {
+              "1": "m2",
+              "2": "m2",
+              "3": "m2"
+            },
+            "hint": "Which of the three quantities is a property of the component itself?",
+            "explanation": "R is a property of the resistor and does not change. With V doubled, I = V/R doubles: 0.05 A becomes 0.1 A."
+          }
+        },
+        {
+          "id": "s4",
+          "heading": "Power, and why fuses blow",
+          "body": "Power (P, in watts) is the rate at which electrical energy is converted - into heat in a resistor, into light in a lamp, into motion in a motor.\n\n    P = V x I\n\nand, substituting Ohm's law, the two forms you will use constantly:\n\n    P = I^2 x R          (when you know the current)\n    P = V^2 / R          (when you know the voltage)\n\nNotice the square. Doubling the current through a cable quadruples the heat it produces. That is why the workshop fuse blew: adding the second welding set roughly doubled the current in the shared cable, and the heat in that cable went up by a factor of four.\n\nPower is a rate. Energy is power multiplied by time - that is what the meter charges for.",
+          "check": {
+            "id": "l1s4c",
+            "type": "numeric",
+            "skill": "power",
+            "difficulty": 3,
+            "prompt": "A 2 A current flows through a 10 ohm heating element. What power does it dissipate, in watts?",
+            "answer": 40,
+            "unit": "W",
+            "tolerance": 0.02,
+            "hint": "You have I and R. Use P = I^2 R - and square the current before multiplying.",
+            "explanation": "P = I^2 R = 2^2 x 10 = 4 x 10 = 40 W.",
+            "misconception": {
+              "order_of_magnitude": "m3"
+            }
+          }
+        }
+      ],
+      "worked_example": {
+        "prompt": "A 12 V battery is connected across a lamp of resistance 60 ohms. Find the current through the lamp and the power it dissipates.",
+        "steps": [
+          "Write down what you have: V = 12 V, R = 60 ohms. You want I, then P.",
+          "Choose the rearrangement that gives you the unknown: I = V / R.",
+          "Substitute: I = 12 / 60 = 0.2 A.",
+          "Now power. You have V and I, so the simplest form is P = V x I.",
+          "Substitute: P = 12 x 0.2 = 2.4 W.",
+          "Check it another way: P = V^2 / R = 144 / 60 = 2.4 W. The two agree, so the arithmetic is sound.",
+          "Sanity-check the size: a fifth of an amp and a couple of watts is about right for a small indicator lamp. If you had got 200 A you would know something was wrong."
+        ]
+      },
+      "practice": [
+        {
+          "id": "l1p1",
+          "type": "numeric",
+          "skill": "ohms-law",
+          "difficulty": 2,
+          "prompt": "A 9 V battery is connected across a 3 ohm resistor. What is the current, in amperes?",
+          "answer": 3,
+          "unit": "A",
+          "hint": "I = V / R.",
+          "explanation": "I = 9 / 3 = 3 A."
+        },
+        {
+          "id": "l1p2",
+          "type": "numeric",
+          "skill": "ohms-law",
+          "difficulty": 3,
+          "prompt": "An appliance draws 0.5 A when connected to a 230 V supply. What is its resistance, in ohms?",
+          "answer": 460,
+          "unit": "ohms",
+          "hint": "This time you know V and I and want R.",
+          "explanation": "R = V / I = 230 / 0.5 = 460 ohms."
+        },
+        {
+          "id": "l1p3",
+          "type": "numeric",
+          "skill": "ohms-law",
+          "difficulty": 4,
+          "prompt": "An LED needs 20 mA at 2 V. What resistance would give that current at 2 V? Answer in ohms.",
+          "answer": 100,
+          "unit": "ohms",
+          "hint": "20 mA is not 20 A. Convert to amperes before you divide.",
+          "explanation": "20 mA = 0.02 A. R = V / I = 2 / 0.02 = 100 ohms. Had you used 20 A you would have got 0.1 ohms - out by a factor of a thousand.",
+          "misconception": {
+            "order_of_magnitude": "m3"
+          }
+        },
+        {
+          "id": "l1p4",
+          "type": "numeric",
+          "skill": "power",
+          "difficulty": 4,
+          "prompt": "A cable of resistance 0.4 ohms carries 15 A. How much power is wasted as heat in the cable, in watts?",
+          "answer": 90,
+          "unit": "W",
+          "hint": "P = I^2 R. Square the 15 first.",
+          "explanation": "P = I^2 R = 225 x 0.4 = 90 W. Ninety watts of heat inside a cable is why undersized cable is dangerous."
+        }
+      ],
+      "apply": {
+        "id": "l1a1",
+        "type": "short",
+        "skill": "ohms-law",
+        "difficulty": 4,
+        "prompt": "A workshop lamp is connected to the battery through a long, thin cable and glows dimly. Swapping to a short, thick cable makes it bright. Explain why, using the ideas from this lesson.",
+        "answer": [
+          "resistance",
+          "voltage",
+          "current"
+        ],
+        "min_match": 2,
+        "placeholder": "Two or three sentences.",
+        "explanation": "A long thin cable has a higher resistance. That resistance is in the path, so some of the battery's voltage is dropped across the cable instead of the lamp, and the current in the circuit is lower. A short thick cable has less resistance, so more of the voltage reaches the lamp and more current flows - the lamp is brighter."
+      },
+      "recap": [
+        "Voltage is measured across a component; current is measured through it.",
+        "V = I x R, and its rearrangements I = V/R and R = V/I.",
+        "For an ohmic component, resistance is fixed - changing the voltage changes the current.",
+        "P = VI = I^2 R = V^2 / R. Because of the square, doubling current quadruples heating.",
+        "Always convert prefixes (mA, kohm) to base units before substituting."
+      ],
+      "misconceptions": [
+        {
+          "id": "m1",
+          "signal": "Treating voltage as something that flows, or as a property of a single point.",
+          "repair": "Voltage is always a difference between two points - that is why a voltmeter has two leads and goes across a component. Current is a flow, so an ammeter is broken into the circuit and goes through it. If you find yourself saying 'the voltage through the resistor', stop and say 'across' instead; the word forces the right picture."
+        },
+        {
+          "id": "m2",
+          "signal": "Believing resistance changes when the applied voltage changes.",
+          "repair": "Resistance is set by the component - its material, length, thickness and temperature - not by what you connect it to. Turning up the voltage does not make the resistor resist harder; it just pushes more current through the same resistance. In V = IR, when you fix R and raise V, it is I that must move."
+        },
+        {
+          "id": "m3",
+          "signal": "An answer out by a factor of ten, a thousand, or a million - a unit-prefix slip.",
+          "repair": "Convert every prefix to base units before you substitute: mA means x 10^-3, kohm means x 10^3, uA means x 10^-6. Write the converted numbers down rather than doing it in your head. Then sanity-check the size of the answer: a torch bulb does not draw 200 A, and a domestic appliance is not 0.5 ohms."
+        },
+        {
+          "id": "m4",
+          "signal": "Using P = VI when only current and resistance are known, and guessing at the missing voltage.",
+          "repair": "You do not need to find the voltage first. Substitute Ohm's law into P = VI and you get P = I^2 R directly. Pick the power formula that matches the two quantities you actually have: V and I, or I and R, or V and R."
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "title": "Resistors in series and in parallel",
+      "skill": "series-parallel",
+      "prerequisites": [
+        "ohms-law"
+      ],
+      "estimated_minutes": 30,
+      "hook": "Real circuits are never one resistor. Before you can analyse anything - a distribution board, a sensor input, a motor starter - you need to collapse a group of resistors into one equivalent value. Two rules do almost all of that work.",
+      "segments": [
+        {
+          "id": "s1",
+          "heading": "Series: one path",
+          "body": "Components are in series when they sit on a single path, so every electron that goes through one must go through the next. There is nowhere else to go.\n\nTwo consequences follow immediately:\n\n  - The current is the same through every component in the series chain.\n  - The voltages across them add up to the supply voltage.\n\nAnd the equivalent resistance is simply the sum:\n\n    R_series = R1 + R2 + R3 + ...\n\nAdding a resistor in series always increases the total resistance, because you have made the single path harder.",
+          "recap": "Series: same current, voltages add, resistances add.",
+          "check": {
+            "id": "l2s1c",
+            "type": "numeric",
+            "skill": "series-parallel",
+            "difficulty": 2,
+            "prompt": "Resistors of 10, 20 and 30 ohms are connected in series. What is the equivalent resistance, in ohms?",
+            "answer": 60,
+            "unit": "ohms",
+            "hint": "In series you simply add.",
+            "explanation": "R = 10 + 20 + 30 = 60 ohms."
+          }
+        },
+        {
+          "id": "s2",
+          "heading": "Parallel: a choice of paths",
+          "body": "Components are in parallel when they are connected across the same two nodes, so the current arriving has a choice of routes.\n\n  - The voltage is the same across every parallel branch.\n  - The branch currents add up to the total current.\n\nThe equivalent resistance comes from adding reciprocals:\n\n    1/R_parallel = 1/R1 + 1/R2 + ...\n\nFor exactly two resistors this simplifies to the product over the sum:\n\n    R = (R1 x R2) / (R1 + R2)\n\nHere is the result that surprises people: adding a resistor in parallel always *decreases* the total resistance. You have opened another route, so more current flows for the same voltage. The equivalent resistance of a parallel combination is always smaller than the smallest branch. Use that as your check - if your answer is bigger than the smallest resistor, you have made an error.",
+          "recap": "Parallel: same voltage, currents add, reciprocals add, total is smaller than the smallest branch.",
+          "check": {
+            "id": "l2s2c",
+            "type": "mcq",
+            "skill": "series-parallel",
+            "difficulty": 3,
+            "prompt": "A 10 ohm resistor is connected in parallel with a 15 ohm resistor. Without calculating exactly, what must the equivalent resistance be?",
+            "options": [
+              "Less than 10 ohms",
+              "Exactly 25 ohms",
+              "Between 10 and 15 ohms",
+              "Exactly 12.5 ohms"
+            ],
+            "answer": 0,
+            "misconception": {
+              "1": "m1",
+              "2": "m1",
+              "3": "m2"
+            },
+            "hint": "What does opening a second path do to the total opposition?",
+            "explanation": "A parallel combination is always less than its smallest branch, so it must be under 10 ohms. Exactly: (10 x 15)/(10 + 15) = 150/25 = 6 ohms."
+          }
+        },
+        {
+          "id": "s3",
+          "heading": "The potential divider",
+          "body": "Two resistors in series across a supply split the voltage between them in proportion to their resistances. This arrangement is called a potential divider and it is everywhere - setting a reference voltage, scaling a signal down to something a meter can read, biasing a transistor.\n\nFor R1 and R2 in series across V_in, the voltage across R2 is:\n\n    V_2 = V_in x R2 / (R1 + R2)\n\nThe logic is just Ohm's law twice: the same current I = V_in / (R1 + R2) flows through both, so the voltage across R2 is I x R2.\n\nThe bigger resistor always takes the bigger share of the voltage.",
+          "check": {
+            "id": "l2s3c",
+            "type": "numeric",
+            "skill": "series-parallel",
+            "difficulty": 4,
+            "prompt": "A 1 kohm and a 2 kohm resistor are in series across 12 V. What is the voltage across the 2 kohm resistor, in volts?",
+            "answer": 8,
+            "unit": "V",
+            "hint": "The 2 kohm is two thirds of the total 3 kohm, so it takes two thirds of the voltage.",
+            "explanation": "V = 12 x 2000/(1000 + 2000) = 12 x 2/3 = 8 V. The remaining 4 V is across the 1 kohm resistor, and 8 + 4 = 12 as it must."
+          }
+        }
+      ],
+      "worked_example": {
+        "prompt": "A 12 V supply is connected to a 4 ohm resistor in series with a parallel pair of 6 ohm and 3 ohm resistors. Find the total current drawn from the supply and the voltage across the parallel pair.",
+        "steps": [
+          "Deal with the parallel pair first - always collapse the innermost group before working outwards.",
+          "R_parallel = (6 x 3)/(6 + 3) = 18/9 = 2 ohms. Check: 2 is smaller than 3, the smaller branch, so it is plausible.",
+          "Now the circuit is 4 ohms in series with 2 ohms. R_total = 4 + 2 = 6 ohms.",
+          "Total current from the supply: I = V/R = 12/6 = 2 A.",
+          "That 2 A flows through the 4 ohm resistor (it is in the single path), dropping 2 x 4 = 8 V across it.",
+          "So the voltage across the parallel pair is 12 - 8 = 4 V.",
+          "Check directly: V = I x R_parallel = 2 x 2 = 4 V. The two routes agree."
+        ]
+      },
+      "practice": [
+        {
+          "id": "l2p1",
+          "type": "numeric",
+          "skill": "series-parallel",
+          "difficulty": 2,
+          "prompt": "Two 100 ohm resistors are connected in parallel. What is the equivalent resistance, in ohms?",
+          "answer": 50,
+          "unit": "ohms",
+          "hint": "Two equal resistors in parallel give half of one of them.",
+          "explanation": "(100 x 100)/(100 + 100) = 10000/200 = 50 ohms."
+        },
+        {
+          "id": "l2p2",
+          "type": "numeric",
+          "skill": "series-parallel",
+          "difficulty": 3,
+          "prompt": "A 6 ohm and a 3 ohm resistor are in parallel. What is the equivalent resistance, in ohms?",
+          "answer": 2,
+          "unit": "ohms",
+          "hint": "Product over sum. And remember the answer must be under 3.",
+          "explanation": "(6 x 3)/(6 + 3) = 18/9 = 2 ohms."
+        },
+        {
+          "id": "l2p3",
+          "type": "numeric",
+          "skill": "series-parallel",
+          "difficulty": 3,
+          "prompt": "A 5 ohm and a 7 ohm resistor are in series across a 24 V supply. What current flows, in amperes?",
+          "answer": 2,
+          "unit": "A",
+          "hint": "Add the series resistances, then use Ohm's law once.",
+          "explanation": "R = 5 + 7 = 12 ohms. I = 24/12 = 2 A."
+        },
+        {
+          "id": "l2p4",
+          "type": "mcq",
+          "skill": "series-parallel",
+          "difficulty": 4,
+          "prompt": "A 2 ohm and a 4 ohm resistor are in parallel across a battery. Which branch carries more current?",
+          "options": [
+            "The 2 ohm branch, and twice as much as the 4 ohm branch",
+            "The 4 ohm branch, and twice as much as the 2 ohm branch",
+            "They carry equal current, because the voltage across them is equal",
+            "It cannot be decided without knowing the battery voltage"
+          ],
+          "answer": 0,
+          "misconception": {
+            "1": "m3",
+            "2": "m3",
+            "3": "m3"
+          },
+          "hint": "The voltage across both is the same. Apply I = V/R to each branch separately.",
+          "explanation": "Both branches have the same voltage V across them. I = V/R, so the 2 ohm branch carries V/2 and the 4 ohm branch V/4 - exactly twice as much through the smaller resistance. Current divides in inverse proportion to resistance, not equally."
+        }
+      ],
+      "apply": {
+        "id": "l2a1",
+        "type": "short",
+        "skill": "series-parallel",
+        "difficulty": 4,
+        "prompt": "Every lamp in a workshop is wired in parallel across the same supply. As each extra lamp is switched on, the total current drawn from the supply rises. Explain why, in terms of equivalent resistance.",
+        "answer": [
+          "parallel",
+          "resistance",
+          "current"
+        ],
+        "min_match": 2,
+        "placeholder": "Two or three sentences.",
+        "explanation": "Each lamp switched on adds another parallel path. Adding a parallel branch lowers the equivalent resistance of the whole group, and with the supply voltage fixed, I = V/R means a lower total resistance draws a larger total current. Equivalently: each lamp draws its own branch current and the branch currents add."
+      },
+      "recap": [
+        "Series: one path - the same current flows through everything, and resistances add.",
+        "Parallel: shared nodes - the same voltage is across every branch, and reciprocals add.",
+        "A parallel combination is always smaller than its smallest branch. Use this to check every answer.",
+        "Potential divider: V2 = Vin x R2/(R1+R2). The larger resistor takes the larger share.",
+        "Current divides between parallel branches in inverse proportion to their resistances."
+      ],
+      "misconceptions": [
+        {
+          "id": "m1",
+          "signal": "Adding parallel resistances as if they were in series, giving a total larger than either branch.",
+          "repair": "Check the shape before you pick the rule. If the current has a choice of routes, it is parallel and the total must come out smaller than the smallest branch - opening another road never makes the journey harder. Adding straight up is the series rule, for components on a single path."
+        },
+        {
+          "id": "m2",
+          "signal": "Averaging two parallel resistances instead of combining them.",
+          "repair": "The average of 10 and 15 is 12.5, but the parallel combination is 6. There is no averaging step anywhere in this topic. Use 1/R = 1/R1 + 1/R2, or product over sum for exactly two, and then check the answer is below the smallest branch."
+        },
+        {
+          "id": "m3",
+          "signal": "Assuming current splits equally between parallel branches.",
+          "repair": "Current splits in inverse proportion to resistance, not equally. The branches share a voltage, not a current, so apply I = V/R to each branch on its own. Half the resistance carries twice the current. Equal splitting only happens when the branches happen to be equal."
+        }
+      ]
+    },
+    {
+      "id": "l3",
+      "title": "Kirchhoff's current and voltage laws",
+      "skill": "kirchhoff",
+      "prerequisites": [
+        "series-parallel"
+      ],
+      "estimated_minutes": 30,
+      "hook": "Series and parallel rules run out as soon as a circuit has two sources, or a bridge, or any shape that cannot be collapsed. Kirchhoff's two laws never run out. They are the bookkeeping of charge and energy, and every circuit analysis method you meet later is built on them.",
+      "segments": [
+        {
+          "id": "s1",
+          "heading": "Kirchhoff's current law",
+          "body": "At any junction (a node), the total current arriving equals the total current leaving.\n\n    sum of currents in = sum of currents out\n\nThe reason is that charge is not created or destroyed and does not pile up at a junction. A wire junction is not a bucket.\n\nThis is the formal version of something you already used: in a parallel group, the branch currents must add up to the total current, because the node where they split has to balance.\n\nIf 5 A arrives at a node and 2 A leaves down one branch, then 3 A must leave down the other. There is no other possibility.",
+          "recap": "At a node, current in equals current out.",
+          "check": {
+            "id": "l3s1c",
+            "type": "numeric",
+            "skill": "kirchhoff",
+            "difficulty": 2,
+            "prompt": "3 A flows into a node. One branch carries 1.2 A away. What current flows in the only other branch leaving the node, in amperes?",
+            "answer": 1.8,
+            "unit": "A",
+            "hint": "What goes in must come out.",
+            "explanation": "3 - 1.2 = 1.8 A."
+          }
+        },
+        {
+          "id": "s2",
+          "heading": "Kirchhoff's voltage law",
+          "body": "Around any closed loop, the voltages rises equal the voltage drops:\n\n    sum of emfs = sum of potential differences\n\nThe reason is energy. Take a unit of charge all the way round a loop and back to where it started; it must end at the same potential it began at. Every joule the source gives it must be given up in the components.\n\nSo in a single loop with a 12 V battery and three resistors, the three resistor voltages must add to exactly 12 V. If you calculate 5 V, 4 V and 2 V, you have made a mistake - not found a circuit that loses a volt.\n\nSigns matter. Pick a direction to walk round the loop and stick to it. Going through a resistor in the direction of the current is a drop; going through a source from minus to plus is a rise.",
+          "recap": "Around a loop, rises equal drops - because energy is conserved.",
+          "check": {
+            "id": "l3s2c",
+            "type": "numeric",
+            "skill": "kirchhoff",
+            "difficulty": 2,
+            "prompt": "A single loop contains a 12 V battery and two resistors. The first resistor has 5 V across it. What is the voltage across the second, in volts?",
+            "answer": 7,
+            "unit": "V",
+            "hint": "The drops must add up to the rise.",
+            "explanation": "12 - 5 = 7 V."
+          }
+        },
+        {
+          "id": "s3",
+          "heading": "Using the two together",
+          "body": "A method that will carry you a long way:\n\n  1. Label every branch with a current and an assumed direction. Guessing the direction wrongly is fine - the arithmetic returns a negative number and tells you so.\n  2. Write a current-law equation at each node except one. The last node gives you nothing new.\n  3. Write a voltage-law equation around each independent loop, walking consistently in one direction.\n  4. Solve the simultaneous equations.\n  5. Check: put the answers back and confirm every node balances and every loop sums to zero.\n\nStep 5 is not optional. It catches sign errors, which are by far the most common failure in this topic and the easiest to miss.",
+          "check": {
+            "id": "l3s3c",
+            "type": "mcq",
+            "skill": "kirchhoff",
+            "difficulty": 3,
+            "prompt": "You solve a circuit and one of your branch currents comes out as -0.4 A. What does that mean?",
+            "options": [
+              "The current is 0.4 A, flowing opposite to the direction you assumed.",
+              "You have made an arithmetic error, since current cannot be negative.",
+              "The branch carries no current at all.",
+              "The supply polarity in the circuit must be reversed."
+            ],
+            "answer": 0,
+            "misconception": {
+              "1": "m2",
+              "2": "m2",
+              "3": "m2"
+            },
+            "hint": "What did the minus sign attach itself to - the size, or the direction you chose?",
+            "explanation": "The minus sign refers to your assumed direction, not to the physics. The current is 0.4 A flowing the other way. This is exactly why guessing directions is safe."
+          }
+        }
+      ],
+      "worked_example": {
+        "prompt": "A 24 V battery drives a single loop containing a 2 ohm and a 4 ohm resistor in series. Find the current and the voltage across each resistor, and verify both laws.",
+        "steps": [
+          "One loop, so one current. Call it I, clockwise.",
+          "Voltage law around the loop: 24 = I x 2 + I x 4 = 6I.",
+          "So I = 24/6 = 4 A.",
+          "Voltage across the 2 ohm resistor: V = IR = 4 x 2 = 8 V.",
+          "Voltage across the 4 ohm resistor: V = IR = 4 x 4 = 16 V.",
+          "Check the voltage law: 8 + 16 = 24 V, which equals the source. Correct.",
+          "Check the current law: there is no branching, so the same 4 A passes every point. Consistent."
+        ]
+      },
+      "practice": [
+        {
+          "id": "l3p1",
+          "type": "numeric",
+          "skill": "kirchhoff",
+          "difficulty": 2,
+          "prompt": "Currents of 2 A and 3 A flow into a node, and 1.5 A flows out along one branch. What current flows out along the only remaining branch, in amperes?",
+          "answer": 3.5,
+          "unit": "A",
+          "hint": "Total in is 5 A. Total out must also be 5 A.",
+          "explanation": "In: 2 + 3 = 5 A. Out so far: 1.5 A. Remaining: 5 - 1.5 = 3.5 A."
+        },
+        {
+          "id": "l3p2",
+          "type": "numeric",
+          "skill": "kirchhoff",
+          "difficulty": 3,
+          "prompt": "A 24 V source drives a series loop of 2 ohms and 4 ohms. What is the voltage across the 4 ohm resistor, in volts?",
+          "answer": 16,
+          "unit": "V",
+          "hint": "Find the loop current first, then apply Ohm's law to the 4 ohm resistor alone.",
+          "explanation": "I = 24/(2+4) = 4 A. V = 4 x 4 = 16 V."
+        },
+        {
+          "id": "l3p3",
+          "type": "numeric",
+          "skill": "kirchhoff",
+          "difficulty": 4,
+          "prompt": "A loop contains a 9 V battery and a 3 V battery connected so that they oppose each other, in series with a 3 ohm resistor. What current flows, in amperes?",
+          "answer": 2,
+          "unit": "A",
+          "hint": "Opposing sources subtract. Find the net driving voltage first.",
+          "explanation": "Net emf = 9 - 3 = 6 V. I = 6/3 = 2 A. Had they aided each other, the net emf would be 12 V and the current 4 A."
+        },
+        {
+          "id": "l3p4",
+          "type": "mcq",
+          "skill": "kirchhoff",
+          "difficulty": 4,
+          "prompt": "In a single-loop circuit, a student measures 12 V at the battery and voltage drops of 5 V and 6 V across the two resistors. What is the most likely explanation?",
+          "options": [
+            "A measurement or arithmetic error - in a single loop the drops must total 12 V.",
+            "The circuit is losing 1 V as heat in the air.",
+            "Kirchhoff's voltage law does not apply when there are two resistors.",
+            "The battery is delivering more energy than the resistors can absorb."
+          ],
+          "answer": 0,
+          "misconception": {
+            "1": "m1",
+            "2": "m1",
+            "3": "m1"
+          },
+          "hint": "The voltage law is a statement of energy conservation. Can energy go missing?",
+          "explanation": "The voltage law is not approximate. 5 + 6 = 11, not 12, so something is wrong with the measurement or the arithmetic - a real circuit would show the missing volt somewhere, for instance across the battery's own internal resistance or a poor connection."
+        }
+      ],
+      "apply": {
+        "id": "l3a1",
+        "type": "short",
+        "skill": "kirchhoff",
+        "difficulty": 5,
+        "prompt": "Explain, in terms of what each law is really conserving, why Kirchhoff's current law applies at a node and the voltage law applies around a loop.",
+        "answer": [
+          "charge",
+          "energy",
+          "node",
+          "loop"
+        ],
+        "min_match": 2,
+        "placeholder": "Three or four sentences.",
+        "explanation": "The current law conserves charge: charge cannot accumulate at a junction, so whatever arrives must leave. The voltage law conserves energy: a unit of charge taken all the way round a loop returns to its starting potential, so the energy given to it by sources must exactly equal the energy it gives up in components. One is about a point, the other about a closed path - which is why one applies at nodes and the other around loops."
+      },
+      "recap": [
+        "Current law: at any node, current in equals current out - charge is conserved.",
+        "Voltage law: around any loop, rises equal drops - energy is conserved.",
+        "Assume current directions freely; a negative answer just means you guessed the direction backwards.",
+        "Walk each loop consistently in one direction and keep your signs straight.",
+        "Always substitute your answers back and check both laws balance."
+      ],
+      "misconceptions": [
+        {
+          "id": "m1",
+          "signal": "Treating the voltage law as approximate, or believing voltage is 'used up' and can go missing.",
+          "repair": "Both laws are exact consequences of conservation, not rules of thumb. If your loop does not balance, the error is in your working or your measurement - never in the law. In a real circuit the apparently missing volts always turn up somewhere: across internal resistance, a lead, or a bad joint."
+        },
+        {
+          "id": "m2",
+          "signal": "Panicking at a negative current, or flipping signs mid-solution to remove it.",
+          "repair": "A negative result is information, not an error. It says the current really flows opposite to the arrow you drew. Leave it negative, finish the algebra, and only reinterpret the direction at the end. Changing signs part-way through is what actually creates errors."
+        }
+      ]
+    }
+  ],
+  "diagnostic": [
+    {
+      "id": "d1",
+      "skill": "ohms-law",
+      "difficulty": 1,
+      "type": "mcq",
+      "prompt": "Which is the correct statement of Ohm's law?",
+      "options": [
+        "V = I x R",
+        "V = I / R",
+        "I = V x R",
+        "R = I x V"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "d2",
+      "skill": "ohms-law",
+      "difficulty": 2,
+      "type": "numeric",
+      "prompt": "A 6 V supply is across a 2 ohm resistor. What current flows, in amperes?",
+      "answer": 3
+    },
+    {
+      "id": "d3",
+      "skill": "ohms-law",
+      "difficulty": 4,
+      "type": "numeric",
+      "prompt": "A component draws 250 mA from a 10 V supply. What is its resistance, in ohms?",
+      "answer": 40
+    },
+    {
+      "id": "d4",
+      "skill": "power",
+      "difficulty": 3,
+      "type": "numeric",
+      "prompt": "A 3 A current flows through a 5 ohm resistor. What power is dissipated, in watts?",
+      "answer": 45
+    },
+    {
+      "id": "d5",
+      "skill": "power",
+      "difficulty": 5,
+      "type": "mcq",
+      "prompt": "The current through a cable doubles. What happens to the heat dissipated in the cable?",
+      "options": [
+        "It quadruples",
+        "It doubles",
+        "It stays the same",
+        "It halves"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "d6",
+      "skill": "series-parallel",
+      "difficulty": 2,
+      "type": "numeric",
+      "prompt": "Resistors of 4 and 6 ohms are in series. What is the equivalent resistance, in ohms?",
+      "answer": 10
+    },
+    {
+      "id": "d7",
+      "skill": "series-parallel",
+      "difficulty": 3,
+      "type": "numeric",
+      "prompt": "Two 12 ohm resistors are in parallel. What is the equivalent resistance, in ohms?",
+      "answer": 6
+    },
+    {
+      "id": "d8",
+      "skill": "series-parallel",
+      "difficulty": 4,
+      "type": "mcq",
+      "prompt": "Adding one more resistor in parallel with an existing group does what to the equivalent resistance?",
+      "options": [
+        "Decreases it",
+        "Increases it",
+        "Leaves it unchanged",
+        "Depends on the supply voltage"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "d9",
+      "skill": "series-parallel",
+      "difficulty": 5,
+      "type": "numeric",
+      "prompt": "A 3 kohm and a 1 kohm resistor are in series across 8 V. What voltage appears across the 3 kohm resistor, in volts?",
+      "answer": 6
+    },
+    {
+      "id": "d10",
+      "skill": "kirchhoff",
+      "difficulty": 2,
+      "type": "numeric",
+      "prompt": "4 A enters a node and 2.5 A leaves by one branch. How much leaves by the only other branch, in amperes?",
+      "answer": 1.5
+    },
+    {
+      "id": "d11",
+      "skill": "kirchhoff",
+      "difficulty": 3,
+      "type": "mcq",
+      "prompt": "Kirchhoff's voltage law is a statement of the conservation of what?",
+      "options": [
+        "Energy",
+        "Charge",
+        "Resistance",
+        "Power factor"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "d12",
+      "skill": "kirchhoff",
+      "difficulty": 5,
+      "type": "numeric",
+      "prompt": "A loop has a 10 V and a 4 V source opposing each other, in series with a 2 ohm resistor. What current flows, in amperes?",
+      "answer": 3
+    }
+  ],
+  "translations": {
+    "bem": {
+      "lessons": {
+        "l1": {
+          "title": "Voltage, current, resistance ne funde lya kwa Ohm",
+          "hook": "Iworkshopu ibomba na solar array. Umuntu abika welding set iyalenga ibili mu socket imo, elyo fyuzi yatulika. Takuli uwakumine batali, takuli uwaalwile ama-panel - nomba mulandu nshi yatulikile? Ilyo iyi lesoni ikapwa, ukesakwanisha ukupenda ici pa lupapulo ilyo ushilabika cimo, ukubomfya equation imo ne fintu fitatu.",
+          "segments": {
+            "s1": {
+              "heading": "Ifintu fitatu",
+              "body": "Ifintu fitatu filondolola ifilecitika mu circuit iili yonse.\n\nCurrent (I, ipimwa mu amperes, A) ni bwangu ubo charge ipitila pa ncende. Ni kupita, kwati ni malita pa sekondi ayapita pa ncende mu paipi.\n\nVoltage (V, ipimwa mu volts) ni maka ya kusunkanya pakati pa ncende shibili. Ni kupusana pakati pa ncende shibili, te cintu ca ncende imo yeka iyo. E mulandu tulanda pa voltage across icipande.\n\nResistance (R, ipimwa mu ohms) ni fyo icipande cikaanya uku kupita. Umushipi uutali kabili uunono ukaanya ukucila uukulu kabili uwipi uwa cintu cimo cine.\n\nUkupalanya na menshi - ukupusana kwa maka ukusunkanya amenshi mu paipi iyanono - kwaliwama pa kutampa, lelo lekelesha ilyo kwaleka ukwafwa. Amenshi yalasuuma mu paipi iyatobeka; charge tailasuuma mu circuit iyatobeka, ilaleka fye ukupita.",
+              "recap": "Current ilapita, voltage ilasunkanya, resistance ilakaanya."
+            },
+            "s2": {
+              "heading": "Ifunde lya kwa Ohm",
+              "body": "Ku fipande ifingi sana - ama-resistor, imishipi, ifya kukafya - current ilingana na voltage iili across ifipande. Ili e funde lya kwa Ohm:\n\n    V = I x R\n\nilyo lyaaluka ukuba I = V / R na R = V / I.\n\nLibomfye mu nshila shitatu. Nga waishiba voltage across resistor ne resistance yaiko, ukapeela current. Nga waishiba voltage na current, ukapeela resistance. Nga waishiba current na resistance, ukapeela voltage across yene.\n\nLenga voltage ukufula imiku ibili pa resistor iishaaluka, ninshi current na yene ilafula imiku ibili. Cefya resistance ku hafu pa voltage imo yene, ninshi current ilafula imiku ibili.",
+              "recap": "V = IR, ne nshila shaiko shibili."
+            },
+            "s3": {
+              "heading": "Resistance ni ya cipande cine",
+              "body": "Resistance ya resistor iya cine ni cintu ca cipande cine - icintu icapangwamo, ubutali bwaciko, ubukulu bwaciko, no kukafya kwaciko. Tailengwa na circuit umo waibika.\n\nE co nga wanyanta voltage across resistor ya 100 ohm ukufuma pa 5 V ukufika pa 10 V, resistance ishala pa 100 ohms kabili current ilafula imiku ibili ukufuma pa 0.05 A ukufika pa 0.1 A. Resistor tailwisha na maka ayengi.\n\nIfipande ifisunga resistance iishaaluka ifi fyitwa ohmic. Te fyonse ifili ifi: filament lamp ilakafya nga current iingi ilepita, kabili resistance yaiko ilakula na ukukafya. Diode taili ohmic nakalya. Muli aya masambililo, tontonkanya ukuti fyonse ni ohmic kano icipusho cakweba ukucita ukupusanako.",
+              "recap": "Ku cipande ca ohmic, R taialuka; ukwaluka V kwaluula I."
+            },
+            "s4": {
+              "heading": "Power, ne mulandu ama-fyuzi yatulikila",
+              "body": "Power (P, mu watts) ni bwangu ubo amaka ya magetsi yaalukila - ukuba ukukafya mu resistor, ulubuuto mu lampi, ukwenda mu motor.\n\n    P = V x I\n\nkabili, nga tubikamo ifunde lya kwa Ohm, inshila shibili isho ukalabomfya lyonse:\n\n    P = I^2 x R          (nga waishiba current)\n    P = V^2 / R          (nga waishiba voltage)\n\nMona isikweya. Ukufusha current mu keebo imiku ibili kulenga ukukafya ukufula imiku ine. E mulandu fyuzi ya mu workshopu yatulikile: ukubikako welding set iyalenga ibili kwafushishe current mu keebo imiku ibili, kabili ukukafya mu keebo kwaninine imiku ine.\n\nPower ni bwangu. Amaka (energy) ni power iyafyulwa ne nshita - e co mita ilipilisha."
+            }
+          },
+          "items": {
+            "l1s1c": {
+              "prompt": "Ni cishinka nshi icalungama?",
+              "options": [
+                "Voltage ipimwa across icipande; current ipimwa through icipande.",
+                "Current ipimwa across icipande; voltage ipimwa through icipande.",
+                "Voltage na current fyonse fipimwa pa ncende imo yeka.",
+                "Voltage na current fipilibula cintu cimo mu DC circuit."
+              ]
+            },
+            "l1s2c": {
+              "prompt": "Resistor ya 4 ohm ikwete 12 V across yene. Ni current nshi ipita muli yene, mu amperes?"
+            },
+            "l1s3c": {
+              "prompt": "Voltage across resistor ya 100 ohm yanyantwa ukufuma pa 5 V ukufika pa 10 V. Cinshi cicitika?",
+              "options": [
+                "Current ilafula imiku ibili kabili resistance ishala pa 100 ohms.",
+                "Current ishala imo yene kabili resistance ilacefya ku hafu.",
+                "Resistance ilafula imiku ibili, e co current ishala imo yene.",
+                "Current na resistance fyonse filafula imiku ibili."
+              ]
+            },
+            "l1s4c": {
+              "prompt": "Current ya 2 A ipita mu cipande ca kukafya ica 10 ohm. Ni power nshi ifumamo, mu watts?"
+            },
+            "l1p1": {
+              "prompt": "Batali ya 9 V yakakililwa across resistor ya 3 ohm. Ni current nshi, mu amperes?",
+              "hint": "I = V / R."
+            },
+            "l1p2": {
+              "prompt": "Icipe cisenda 0.5 A ilyo cakakililwa ku supply ya 230 V. Ni resistance nshi yaciko, mu ohms?",
+              "hint": "Ino nshita waishiba V na I kabili ulefwaya R."
+            },
+            "l1p3": {
+              "prompt": "LED ifwaya 20 mA pa 2 V. Ni resistance nshi ingapeela iyi current pa 2 V? Asuka mu ohms.",
+              "hint": "20 mA te 20 A iyo. Alusha ku amperes ilyo ushilagabanya."
+            },
+            "l1p4": {
+              "prompt": "Keebo iya resistance ya 0.4 ohms isenda 15 A. Ni power nshi iyonaika ukuba ukukafya mu keebo, mu watts?",
+              "hint": "P = I^2 R. Kwate isikweya ya 15 ubutanshi."
+            },
+            "l1a1": {
+              "prompt": "Lampi ya mu workshopu yakakililwa ku batali ukupitila mu keebo iitali kabili iyanono, kabili ilaaka panono. Ukwaluka ku keebo iyipi kabili iikulu kulenga ukwaka bwino. Londolola umulandu, ukubomfya ifyo wasambilila muli iyi lesoni.",
+              "answer": [
+                "resistance",
+                "voltage",
+                "current"
+              ]
+            }
+          },
+          "worked_example": {
+            "prompt": "Batali ya 12 V yakakililwa across lampi iya resistance ya 60 ohms. Fwaya current iipita mu lampi na power iifumamo.",
+            "steps": [
+              "Lemba ifyo wakwete: V = 12 V, R = 60 ohms. Ulefwaya I, elyo P.",
+              "Sala inshila iikupeela ico ushaishibe: I = V / R.",
+              "Bikamo: I = 12 / 60 = 0.2 A.",
+              "Nomba power. Wakwete V na I, e co inshila iyanguka ni P = V x I.",
+              "Bikamo: P = 12 x 0.2 = 2.4 W.",
+              "Cebeta mu nshila imbi: P = V^2 / R = 144 / 60 = 2.4 W. Inshila shibili shileumfwana, e co ukupenda kwalungama.",
+              "Cebeta ubukulu: icipande ca ampere na ma-watts yanono e fyalinga ku lampi inono iya cishibilo. Nga wapeele 200 A, nga waishiba ukuti kwali icalubana."
+            ]
+          },
+          "recap": [
+            "Voltage ipimwa across icipande; current ipimwa through icipande.",
+            "V = I x R, ne nshila shaiko I = V/R na R = V/I.",
+            "Ku cipande ca ohmic, resistance taialuka - ukwaluka voltage kwaluula current.",
+            "P = VI = I^2 R = V^2 / R. Pa mulandu wa sikweya, ukufusha current imiku ibili kufusha ukukafya imiku ine.",
+            "Lyonse alusha ama-prefix (mA, kohm) ku fipimo fya ntendekelo ilyo ushilabikamo."
+          ],
+          "misconceptions": {
+            "m1": {
+              "signal": "Ukumona voltage kwati e cintu icipita, nangu kwati ni cintu ca ncende imo.",
+              "repair": "Voltage lyonse ni kupusana pakati pa ncende shibili - e mulandu voltmeter ikwete imishipi ibili kabili ibikwa across icipande. Current ni kupita, e co ammeter ibikwa mu circuit kabili ipita through. Nga waisanga ulelanda ati 'voltage through resistor', imina no kulanda ati 'across'; ishiwi lilaleta icipasho icalungama."
+            },
+            "m2": {
+              "signal": "Ukusumina ukuti resistance ilaaluka ilyo voltage yaaluka.",
+              "repair": "Resistance ilengwa na cipande - icintu icapangwamo, ubutali, ubukulu no kukafya - te ku fyo wakakililako iyo. Ukunyanta voltage takulenga resistor ukukaanya na maka ayengi; kulasunkanya fye current iingi mu resistance imo yene. Muli V = IR, nga wakosha R no kunyanta V, ni I e ilingile ukwaluka."
+            },
+            "m3": {
+              "signal": "Icasuko icalubana ku miku ikumi, umwanda wa makana, nangu akana - ukulufyanya kwa prefix.",
+              "repair": "Alusha prefix iili yonse ku fipimo fya ntendekelo ilyo ushilabikamo: mA cipilibula x 10^-3, kohm cipilibula x 10^3, uA cipilibula x 10^-6. Lemba pa lupapulo inamba ishaalushiwa, wilacita mu mutwe. Elyo cebeta ubukulu bwa casuko: ilampi ya toochi taisenda 200 A, kabili icipe ca pa ng'anda te ca 0.5 ohms."
+            },
+            "m4": {
+              "signal": "Ukubomfya P = VI ilyo waishiba fye current na resistance, no kupeela voltage iyo ushaishibe.",
+              "repair": "Tawakabile ukufwaya voltage ubutanshi. Bika ifunde lya kwa Ohm muli P = VI ninshi upeela P = I^2 R. Sala inshila ya power iiumfwana ne fintu fibili ifyo wakwete: V na I, nangu I na R, nangu V na R."
+            }
+          }
+        },
+        "l2": {
+          "title": "Ama-resistor mu series na mu parallel",
+          "hook": "Ama-circuit ya cine te resistor imo. Ilyo ushilapenda cimo - distribution board, sensor input, motor starter - ulingile ukulonganika ibumba lya ma-resistor ukuba icipimo cimo. Amafunde yabili e yacita umulimo onse.",
+          "segments": {
+            "s1": {
+              "heading": "Series: inshila imo",
+              "body": "Ifipande fili mu series nga fyaikala pa nshila imo, e co electron iili yonse iipita muli cimo ilingile ukupita na mu cikonkelepo. Takuli kumbi kwa kuya.\n\nIfintu fibili filakonkapo bwangu:\n\n  - Current ni imo yene mu cipande cimo na cimo mu series.\n  - Ama-voltage across ifipande yalongana ukuba voltage ya supply.",
+              "recap": "Series: current imo yene, ama-voltage yalongana, ama-resistance yalongana."
+            },
+            "s2": {
+              "heading": "Parallel: inshila ishingi",
+              "body": "Ifipande fili mu parallel nga fyakakililwa across ama-node yabili yene, e co current iifika ikwata inshila ishingi isha kusala.\n\n  - Voltage ni imo yene across branch iili yonse.\n  - Ama-current ya ma-branch yalongana ukuba current yonse.\n\nResistance iilingene ifuma ku kulongana kwa ma-reciprocal:\n\n    1/R_parallel = 1/R1 + 1/R2 + ...\n\nKu ma-resistor yabili fye, ici cangukila ku product pa sum:\n\n    R = (R1 x R2) / (R1 + R2)\n\nCino e cintu icipapusha abantu: ukubikako resistor mu parallel lyonse *kucefya* resistance yonse. Naisula inshila imbi, e co current iingi ilapita pa voltage imo yene. Resistance iilingene iya parallel lyonse yaba iinono ukucila branch iinono sana. Bomfya ici kwati e cakucebeta - nga icasuko cobe cakalamba ukucila resistor iinono sana, ninshi walufyanya.",
+              "recap": "Parallel: voltage imo yene, ama-current yalongana, ama-reciprocal yalongana, iyonse yaba iinono ukucila branch iinono sana."
+            },
+            "s3": {
+              "heading": "Potential divider",
+              "body": "Ama-resistor yabili mu series across supply yakanya voltage pakati pabo ukulingana na ma-resistance yabo. Uku kwikala kwitwa potential divider kabili kuli konse - ukubika reference voltage, ukucefya signal ukuba icintu mita ingabelenga, ukubika bias pa transistor.\n\nKu R1 na R2 mu series across V_in, voltage across R2 ni:\n\n    V_2 = V_in x R2 / (R1 + R2)\n\nUbwafwilisho ni ifunde lya kwa Ohm imiku ibili fye: current imo yene I = V_in / (R1 + R2) ipita mu fyonse fibili, e co voltage across R2 ni I x R2.\n\nResistor iikalamba lyonse isenda ulubali ulukalamba ulwa voltage."
+            }
+          },
+          "items": {
+            "l2s1c": {
+              "prompt": "Ama-resistor ya 10, 20 na 30 ohms yakakililwa mu series. Ni resistance nshi iilingene, mu ohms?"
+            },
+            "l2s2c": {
+              "prompt": "Resistor ya 10 ohm yakakililwa mu parallel na resistor ya 15 ohm. Ukwabula ukupenda bwino bwino, resistance iilingene ilingile ukuba nshi?",
+              "options": [
+                "Iinono ukucila 10 ohms",
+                "25 ohms fye",
+                "Pakati pa 10 na 15 ohms",
+                "12.5 ohms fye"
+              ]
+            },
+            "l2s3c": {
+              "prompt": "Resistor ya 1 kohm ne ya 2 kohm shili mu series across 12 V. Ni voltage nshi across resistor ya 2 kohm, mu volts?"
+            },
+            "l2p1": {
+              "prompt": "Ama-resistor yabili aya 100 ohm yakakililwa mu parallel. Ni resistance nshi iilingene, mu ohms?",
+              "hint": "Ama-resistor yabili ayalingana mu parallel yapeela hafu ya limo."
+            },
+            "l2p2": {
+              "prompt": "Resistor ya 6 ohm ne ya 3 ohm shili mu parallel. Ni resistance nshi iilingene, mu ohms?",
+              "hint": "Product pa sum. Kabili ibukisha ukuti icasuko cilingile ukuba panshi ya 3."
+            },
+            "l2p3": {
+              "prompt": "Resistor ya 5 ohm ne ya 7 ohm shili mu series across supply ya 24 V. Ni current nshi ipita, mu amperes?",
+              "hint": "Longanya ama-resistance ya series, elyo ubomfye ifunde lya kwa Ohm umuku umo."
+            },
+            "l2p4": {
+              "prompt": "Resistor ya 2 ohm ne ya 4 ohm shili mu parallel across batali. Ni branch nshi isenda current iingi?",
+              "options": [
+                "Branch ya 2 ohm, kabili imiku ibili ukucila branch ya 4 ohm",
+                "Branch ya 4 ohm, kabili imiku ibili ukucila branch ya 2 ohm",
+                "Shisenda current imo yene, pantu voltage across shene ilingana",
+                "Te kuti cipingulwe ukwabula ukwishiba voltage ya batali"
+              ],
+              "hint": "Voltage across shonse shibili ni imo yene. Bomfya I = V/R ku branch imo na imo."
+            },
+            "l2a1": {
+              "prompt": "Amalampi yonse mu workshopu yakakililwe mu parallel across supply imo yene. Ilyo ilampi imo na imo yabikwa, current yonse iifuma ku supply ilakula. Londolola umulandu, ukulanda pa resistance iilingene.",
+              "answer": [
+                "parallel",
+                "resistance",
+                "current"
+              ]
+            }
+          },
+          "worked_example": {
+            "prompt": "Supply ya 12 V yakakililwa ku resistor ya 4 ohm mu series na ma-resistor ya 6 ohm na 3 ohm ayali mu parallel. Fwaya current yonse iifuma ku supply na voltage across ama-resistor ya parallel.",
+            "steps": [
+              "Tampa na ma-resistor ya parallel - lyonse longanika ibumba lya mukati ilyo ushilaya ku nse.",
+              "R_parallel = (6 x 3)/(6 + 3) = 18/9 = 2 ohms. Cebeta: 2 yaba iinono ukucila 3, branch iinono, e co caumfwika.",
+              "Nomba circuit ni 4 ohms mu series na 2 ohms. R_total = 4 + 2 = 6 ohms.",
+              "Current yonse ukufuma ku supply: I = V/R = 12/6 = 2 A.",
+              "Iyi 2 A ipita mu resistor ya 4 ohm (pantu ili pa nshila imo), no kutentemuna 2 x 4 = 8 V across yene.",
+              "E co voltage across ama-resistor ya parallel ni 12 - 8 = 4 V.",
+              "Cebeta bwangu: V = I x R_parallel = 2 x 2 = 4 V. Inshila shibili shileumfwana."
+            ]
+          },
+          "recap": [
+            "Series: inshila imo - current imo yene ipita mu fyonse, kabili ama-resistance yalongana.",
+            "Parallel: ama-node yamo - voltage imo yene across branch iili yonse, kabili ama-reciprocal yalongana.",
+            "Parallel lyonse yaba iinono ukucila branch yaiko iinono sana. Bomfya ici pa kucebeta icasuko cimo na cimo.",
+            "Potential divider: V2 = Vin x R2/(R1+R2). Resistor iikalamba isenda ulubali ulukalamba.",
+            "Current ikanwa pakati pa ma-branch ya parallel mu nshila iyalubulukile ku ma-resistance yabo."
+          ],
+          "misconceptions": {
+            "m1": {
+              "signal": "Ukulongana ama-resistance ya parallel kwati yali mu series, ukupeela icasuko icikalamba ukucila branch iili yonse.",
+              "repair": "Cebeta imimonekele ilyo ushilasala ifunde. Nga current ikwete inshila ishingi isha kusala, ninshi ni parallel kabili icasuko cilingile ukuba icinono ukucila branch iinono sana - ukwisula umusebo umbi takulenga ubulendo ukwafya. Ukulongana lululu e funde lya series, ilya fipande ifili pa nshila imo."
+            },
+            "m2": {
+              "signal": "Ukufwaya average ya ma-resistance yabili aya parallel ukucila ukuyalonganika.",
+              "repair": "Average ya 10 na 15 ni 12.5, lelo parallel ni 6. Takuli intampulo ya average nangu panono muli aya masambililo. Bomfya 1/R = 1/R1 + 1/R2, nangu product pa sum ku fibili fye, elyo ucebete ukuti icasuko cili panshi ya branch iinono sana."
+            },
+            "m3": {
+              "signal": "Ukutontonkanya ukuti current ikanwa mu kulingana pakati pa ma-branch ya parallel.",
+              "repair": "Current ikanwa mu nshila iyalubulukile ku resistance, te mu kulingana iyo. Ama-branch yakanyana voltage, te current iyo, e co bomfya I = V/R ku branch imo na imo. Hafu ya resistance isenda current iyafula imiku ibili. Ukukanyana mu kulingana kucitika fye nga ama-branch yalingana."
+            }
+          }
+        },
+        "l3": {
+          "title": "Amafunde ya kwa Kirchhoff aya current na voltage",
+          "hook": "Amafunde ya series na parallel yalapwa ilyo circuit yakwata ama-source yabili, nangu bridge, nangu imimonekele iishingalonganikwa. Amafunde yabili aya kwa Kirchhoff tayapwa nakalya. Ni bubalilo bwa charge na maka, kabili inshila shonse isha kupenda ama-circuit isho ukasanga ku ntanshi shashintilila pali yene.",
+          "segments": {
+            "s1": {
+              "heading": "Ifunde lya current ilya kwa Kirchhoff",
+              "body": "Pa ncende iili yonse iya kusangana (node), current yonse iifika ilingana na current yonse iifumamo.\n\n    ukulongana kwa ma-current ayengila = ukulongana kwa ma-current ayafuma\n\nUmulandu wa kuti charge tailengwa nangu ukonaulwa kabili tailongana pa ncende ya kusangana. Ukusangana kwa mishipi te bakete iyo.\n\nIci e cishinka ca cine ica cintu ico wabomfeshe kale: mu bumba lya parallel, ama-current ya ma-branch yalingile ukulongana ukuba current yonse, pantu node umo yakanwa ilingile ukulingana.\n\nNga 5 A ifika pa node kabili 2 A ifuma mu branch imo, ninshi 3 A ilingile ukufuma mu branch iyalenga ibili. Takuli inshila imbi.",
+              "recap": "Pa node, current iyengila ilingana ne yafuma."
+            },
+            "s2": {
+              "heading": "Ifunde lya voltage ilya kwa Kirchhoff",
+              "body": "Mu loop iili yonse iyashinguluka, ukuninika kwa voltage kulingana no kutentemuka kwa voltage:\n\n    ukulongana kwa ma-emf = ukulongana kwa ma-potential difference\n\nUmulandu ni maka. Sende charge ushinguluke loop yonse ubwelele apo watampile; ilingile ukupwila pa potential imo yene iyo yatampile. Joule iili yonse iyo source yaipeela ilingile ukupeelwa ku fipande.\n\nE co mu loop imo iikwete batali ya 12 V na ma-resistor yatatu, ama-voltage yatatu ya ma-resistor yalingile ukulongana ukuba 12 V. Nga wapenda 5 V, 4 V na 2 V, ninshi walufyanya - taumwene circuit iilelufya volti iyo.\n\nIfishibilo fyacindama. Sala inshila ya kushinguluka loop kabili ukonkepo. Ukupita mu resistor mu nshila ya current ni kutentemuka; ukupita mu source ukufuma ku minus ukuya ku plus ni kuninika.",
+              "recap": "Ukushinguluka loop, ukuninika kulingana no kutentemuka - pantu amaka yalasungwa."
+            },
+            "s3": {
+              "heading": "Ukubomfya yonse yabili pamo",
+              "body": "Inshila iikakutwala ukuya kutali:\n\n  1. Lemba pa branch iili yonse current ne nshila iyo ulemona. Ukulufyanya inshila te bwafya - ukupenda kukapeela namba iyabipa no kukweba.\n  2. Lemba equation ya funde lya current pa node imo na imo kano imo. Node iyakulekelesha tailapeela cimo icipya.\n  3. Lemba equation ya funde lya voltage ukushinguluka loop imo na imo iyaikala yeka, ukwenda mu nshila imo yene.\n  4. Pwisha ama-equation pamo.\n  5. Cebeta: bwesha amasuko mo no kushininkisha ukuti node iili yonse ilalingana kabili loop iili yonse ilongana ukuba zero.\n\nIntampulo ya 5 te ya kusala iyo. Ilekata ifilubo fya fishibilo, ifili e filubo ifingi sana muli aya masambililo kabili ifyanguka ukulufya."
+            }
+          },
+          "items": {
+            "l3s1c": {
+              "prompt": "3 A yaingila mu node. Branch imo isenda 1.2 A ukufuma. Ni current nshi ipita mu branch iyashala iyafuma mu node, mu amperes?"
+            },
+            "l3s2c": {
+              "prompt": "Loop imo yeka ikwete batali ya 12 V na ma-resistor yabili. Resistor ya kubalilapo ikwete 5 V across yene. Ni voltage nshi across iyalenga ibili, mu volts?"
+            },
+            "l3s3c": {
+              "prompt": "Wapwisha circuit kabili current imo iya branch yafuma ukuba -0.4 A. Ico cipilibula shani?",
+              "options": [
+                "Current ni 0.4 A, ilepita mu nshila iyapusana ne yo watontonkenye.",
+                "Walufyanya mu kupenda, pantu current te kuti ibe iyabipa.",
+                "Branch taisenda current nangu panono.",
+                "Ifishibilo fya supply mu circuit filingile ukwalulwa."
+              ]
+            },
+            "l3p1": {
+              "prompt": "Ama-current ya 2 A na 3 A yaingila mu node, kabili 1.5 A ifuma mu branch imo. Ni current nshi ifuma mu branch iyashala, mu amperes?",
+              "hint": "Iyengila yonse ni 5 A. Iyafuma yonse na yene ilingile ukuba 5 A."
+            },
+            "l3p2": {
+              "prompt": "Source ya 24 V isunkanya loop ya series iya 2 ohms na 4 ohms. Ni voltage nshi across resistor ya 4 ohm, mu volts?",
+              "hint": "Fwaya current ya loop ubutanshi, elyo ubomfye ifunde lya kwa Ohm ku resistor ya 4 ohm yeka."
+            },
+            "l3p3": {
+              "prompt": "Loop ikwete batali ya 9 V ne ya 3 V ishakakililwe ukukaanyana, mu series na resistor ya 3 ohm. Ni current nshi ipita, mu amperes?",
+              "hint": "Ama-source ayakaanyana yalafumyanako. Fwaya voltage iisunkanya ubutanshi."
+            },
+            "l3p4": {
+              "prompt": "Mu circuit ya loop imo, umusambi apima 12 V pa batali kabili ukutentemuka kwa 5 V na 6 V across ama-resistor yabili. Cinshi cingaba icalenga?",
+              "options": [
+                "Ukulufyanya kwa kupima nangu kwa kupenda - mu loop imo ukutentemuka kulingile ukulongana ukuba 12 V.",
+                "Circuit ilelufya 1 V ukuba ukukafya mu mwela.",
+                "Ifunde lya voltage ilya kwa Kirchhoff talibomba nga kuli ama-resistor yabili.",
+                "Batali ilepeela amaka ayengi ukucila ayo ama-resistor yengapokelela."
+              ],
+              "hint": "Ifunde lya voltage ni cishinka ca kusunga amaka. Bushe amaka kuti yaluba?"
+            },
+            "l3a1": {
+              "prompt": "Londolola, ukulanda pa cintu ifunde limo na limo lisunga, umulandu ifunde lya current ilya kwa Kirchhoff libombela pa node kabili ifunde lya voltage libombela ukushinguluka loop.",
+              "answer": [
+                "charge",
+                "amaka",
+                "node",
+                "loop"
+              ]
+            }
+          },
+          "worked_example": {
+            "prompt": "Batali ya 24 V isunkanya loop imo iikwete resistor ya 2 ohm ne ya 4 ohm mu series. Fwaya current na voltage across resistor imo na imo, no kushininkisha amafunde yonse yabili.",
+            "steps": [
+              "Loop imo, e co current imo. Iite I, ukwenda mu nshila ya wachi.",
+              "Ifunde lya voltage ukushinguluka loop: 24 = I x 2 + I x 4 = 6I.",
+              "E co I = 24/6 = 4 A.",
+              "Voltage across resistor ya 2 ohm: V = IR = 4 x 2 = 8 V.",
+              "Voltage across resistor ya 4 ohm: V = IR = 4 x 4 = 16 V.",
+              "Cebeta ifunde lya voltage: 8 + 16 = 24 V, ico cilingana na source. Calungama.",
+              "Cebeta ifunde lya current: takuli ukukanwa, e co 4 A imo yene ipita pa ncende iili yonse. Caumfwana."
+            ]
+          },
+          "recap": [
+            "Ifunde lya current: pa node iili yonse, iyengila ilingana ne yafuma - charge ilasungwa.",
+            "Ifunde lya voltage: ukushinguluka loop iili yonse, ukuninika kulingana no kutentemuka - amaka yalasungwa.",
+            "Tontonkanya inshila sha ma-current ukwabula ukutiina; icasuko icabipa cilanga fye ukuti walufyanishe inshila.",
+            "Enda loop imo na imo mu nshila imo yene kabili usunge ifishibilo fyobe ifyalungama.",
+            "Lyonse bwesha amasuko yobe mo no kucebeta ukuti amafunde yonse yabili yalalingana."
+          ],
+          "misconceptions": {
+            "m1": {
+              "signal": "Ukumona ifunde lya voltage kwati ni lya mupepi fye, nangu ukusumina ukuti voltage ilabomfiwa kabili kuti yaluba.",
+              "repair": "Amafunde yonse yabili ni fyakonkapo ifya cine ifya kusunga, te mafunde ya kutontonkanya fye iyo. Nga loop yobe tailingana, ukulufyanya kuli mu mulimo wobe nangu mu kupima kwobe - te mu funde nakalya. Mu circuit ya cine ama-volti ayamoneka kwati yalubile lyonse yasangwa: across internal resistance, umushipi, nangu ukusangana ukubipile."
+            },
+            "m2": {
+              "signal": "Ukutiina current iyabipa, nangu ukwalula ifishibilo pakati pa kupwisha pa kufumyapo.",
+              "repair": "Icasuko icabipa ni bwishibisho, te ubulubo iyo. Cilanda ukuti current ilepita mu nshila iyapusana ne mufwi uo walembele. Cileke cibe icabipa, upwishe algebra, elyo upilibule inshila pa mpela fye. Ukwalula ifishibilo pakati e kwine kuleta ifilubo."
+            }
+          }
+        }
+      },
+      "provenance": {
+        "translator": "Claude (MACHINE DRAFT - not a human translation)",
+        "translated_on": "2026-08-28",
+        "reviewed_by": null,
+        "reviewed_on": null,
+        "method": "machine-draft",
+        "notes": ""
+      }
+    },
+    "loz": {
+      "lessons": {
+        "l1": {
+          "title": "Voltage, current, resistance ni mulao wa Ohm",
+          "hook": "Workshop i sebeza ka solar array. Mutu u beya welding set ya bubeli mwa socket i liñwi, mi fuse ya puluha. Ha ku na ya swezi batili, ha ku na ya cincize li-panel - cwale ki kabakalañi ha i pulukile? Kwa mafelelezo a tuto ye, u ka kona ku bala taba yeo fa pampili pili u si ka beya se siñwi, ka ku itusisa equation i liñwi ni lika ze talu.",
+          "segments": {
+            "s1": {
+              "heading": "Lika ze talu",
+              "body": "Lika ze talu li talusa se si ezahala mwa circuit ifi kamba ifi.\n\nCurrent (I, ye likiwa ka amperes, A) ki bubebe bo charge i fita ka bona fa sibaka. Ki ku buba, sina malita fa sekondi a fita fa sibaka mwa mupaipi.\n\nVoltage (V, ye likiwa ka volts) ki maata a ku sunda mwahalaa libaka ze peli. Ki ku shutana mwahalaa libaka ze peli, isiñi sika sa sibaka si li siñwi. Ki lona libaka lu bulelela voltage across sisebeliso.\n\nResistance (R, ye likiwa ka ohms) ki mo sisebeliso si hanela ku buba koo. Kota ye telele ni ye nyinyani i hana ku fita ye tuna ni ye kuswani ya sika se siñwi.\n\nSiswaniso sa mezi - ku shutana kwa maata ko ku sunda mezi mwa mupaipi o munyinyani - ki nzila ye nde ya ku kala, kono i lisele ha i tuhela ku tusa. Mezi a suluha mwa mupaipi o lobehile; charge ha i suluhi mwa circuit ye lobehile, i tuhela fela ku buba.",
+              "recap": "Current ya buba, voltage ya sunda, resistance ya hana."
+            },
+            "s2": {
+              "heading": "Mulao wa Ohm",
+              "body": "Kwa lisebeliso ze ñata - ma-resistor, likota za magesi, lika ze cisa - current i likana ni voltage ye li across zona. Wo ki mulao wa Ohm:\n\n    V = I x R\n\no cinca ku ba I = V / R ni R = V / I.\n\nU itusise ka linzila ze talu. Haiba u ziba voltage across resistor ni resistance ya yona, u fumana current. Haiba u ziba voltage ni current, u fumana resistance. Haiba u ziba current ni resistance, u fumana voltage across yona.\n\nEkeza voltage hañata ka bubeli fa resistor ye sa cinci, mi current ni yona i ekezeha hañata ka bubeli. Fokolisa resistance ku ba hafu fa voltage ye swana, mi current i ekezeha hañata ka bubeli.",
+              "recap": "V = IR, ni linzila za yona ze peli."
+            },
+            "s3": {
+              "heading": "Resistance ki ya sisebeliso",
+              "body": "Resistance ya resistor ye tuna ki sika sa sisebeliso ka sibili - sika se si ezizwe ka sona, butelele bwa sona, butuna bwa sona, ni mucwalo wa ku cisa. Ha i tomiwi ki circuit mo u i beya.\n\nKacwalo ha u nanulela voltage across resistor ya 100 ohm ku zwa fa 5 V ku isa fa 10 V, resistance i siyala fa 100 ohms mi current i ekezeha hañata ka bubeli ku zwa fa 0.05 A ku isa fa 0.1 A. Resistor ha i lwanisi ka maata a mañata.\n\nLisebeliso ze buluka resistance ye sa cinci cwalo li bizwa ohmic. Haki lika kaufela ze cwalo: filament lamp i cisa hahulu ha current ye ñata i fita, mi resistance ya yona i ekezeha ni ku cisa. Diode haki ohmic ni hanyinyani. Mwa tuto ye, nahana kuli lika kaufela ki ohmic konji haiba puzo i ku bulelela ku eza ka ku shutana.",
+              "recap": "Kwa sisebeliso sa ohmic, R ha i cinci; ku cinca V ku cinca I."
+            },
+            "s4": {
+              "heading": "Power, ni libaka ma-fuse ha a puluha",
+              "body": "Power (P, ka watts) ki bubebe bo maata a magesi a cinceza ka bona - ku ba ku cisa mwa resistor, ku ba liseli mwa lamba, ku ba ku zamaya mwa motor.\n\n    P = V x I\n\nmi, ha lu beya mulao wa Ohm, linzila ze peli ze u ka itusisa kamita:\n\n    P = I^2 x R          (ha u ziba current)\n    P = V^2 / R          (ha u ziba voltage)\n\nBona square. Ku ekeza current mwa mahala hañata ka bubeli ku ekeza ku cisa hañata ka ne. Ki lona libaka fuse ya workshop ne i pulukile: ku ekeza welding set ya bubeli ne ku ekelize current mwa mahala hañata ka bubeli, mi ku cisa mwa mahala ao ne ku nanuhile hañata ka ne.\n\nPower ki bubebe. Maata (energy) ki power ye atisizwe ni nako - ki sona mita se i lifisa."
+            }
+          },
+          "items": {
+            "l1s1c": {
+              "prompt": "Ki taba mañi ye lukile?",
+              "options": [
+                "Voltage i likiwa across sisebeliso; current i likiwa through sisebeliso.",
+                "Current i likiwa across sisebeliso; voltage i likiwa through sisebeliso.",
+                "Voltage ni current kaufela li likiwa fa sibaka si li siñwi.",
+                "Voltage ni current li talusa nto i liñwi mwa DC circuit."
+              ]
+            },
+            "l1s2c": {
+              "prompt": "Resistor ya 4 ohm i na ni 12 V across yona. Ki current mañi ye fita ku yona, ka amperes?"
+            },
+            "l1s3c": {
+              "prompt": "Voltage across resistor ya 100 ohm i nanulelwa ku zwa fa 5 V ku isa fa 10 V. Ki nto mañi ye ezahala?",
+              "options": [
+                "Current i ekezeha hañata ka bubeli mi resistance i siyala fa 100 ohms.",
+                "Current i siyala i swana mi resistance i fokola ku ba hafu.",
+                "Resistance i ekezeha hañata ka bubeli, kacwalo current i siyala i swana.",
+                "Current ni resistance kaufela li ekezeha hañata ka bubeli."
+              ]
+            },
+            "l1s4c": {
+              "prompt": "Current ya 2 A i fita mwa sisebeliso sa ku cisa sa 10 ohm. Ki power mañi ye i zwisa, ka watts?"
+            },
+            "l1p1": {
+              "prompt": "Batiri ya 9 V i tamilwe across resistor ya 3 ohm. Ki current mañi, ka amperes?",
+              "hint": "I = V / R."
+            },
+            "l1p2": {
+              "prompt": "Sisebeliso si nga 0.5 A ha si tamilwe kwa supply ya 230 V. Ki resistance mañi ya sona, ka ohms?",
+              "hint": "Ka nako ye u ziba V ni I mi u bata R."
+            },
+            "l1p3": {
+              "prompt": "LED i tokwa 20 mA fa 2 V. Ki resistance mañi ye ne i ka fa current yeo fa 2 V? Alaba ka ohms.",
+              "hint": "20 mA haki 20 A. Cinceza kwa amperes pili u si ka kauhanya."
+            },
+            "l1p4": {
+              "prompt": "Mahala a na ni resistance ya 0.4 ohms a nga 15 A. Ki power mañi ye sinyeha ku ba ku cisa mwa mahala, ka watts?",
+              "hint": "P = I^2 R. Eza square ya 15 pili."
+            },
+            "l1a1": {
+              "prompt": "Lamba ya mwa workshop i tamilwe kwa batiri ka mahala a matelele ni a manyinyani mi i benya hanyinyani. Ku cinca ku mahala a makuswani ni a matuna ku i tisa ku benya hande. Talusa libaka, ka ku itusisa ze u itutile mwa tuto ye.",
+              "answer": [
+                "resistance",
+                "voltage",
+                "current"
+              ]
+            }
+          },
+          "worked_example": {
+            "prompt": "Batiri ya 12 V i tamilwe across lamba ye na ni resistance ya 60 ohms. Fumana current ye fita mwa lamba ni power ye i zwisa.",
+            "steps": [
+              "Ñola se u na ni sona: V = 12 V, R = 60 ohms. U bata I, cwale P.",
+              "Keta nzila ye ku fa se u sa zibi: I = V / R.",
+              "Beya: I = 12 / 60 = 0.2 A.",
+              "Cwale power. U na ni V ni I, kacwalo nzila ye bunolo ki P = V x I.",
+              "Beya: P = 12 x 0.2 = 2.4 W.",
+              "Talima ka nzila ye ñwi: P = V^2 / R = 144 / 60 = 2.4 W. Linzila ze peli za lumelelana, kacwalo palo i lukile.",
+              "Talima butuna: sikai sa ampere ni ma-watts a manyinyani ki a lukile kwa lamba ye nyinyani ya sisupo. Kambe ne u fumani 200 A, ne u ka ziba kuli ku na ni se si fosahalile."
+            ]
+          },
+          "recap": [
+            "Voltage i likiwa across sisebeliso; current i likiwa through sisebeliso.",
+            "V = I x R, ni linzila za yona I = V/R ni R = V/I.",
+            "Kwa sisebeliso sa ohmic, resistance ha i cinci - ku cinca voltage ku cinca current.",
+            "P = VI = I^2 R = V^2 / R. Kabakala square, ku ekeza current hañata ka bubeli ku ekeza ku cisa hañata ka ne.",
+            "Kamita cinceza li-prefix (mA, kohm) kwa liyunithi za mutomo pili u si ka beya."
+          ],
+          "misconceptions": {
+            "m1": {
+              "signal": "Ku nga voltage inge ki nto ye buba, kamba inge ki sika sa sibaka si li siñwi.",
+              "repair": "Voltage kamita ki ku shutana mwahalaa libaka ze peli - ki lona libaka voltmeter i na ni mihala ye mibeli mi i beiwa across sisebeliso. Current ki ku buba, kacwalo ammeter i beiwa mwa circuit mi i fita through. Haiba u ipumana u bulela 'voltage through resistor', ema mi u bulele 'across'; linzwi li tisa siswaniso se si lukile."
+            },
+            "m2": {
+              "signal": "Ku lumela kuli resistance ya cinca ha voltage i cinca.",
+              "repair": "Resistance i tomiwa ki sisebeliso - sika se si ezizwe ka sona, butelele, butuna ni ku cisa - isiñi ki se u tama ku sona. Ku nanulela voltage ha ku tisi resistor ku hana ka maata a mañata; ku sunda fela current ye ñata mwa resistance ye swana. Mwa V = IR, ha u tiisa R mi u nanulela V, ki I ye lukela ku cinca."
+            },
+            "m3": {
+              "signal": "Kalabo ye fosahalile ka likweli ze lishumi, ka lule, kamba ka milioni - mafosisa a prefix.",
+              "repair": "Cinceza prefix ifi kamba ifi kwa liyunithi za mutomo pili u si ka beya: mA i talusa x 10^-3, kohm i talusa x 10^3, uA i talusa x 10^-6. Ñola lipalo ze cincizwe fa pampili, isiñi ku eza mwa toho. Cwale talima butuna bwa kalabo: lamba ya toshi ha i ngi 200 A, mi sisebeliso sa fa ndu haki sa 0.5 ohms."
+            },
+            "m4": {
+              "signal": "Ku itusisa P = VI ha u ziba fela current ni resistance, ni ku hakanya voltage ye u sa zibi.",
+              "repair": "Ha u tokwi ku fumana voltage pili. Beya mulao wa Ohm mwa P = VI mi u fumana P = I^2 R ka ku nonga. Keta nzila ya power ye lumelelana ni lika ze peli ze u na ni zona luli: V ni I, kamba I ni R, kamba V ni R."
+            }
+          }
+        },
+        "l2": {
+          "title": "Ma-resistor mwa series ni mwa parallel",
+          "hook": "Ma-circuit a niti haki resistor i liñwi. Pili u si ka bala se siñwi - distribution board, sensor input, motor starter - u lukela ku kopanya sikwata sa ma-resistor ku ba palo i liñwi. Milao ye mibeli i eza musebezi kaufela.",
+          "segments": {
+            "s1": {
+              "heading": "Series: nzila i liñwi",
+              "body": "Lisebeliso li mwa series ha li inzi fa nzila i liñwi, kacwalo electron ifi kamba ifi ye fita mwa se siñwi i lukela ku fita ni mwa se si tatama. Ha ku na ko ku ñwi ku ya.\n\nLika ze peli za latelela honafo:\n\n  - Current ki ye swana mwa sisebeliso ni sisebeliso mwa series.\n  - Ma-voltage across lisebeliso a kopana ku ba voltage ya supply.",
+              "recap": "Series: current ye swana, ma-voltage a kopana, ma-resistance a kopana."
+            },
+            "s2": {
+              "heading": "Parallel: linzila ze ñata",
+              "body": "Lisebeliso li mwa parallel ha li tamilwe across li-node ze peli ze swana, kacwalo current ye fita i na ni linzila ze ñata za ku keta.\n\n  - Voltage ki ye swana across branch ifi kamba ifi.\n  - Ma-current a ma-branch a kopana ku ba current kaufela.\n\nResistance ye likanelela i zwa kwa ku kopanya li-reciprocal:\n\n    1/R_parallel = 1/R1 + 1/R2 + ...\n\nKwa ma-resistor a mabeli fela, se si bunolo ku ba product fa sum:\n\n    R = (R1 x R2) / (R1 + R2)\n\nSe ki sona se si komokisa batu: ku ekeza resistor mwa parallel kamita ku *fokolisa* resistance kaufela. U kwalula nzila ye ñwi, kacwalo current ye ñata ya fita fa voltage ye swana. Resistance ye likanelela ya parallel kamita ki ye nyinyani ku fita branch ye nyinyani. Itusise seo sina teko ya hao - haiba kalabo ya hao ki ye tuna ku fita resistor ye nyinyani, u fosize.",
+              "recap": "Parallel: voltage ye swana, ma-current a kopana, li-reciprocal za kopana, kaufela ki ye nyinyani ku fita branch ye nyinyani."
+            },
+            "s3": {
+              "heading": "Potential divider",
+              "body": "Ma-resistor a mabeli mwa series across supply a kauhanya voltage mwahalaa ona ka ku ya ka ma-resistance a ona. Ku beiwa cwalo ku bizwa potential divider mi ku li kai ni kai - ku beya reference voltage, ku fokolisa signal ku ba nto ye mita i kona ku bala, ku beya bias fa transistor.\n\nKwa R1 ni R2 mwa series across V_in, voltage across R2 ki:\n\n    V_2 = V_in x R2 / (R1 + R2)\n\nMulelo ki mulao wa Ohm hañata ka bubeli fela: current ye swana I = V_in / (R1 + R2) i fita mwa zona ze peli, kacwalo voltage across R2 ki I x R2.\n\nResistor ye tuna kamita i nga kabelo ye tuna ya voltage."
+            }
+          },
+          "items": {
+            "l2s1c": {
+              "prompt": "Ma-resistor a 10, 20 ni 30 ohms a tamilwe mwa series. Ki resistance mañi ye likanelela, ka ohms?"
+            },
+            "l2s2c": {
+              "prompt": "Resistor ya 10 ohm i tamilwe mwa parallel ni resistor ya 15 ohm. Ku si na ku bala luli, resistance ye likanelela i lukela ku ba mañi?",
+              "options": [
+                "Ye nyinyani ku fita 10 ohms",
+                "25 ohms fela",
+                "Mwahalaa 10 ni 15 ohms",
+                "12.5 ohms fela"
+              ]
+            },
+            "l2s3c": {
+              "prompt": "Resistor ya 1 kohm ni ya 2 kohm li mwa series across 12 V. Ki voltage mañi across resistor ya 2 kohm, ka volts?"
+            },
+            "l2p1": {
+              "prompt": "Ma-resistor a mabeli a 100 ohm a tamilwe mwa parallel. Ki resistance mañi ye likanelela, ka ohms?",
+              "hint": "Ma-resistor a mabeli a likanelela mwa parallel a fa hafu ya se siñwi."
+            },
+            "l2p2": {
+              "prompt": "Resistor ya 6 ohm ni ya 3 ohm li mwa parallel. Ki resistance mañi ye likanelela, ka ohms?",
+              "hint": "Product fa sum. Mi hupula kuli kalabo i lukela ku ba mwatasa a 3."
+            },
+            "l2p3": {
+              "prompt": "Resistor ya 5 ohm ni ya 7 ohm li mwa series across supply ya 24 V. Ki current mañi ye fita, ka amperes?",
+              "hint": "Kopanya ma-resistance a series, cwale u itusise mulao wa Ohm hañwi."
+            },
+            "l2p4": {
+              "prompt": "Resistor ya 2 ohm ni ya 4 ohm li mwa parallel across batiri. Ki branch mañi ye nga current ye ñata?",
+              "options": [
+                "Branch ya 2 ohm, mi hañata ka bubeli ku fita branch ya 4 ohm",
+                "Branch ya 4 ohm, mi hañata ka bubeli ku fita branch ya 2 ohm",
+                "Li nga current ye swana, kakuli voltage across zona ya likana",
+                "Ha ku koni ku atulwa ku si na ku ziba voltage ya batiri"
+              ],
+              "hint": "Voltage across zona ze peli ki ye swana. Itusise I = V/R kwa branch ni branch."
+            },
+            "l2a1": {
+              "prompt": "Malamba kaufela mwa workshop a tamilwe mwa parallel across supply ye swana. Lamba ni lamba ha i cwaniwa, current kaufela ye zwa kwa supply ya ekezeha. Talusa libaka, ka ku bulela ka za resistance ye likanelela.",
+              "answer": [
+                "parallel",
+                "resistance",
+                "current"
+              ]
+            }
+          },
+          "worked_example": {
+            "prompt": "Supply ya 12 V i tamilwe kwa resistor ya 4 ohm mwa series ni ma-resistor a 6 ohm ni 3 ohm a mwa parallel. Fumana current kaufela ye zwa kwa supply ni voltage across ma-resistor a parallel.",
+            "steps": [
+              "Kala ka ma-resistor a parallel - kamita kopanya sikwata sa mwahali pili u si ka ya kwande.",
+              "R_parallel = (6 x 3)/(6 + 3) = 18/9 = 2 ohms. Talima: 2 ki ye nyinyani ku fita 3, branch ye nyinyani, kacwalo ya utwahala.",
+              "Cwale circuit ki 4 ohms mwa series ni 2 ohms. R_total = 4 + 2 = 6 ohms.",
+              "Current kaufela ye zwa kwa supply: I = V/R = 12/6 = 2 A.",
+              "2 A yeo i fita mwa resistor ya 4 ohm (kakuli i fa nzila i liñwi), ni ku shetumuna 2 x 4 = 8 V across yona.",
+              "Kacwalo voltage across ma-resistor a parallel ki 12 - 8 = 4 V.",
+              "Talima ka ku nonga: V = I x R_parallel = 2 x 2 = 4 V. Linzila ze peli za lumelelana."
+            ]
+          },
+          "recap": [
+            "Series: nzila i liñwi - current ye swana i fita mwa lika kaufela, mi ma-resistance a kopana.",
+            "Parallel: li-node ze swana - voltage ye swana across branch ifi kamba ifi, mi li-reciprocal za kopana.",
+            "Parallel kamita ki ye nyinyani ku fita branch ya yona ye nyinyani. Itusise seo ku talima kalabo ni kalabo.",
+            "Potential divider: V2 = Vin x R2/(R1+R2). Resistor ye tuna i nga kabelo ye tuna.",
+            "Current i kauhana mwahalaa ma-branch a parallel ka mukwa o fapahana ni ma-resistance a ona."
+          ],
+          "misconceptions": {
+            "m1": {
+              "signal": "Ku kopanya ma-resistance a parallel inge a li mwa series, ku fa kalabo ye tuna ku fita branch ifi kamba ifi.",
+              "repair": "Talima sibupeho pili u si ka keta mulao. Haiba current i na ni linzila za ku keta, ki parallel mi kalabo i lukela ku ba ye nyinyani ku fita branch ye nyinyani - ku kwalula nzila ye ñwi ha ku tisi musipili ku ba o taata. Ku kopanya ka ku nonga ki mulao wa series, wa lisebeliso ze fa nzila i liñwi."
+            },
+            "m2": {
+              "signal": "Ku fumana average ya ma-resistance a mabeli a parallel mwa sibaka sa ku a kopanya.",
+              "repair": "Average ya 10 ni 15 ki 12.5, kono parallel ki 6. Ha ku na muhato wa average ni hanyinyani mwa tuto ye. Itusise 1/R = 1/R1 + 1/R2, kamba product fa sum kwa ze peli fela, cwale u talime kuli kalabo i li mwatasa a branch ye nyinyani."
+            },
+            "m3": {
+              "signal": "Ku nahana kuli current i kauhana ka ku likana mwahalaa ma-branch a parallel.",
+              "repair": "Current i kauhana ka mukwa o fapahana ni resistance, isiñi ka ku likana. Ma-branch a kauhanya voltage, isiñi current, kacwalo itusise I = V/R kwa branch ni branch ka i nosi. Hafu ya resistance i nga current ye ñata hañata ka bubeli. Ku kauhana ka ku likana ku ezahala fela ha ma-branch a likana."
+            }
+          }
+        },
+        "l3": {
+          "title": "Milao ya Kirchhoff ya current ni voltage",
+          "hook": "Milao ya series ni parallel ya fela honafo circuit i na ni li-source ze peli, kamba bridge, kamba sibupeho se si sa koni ku kopanywa. Milao ye mibeli ya Kirchhoff ha i feli ni kamuta. Ki buñoli bwa charge ni maata, mi linzila kaufela za ku bala ma-circuit ze u ka fumana kwapili li yahilwe fa zona.",
+          "segments": {
+            "s1": {
+              "heading": "Mulao wa Kirchhoff wa current",
+              "body": "Fa sibaka sifi kamba sifi sa ku kopana (node), current kaufela ye fita i likana ni current kaufela ye zwa.\n\n    kopano ya ma-current a kena = kopano ya ma-current a zwa\n\nLibaka ki kuli charge ha i bupiwi kamba ku sinyiwa mi ha i kubukanyi fa sibaka sa ku kopana. Ku kopana kwa mihala haki nkwana.\n\nSe ki taluso ye tiile ya nto ye u itusisize kale: mwa sikwata sa parallel, ma-current a ma-branch a lukela ku kopana ku ba current kaufela, kakuli node mo a kauhana i lukela ku likana.\n\nHaiba 5 A i fita fa node mi 2 A ya zwa ka branch i liñwi, cwale 3 A i lukela ku zwa ka ye ñwi. Ha ku na nzila ye ñwi.",
+              "recap": "Fa node, current ye kena i likana ni ye zwa."
+            },
+            "s2": {
+              "heading": "Mulao wa Kirchhoff wa voltage",
+              "body": "Ku potoloha loop ifi kamba ifi ye kwalilwe, ku nanuha kwa voltage ku likana ni ku shetumuka kwa voltage:\n\n    kopano ya ma-emf = kopano ya ma-potential difference\n\nLibaka ki maata. Nga charge u potoloha loop kaufela mi u kutele ko ne u kalezi; i lukela ku fela fa potential ye swana ye ne i kalile ku yona. Joule ifi kamba ifi ye source i i file i lukela ku fiwa kwa lisebeliso.\n\nKacwalo mwa loop i liñwi ye na ni batiri ya 12 V ni ma-resistor a malalu, ma-voltage a malalu a ma-resistor a lukela ku kopana ku ba 12 V luli. Haiba u bala 5 V, 4 V ni 2 V, u fosize - ha u si ka fumana circuit ye latehelwa ki volt.\n\nLisupo za butokwa. Keta nzila ya ku potoloha loop mi u i latelele. Ku fita mwa resistor mwa nzila ya current ki ku shetumuka; ku fita mwa source ku zwa kwa minus ku ya kwa plus ki ku nanuha.",
+              "recap": "Ku potoloha loop, ku nanuha ku likana ni ku shetumuka - kakuli maata a bulukiwa."
+            },
+            "s3": {
+              "heading": "Ku itusisa yona ze peli hamoho",
+              "body": "Nzila ye ka ku isa kwahule:\n\n  1. Swaya branch ni branch ka current ni nzila ye u nahana. Ku fosa nzila haki butata - palo i ka fa palo ye fokola mi i ka ku bulelela.\n  2. Ñola equation ya mulao wa current fa node ni node konji i liñwi. Node ya mafelelezo ha i fi se siñwi se sinca.\n  3. Ñola equation ya mulao wa voltage ku potoloha loop ni loop ye ipeile, u zamaya ka nzila i liñwi.\n  4. Tatulula ma-equation hamoho.\n  5. Talima: kutisa likalabo mi u kolwisise kuli node ni node ya likana mi loop ni loop i kopana ku ba zero.\n\nMuhato wa 5 haki wa ku keta. U swala mafosisa a lisupo, ao ki ona mafosisa a mañata mwa tuto ye mi a bunolo ku a lisela."
+            }
+          },
+          "items": {
+            "l3s1c": {
+              "prompt": "3 A i kena mwa node. Branch i liñwi i nga 1.2 A ku zwa. Ki current mañi ye fita mwa branch ye siyezi ye zwa mwa node, ka amperes?"
+            },
+            "l3s2c": {
+              "prompt": "Loop i liñwi i na ni batiri ya 12 V ni ma-resistor a mabeli. Resistor ya pili i na ni 5 V across yona. Ki voltage mañi across ya bubeli, ka volts?"
+            },
+            "l3s3c": {
+              "prompt": "U tatulula circuit mi current i liñwi ya branch i zwa ku ba -0.4 A. Seo si talusañi?",
+              "options": [
+                "Current ki 0.4 A, ye fita ka nzila ye fapahana ni ye ne u nahani.",
+                "U fosize mwa ku bala, kakuli current ha i koni ku ba ye fokola.",
+                "Branch ha i ngi current ni hanyinyani.",
+                "Lisupo za supply mwa circuit li lukela ku fetulwa."
+              ]
+            },
+            "l3p1": {
+              "prompt": "Ma-current a 2 A ni 3 A a kena mwa node, mi 1.5 A ya zwa ka branch i liñwi. Ki current mañi ye zwa ka branch ye siyezi, ka amperes?",
+              "hint": "Ye kena kaufela ki 5 A. Ye zwa kaufela ni yona i lukela ku ba 5 A."
+            },
+            "l3p2": {
+              "prompt": "Source ya 24 V i sunda loop ya series ya 2 ohms ni 4 ohms. Ki voltage mañi across resistor ya 4 ohm, ka volts?",
+              "hint": "Fumana current ya loop pili, cwale u itusise mulao wa Ohm kwa resistor ya 4 ohm i nosi."
+            },
+            "l3p3": {
+              "prompt": "Loop i na ni batiri ya 9 V ni ya 3 V ze tamilwe ku lwanisana, mwa series ni resistor ya 3 ohm. Ki current mañi ye fita, ka amperes?",
+              "hint": "Li-source ze lwanisana za zwisana. Fumana voltage ye sunda pili."
+            },
+            "l3p4": {
+              "prompt": "Mwa circuit ya loop i liñwi, muituti u lika 12 V fa batiri mi u lika ku shetumuka kwa 5 V ni 6 V across ma-resistor a mabeli. Ki taba mañi ye kona ku talusa?",
+              "options": [
+                "Mafosisa a ku lika kamba a ku bala - mwa loop i liñwi ku shetumuka ku lukela ku kopana ku ba 12 V.",
+                "Circuit i latehelwa ki 1 V ku ba ku cisa mwa moya.",
+                "Mulao wa Kirchhoff wa voltage ha u sebezi ha ku na ni ma-resistor a mabeli.",
+                "Batiri i fa maata a mañata ku fita a ma-resistor a kona ku amuhela."
+              ],
+              "hint": "Mulao wa voltage ki taba ya ku buluka maata. Kana maata a kona ku latehela?"
+            },
+            "l3a1": {
+              "prompt": "Talusa, ka ku bulela ka za se mulao ni mulao u buluka luli, libaka mulao wa Kirchhoff wa current ha u sebeza fa node mi mulao wa voltage ha u sebeza ku potoloha loop.",
+              "answer": [
+                "charge",
+                "maata",
+                "node",
+                "loop"
+              ]
+            }
+          },
+          "worked_example": {
+            "prompt": "Batiri ya 24 V i sunda loop i liñwi ye na ni resistor ya 2 ohm ni ya 4 ohm mwa series. Fumana current ni voltage across resistor ni resistor, mi u kolwisise milao ye mibeli.",
+            "steps": [
+              "Loop i liñwi, kacwalo current i liñwi. I bize I, ku ya ka nzila ya wachi.",
+              "Mulao wa voltage ku potoloha loop: 24 = I x 2 + I x 4 = 6I.",
+              "Kacwalo I = 24/6 = 4 A.",
+              "Voltage across resistor ya 2 ohm: V = IR = 4 x 2 = 8 V.",
+              "Voltage across resistor ya 4 ohm: V = IR = 4 x 4 = 16 V.",
+              "Talima mulao wa voltage: 8 + 16 = 24 V, ye likana ni source. Ku lukile.",
+              "Talima mulao wa current: ha ku na ku kauhana, kacwalo 4 A ye swana i fita fa sibaka ni sibaka. Ku lumelelana."
+            ]
+          },
+          "recap": [
+            "Mulao wa current: fa node ifi kamba ifi, ye kena i likana ni ye zwa - charge ya bulukiwa.",
+            "Mulao wa voltage: ku potoloha loop ifi kamba ifi, ku nanuha ku likana ni ku shetumuka - maata a bulukiwa.",
+            "Nahana linzila za ma-current ku si na sabo; kalabo ye fokola i bonisa fela kuli u fosize nzila.",
+            "Zamaya loop ni loop ka nzila i liñwi mi u buluke lisupo za hao inge li lukile.",
+            "Kamita kutisa likalabo za hao mi u talime kuli milao ye mibeli ya likana."
+          ],
+          "misconceptions": {
+            "m1": {
+              "signal": "Ku nga mulao wa voltage inge ki wa bukaufi fela, kamba ku lumela kuli voltage ya itusiswa mi i kona ku latehela.",
+              "repair": "Milao ye mibeli ki litaba za niti za ku buluka, isiñi milao ya mihupulo fela. Haiba loop ya hao ha i likani, mafosisa a li mwa musebezi wa hao kamba mwa ku lika kwa hao - isiñi mwa mulao ni kamuta. Mwa circuit ya niti ma-volt a bonahala inge a latehile kamita a fumanwa: across internal resistance, mahala, kamba ku kopana ko ku maswe."
+            },
+            "m2": {
+              "signal": "Ku saba current ye fokola, kamba ku cinca lisupo mwahalaa ku tatulula kuli u i zwise.",
+              "repair": "Kalabo ye fokola ki litaba, isiñi mafosisa. I bulela kuli current i fita luli ka nzila ye fapahana ni supo ye ne u ñozi. I siye i fokola, u feze algebra, mi u talusize nzila kwa mafelelezo fela. Ku cinca lisupo mwahali ki kona ku tisa mafosisa."
+            }
+          }
+        }
+      },
+      "provenance": {
+        "translator": "Claude (MACHINE DRAFT - not a human translation)",
+        "translated_on": "2026-08-28",
+        "reviewed_by": null,
+        "reviewed_on": null,
+        "method": "machine-draft",
+        "notes": "FULL DRAFT, PRODUCED BY A LANGUAGE MODEL, REVIEWED BY NOBODY. Expect errors in grammar, noun-class concord and technical register. Every quantity, unit, symbol and formula is kept in English on purpose - voltage, current, resistance, resistor, ohm, volt, ampere, watt, power, series, parallel, node, loop, circuit, branch, emf, ohmic, diode, LED, potential divider, Ohm's law, Kirchhoff - because CBU teaches and examines EE 220 in English and a student must recognise these on an exam paper and on equipment labels. Formulae are untouched. 'Across' and 'through' are deliberately left in English in the voltage/current distinction, because that contrast is the point of the lesson. NOTE FOR LOZI SPECIFICALLY: no text-to-speech model for Silozi exists anywhere, so this can only be read on screen, never aloud. DO NOT PUT THIS IN FRONT OF A STUDENT until a Lozi-speaking engineer has been through it."
+      }
+    }
+  },
+  "integrity": {
+    "algorithm": "sha256",
+    "sha256": "1ea343a45f6965e7a5e53e714c3d7390d4d5760169e7d3cd7e5150cc23a6540e"
+  }
+}
