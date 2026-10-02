@@ -19,13 +19,13 @@ if not defined PY (
   exit /b 1
 )
 
-if "%~1"=="--doctor"   ( %PY% -m tutor --doctor & pause & exit /b 0 )
-if "%~1"=="--validate" ( %PY% -m tutor --validate & pause & exit /b 0 )
+if "%~1"=="--doctor"   ( %PY% -m ethel --doctor & pause & exit /b 0 )
+if "%~1"=="--validate" ( %PY% -m ethel --validate & pause & exit /b 0 )
 if "%~1"=="--selftest" ( %PY% tools\selftest.py & pause & exit /b 0 )
 if "%~1"=="--modelcheck" ( %PY% tools\modelcheck.py & pause & exit /b 0 )
 if "%~1"=="--listencheck" ( %PY% tools\listencheck.py %2 & pause & exit /b 0 )
 if "%~1"=="--package" ( %PY% tools\package.py %2 %3 & pause & exit /b 0 )
 
 start "" http://127.0.0.1:8770/
-%PY% -m tutor %*
+%PY% -m ethel %*
 pause

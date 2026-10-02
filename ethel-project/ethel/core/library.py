@@ -25,6 +25,7 @@ import json
 import os
 import shutil
 import stat
+import sys
 import time
 from dataclasses import dataclass
 from pathlib import Path
@@ -53,7 +54,10 @@ def _remove_tree(path: Path) -> bool:
 
     for _ in range(3):
         try:
-            shutil.rmtree(path, onexc=onexc)
+            if sys.version_info >= (3, 12):
+                shutil.rmtree(path, onexc=onexc)
+            else:  # onerror takes the same (func, path, exc) shape; deprecated in 3.12
+                shutil.rmtree(path, onerror=onexc)
         except OSError:
             pass
         if not path.exists():

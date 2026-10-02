@@ -60,7 +60,10 @@ def _force_rmtree(path: Path) -> None:
             pass
 
     if path.exists():
-        shutil.rmtree(path, onexc=onexc)
+        if sys.version_info >= (3, 12):
+            shutil.rmtree(path, onexc=onexc)
+        else:  # onerror takes the same (func, path, exc) shape; deprecated in 3.12
+            shutil.rmtree(path, onerror=onexc)
 
 
 def cleanup() -> None:
